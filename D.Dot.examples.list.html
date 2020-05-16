@@ -26,6 +26,22 @@
 <h1 class="libtitle">D.Dot.examples.list</h1>
 
 <div class="code">
+</div>
+
+<div class="doc">
+<a name="lab111"></a><h1 class="section">Encoding covariant lists.</h1>
+
+
+<div class="paragraph"> </div>
+
+Here, the main lemma is <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#listTyp"><span class="id" title="definition">listTyp</span></a></span>, saying that <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> <span class="inlinecode"><a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a></span> (the code shown
+in the paper) has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span> <span class="inlinecode"><a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a></span> in a context offering a boolean
+implementation.
+Subsequent examples demonstrate how to link lists with the boolean
+implementation we provide, and how to <i>use</i> lists.
+ 
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">D</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.tactics.html#"><span class="id" title="library">tactics</span></a>.<br/>
@@ -76,7 +92,7 @@
 </div>
 
 <div class="doc">
-<a name="lab111"></a><h1 class="section">Interface of the list module.</h1>
+<a name="lab112"></a><h2 class="section">Interface of the list module.</h2>
 
 </div>
 <div class="code">
@@ -94,7 +110,7 @@
 </div>
 
 <div class="doc">
-<a name="lab112"></a><h2 class="section">The list type itself.</h2>
+<a name="lab113"></a><h3 class="section">The list type itself.</h3>
 
 </div>
 <div class="code">
@@ -153,7 +169,7 @@ mod stands for module.
 </div>
 
 <div class="doc">
-<a name="lab113"></a><h1 class="section">Implementation of the list module.</h1>
+<a name="lab114"></a><h2 class="section">Implementation of the list module.</h2>
 
 </div>
 <div class="code">
@@ -187,7 +203,7 @@ mod stands for module.
 </div>
 
 <div class="doc">
-<a name="lab114"></a><h1 class="section">Auxiliary types, needed in derivations of typing judgments.</h1>
+<a name="lab115"></a><h2 class="section">Auxiliary types, needed in derivations of typing judgments.</h2>
 
 </div>
 <div class="code">
@@ -214,12 +230,10 @@ mod stands for module.
 </div>
 
 <div class="doc">
-<a name="lab115"></a><h1 class="section">Proofs that <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h1>
+<a name="lab116"></a><h2 class="section">Lemmas for proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
 
 </div>
 <div class="code">
-
-<br/>
 <span class="id" title="keyword">Example</span> <a name="nilTyp"><span class="id" title="definition">nilTyp</span></a> <span class="id" title="var">Γ</span> : (<a class="idref" href="D.Dot.examples.ex_utils.html#3b46f8a39b2df2d3ba2df41c9fe962c8"><span class="id" title="notation">▶:</span></a> <a class="idref" href="D.Dot.examples.list.html#hlistModTConcrBody"><span class="id" title="definition">hlistModTConcrBody</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx1"><span class="id" title="abbreviation">hx1</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a>)%<span class="id" title="var">ty</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">::</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#boolImplT"><span class="id" title="definition">boolImplT</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">::</span></a> <a class="idref" href="D.Dot.examples.list.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.typing.unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">u</span></a><a class="idref" href="D.Dot.typing.unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">⊢ₜ</span></a><br/>
 &nbsp;&nbsp;<a class="idref" href="D.Dot.examples.list.html#hnilV"><span class="id" title="definition">hnilV</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx1"><span class="id" title="abbreviation">hx1</span></a> <a class="idref" href="D.Dot.typing.unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.list.html#hnilT"><span class="id" title="definition">hnilT</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
@@ -309,6 +323,13 @@ We do it using <span class="inlinecode"><a class="idref" href="D.Dot.examples.st
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
+</div>
+
+<div class="doc">
+<a name="lab117"></a><h2 class="section">Proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
+
+</div>
+<div class="code">
 <span class="id" title="keyword">Example</span> <a name="listTyp"><span class="id" title="definition">listTyp</span></a> <span class="id" title="var">Γ</span> : <a class="idref" href="D.Dot.examples.scala_lib.html#boolImplT"><span class="id" title="definition">boolImplT</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">::</span></a> <a class="idref" href="D.Dot.examples.list.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.typing.unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">u</span></a><a class="idref" href="D.Dot.typing.unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">⊢ₜ</span></a> <a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a> <a class="idref" href="D.Dot.typing.unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">have</span> <span class="id" title="var">Hv</span> := <a class="idref" href="D.Dot.examples.list.html#listTypConcr"><span class="id" title="definition">listTypConcr</span></a> <span class="id" title="var">Γ</span>.<br/>
@@ -320,13 +341,16 @@ We do it using <span class="inlinecode"><a class="idref" href="D.Dot.examples.st
 </div>
 
 <div class="doc">
-<a name="lab116"></a><h1 class="section">Link lists with booleans.</h1>
+<a name="lab118"></a><h2 class="section">Link lists with booleans.</h2>
 
 </div>
 <div class="code">
 
 <br/>
-<span class="comment">(*&nbsp;Naive&nbsp;attempt;&nbsp;this&nbsp;fails&nbsp;avoidance.&nbsp;*)</span><br/>
+<span class="comment">(*<br/>
+Naive&nbsp;attempt;&nbsp;this&nbsp;fails,&nbsp;because&nbsp;the&nbsp;return&nbsp;type&nbsp;mentions&nbsp;a&nbsp;local&nbsp;variable.<br/>
+Inferring&nbsp;return&nbsp;types&nbsp;that&nbsp;avoid&nbsp;mentioning&nbsp;local&nbsp;variables&nbsp;is&nbsp;called&nbsp;the<br/>
+avoidance&nbsp;problem,&nbsp;a&nbsp;term&nbsp;going&nbsp;back&nbsp;to&nbsp;the&nbsp;ML&nbsp;module&nbsp;literature.&nbsp;*)</span><br/>
 <span class="comment">(*<br/>
 Definition&nbsp;clListV&nbsp;:=&nbsp;lett&nbsp;(tv&nbsp;boolImplV)&nbsp;(tv&nbsp;listV).<br/>
 Example&nbsp;clListTyp&nbsp;Γ&nbsp;:&nbsp;Γ&nbsp;u⊢ₜ&nbsp;clListV&nbsp;:&nbsp;listT.<br/>
@@ -392,10 +416,7 @@ I'd rather not.
 </div>
 
 <div class="doc">
-XXX: try recursive linking? Probably not. 
-<div class="paragraph"> </div>
-
-<a name="lab117"></a><h1 class="section">Link lists with booleans and with a client using the list API.</h1>
+<a name="lab119"></a><h2 class="section">Link lists with booleans and with a client using the list API.</h2>
 
 </div>
 <div class="code">
