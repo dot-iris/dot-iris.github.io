@@ -26,7 +26,12 @@
 <h1 class="libtitle">D.Dot.examples.hoas</h1>
 
 <div class="code">
-<span class="comment">(*&nbsp;A&nbsp;HOAS&nbsp;frontend&nbsp;for&nbsp;de&nbsp;Bruijn&nbsp;terms.&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;A&nbsp;HOAS&nbsp;frontend&nbsp;to&nbsp;generate&nbsp;de&nbsp;Bruijn&nbsp;DOT&nbsp;terms&nbsp;for&nbsp;examples.<br/>
+<br/>
+While&nbsp;some&nbsp;more&nbsp;examples&nbsp;could&nbsp;use&nbsp;this&nbsp;frontend&nbsp;(and&nbsp;they&nbsp;don't,&nbsp;due&nbsp;to<br/>
+historical&nbsp;reasons),&nbsp;beware&nbsp;this&nbsp;frontend&nbsp;is&nbsp;not&nbsp;fully&nbsp;transparent,&nbsp;and&nbsp;in<br/>
+particular&nbsp;is&nbsp;not&nbsp;suitable&nbsp;for&nbsp;robust&nbsp;typing&nbsp;lemmas.<br/>
+*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">D</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.tactics.html#"><span class="id" title="library">tactics</span></a>.<br/>
@@ -36,16 +41,51 @@
 <span class="id" title="keyword">Set</span> <span class="id" title="var">Default</span> <span class="id" title="keyword">Proof</span> <span class="id" title="var">Using</span> "Type".<br/>
 
 <br/>
-<span class="comment">(*&nbsp;Inspired&nbsp;by&nbsp;the&nbsp;"Unembedding&nbsp;DSLs"&nbsp;paper,&nbsp;but&nbsp;specialized.<br/>
-The&nbsp;algorithm&nbsp;it&nbsp;uses&nbsp;is&nbsp;very&nbsp;different&nbsp;from&nbsp;McBride's&nbsp;Jigger.<br/>
+<span class="comment">(*<br/>
+The&nbsp;algorithm&nbsp;we&nbsp;use&nbsp;is&nbsp;very&nbsp;different&nbsp;from&nbsp;McBride's&nbsp;Jigger:<br/>
 https://web.archive.org/web/20130412082828/http://www.e-pig.org/epilogue/?p=773<br/>
-It’s&nbsp;made&nbsp;possible&nbsp;exactly&nbsp;because&nbsp;our&nbsp;de&nbsp;Bruijn&nbsp;terms&nbsp;have&nbsp;a&nbsp;type&nbsp;indexed&nbsp;by&nbsp;the&nbsp;number&nbsp;of&nbsp;variables&nbsp;in&nbsp;scope.<br/>
+<br/>
+Jigger&nbsp;exploits&nbsp;type&nbsp;inference&nbsp;and&nbsp;well-scoped&nbsp;de&nbsp;Bruijn&nbsp;terms.<br/>
 *)</span><br/>
 <span class="comment">(*&nbsp;TODO?&nbsp;Check&nbsp;out:<br/>
 &nbsp;&nbsp;http://www.cs.uu.nl/research/techreps/repo/CS-2012/2012-009.pdf<br/>
 *)</span><br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Our algorithm is inspired by Atkey's et al.'s
+"Unembedding Domain-Specific Languages", Haskell'09,
+https://doi.org/10.1145/1596638.1596644. 
+</div>
+<div class="code">
+
+<br/>
+<span class="comment">(*&nbsp;Our&nbsp;HOAS&nbsp;terms&nbsp;are&nbsp;functions&nbsp;from&nbsp;the&nbsp;number&nbsp;of&nbsp;free&nbsp;variables&nbsp;in&nbsp;scope<br/>
+to&nbsp;an&nbsp;actual&nbsp;de&nbsp;Bruijn&nbsp;term.&nbsp;*)</span><br/>
+</div>
+
+<div class="doc">
+Type of HOAS terms. 
+</div>
+<div class="code">
 <span class="id" title="keyword">Definition</span> <a name="hterm"><span class="id" title="definition">hterm</span></a> <span class="id" title="var">sort</span> := <a class="idref" href="'https://www.ps.uni-saarland.de/autosubst/doc/'/Autosubst.Autosubst_Basics.html#var"><span class="id" title="definition">var</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.examples.hoas.html#sort"><span class="id" title="variable">sort</span></a>.<br/>
-<span class="id" title="keyword">Definition</span> <a name="hclose"><span class="id" title="definition">hclose</span></a> {<span class="id" title="var">s1</span>} : <a class="idref" href="D.Dot.examples.hoas.html#hterm"><span class="id" title="definition">hterm</span></a> <a class="idref" href="D.Dot.examples.hoas.html#s1"><span class="id" title="variable">s1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.examples.hoas.html#s1"><span class="id" title="variable">s1</span></a> := <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.base.html#4e1caeb7913b97a3b73fcebec7985ae5"><span class="id" title="notation">(.$</span></a> 0<a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.base.html#4e1caeb7913b97a3b73fcebec7985ae5"><span class="id" title="notation">)</span></a>.<br/>
+
+<br/>
+<span class="comment">(*&nbsp;We&nbsp;can&nbsp;convert&nbsp;a&nbsp;closed&nbsp;HOAS&nbsp;term&nbsp;to&nbsp;a&nbsp;de&nbsp;Bruijn&nbsp;one&nbsp;by&nbsp;apply&nbsp;the&nbsp;term&nbsp;to&nbsp;0.&nbsp;*)</span><br/>
+</div>
+
+<div class="doc">
+Convert a closed HOAS term to the corresponding de Bruijn term. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Definition</span> <a name="hclose"><span class="id" title="definition">hclose</span></a> {<span class="id" title="var">s1</span>} : <a class="idref" href="D.Dot.examples.hoas.html#hterm"><span class="id" title="definition">hterm</span></a> <a class="idref" href="D.Dot.examples.hoas.html#s1"><span class="id" title="variable">s1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.examples.hoas.html#s1"><span class="id" title="variable">s1</span></a> := <span class="id" title="keyword">Eval</span> <span class="id" title="tactic">cbv</span> <span class="id" title="tactic">in</span> <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.base.html#4e1caeb7913b97a3b73fcebec7985ae5"><span class="id" title="notation">(.$</span></a> 0<a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.base.html#4e1caeb7913b97a3b73fcebec7985ae5"><span class="id" title="notation">)</span></a>.<br/>
+
+<br/>
+<span class="comment">(*&nbsp;Here&nbsp;in&nbsp;<span class="inlinecode"><span class="id" title="var">hclose</span></span>&nbsp;and&nbsp;below,&nbsp;the&nbsp;point&nbsp;of&nbsp;<span class="inlinecode"><span class="id" title="keyword">Eval</span></span> <span class="inlinecode"><span class="id" title="tactic">cbv</span></span>&nbsp;is&nbsp;to&nbsp;improve&nbsp;the<br/>
+results&nbsp;of&nbsp;simplification,&nbsp;by&nbsp;hiding&nbsp;all&nbsp;the&nbsp;abstractions&nbsp;used&nbsp;to&nbsp;define&nbsp;our<br/>
+combinators&nbsp;on&nbsp;HOAS&nbsp;terms.&nbsp;*)</span><br/>
 <span class="id" title="keyword">Global</span> <span class="id" title="var">Arguments</span> <a class="idref" href="D.Dot.examples.hoas.html#hclose"><span class="id" title="definition">hclose</span></a> /.<br/>
 <span class="id" title="keyword">Definition</span> <a name="pureS"><span class="id" title="definition">pureS</span></a> {<span class="id" title="var">s1</span>} : <a class="idref" href="D.Dot.examples.hoas.html#s1"><span class="id" title="variable">s1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hterm"><span class="id" title="definition">hterm</span></a> <a class="idref" href="D.Dot.examples.hoas.html#s1"><span class="id" title="variable">s1</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#bc1ad27deabe143d39d35abe6be2c1a4"><span class="id" title="notation">λ</span></a> <span class="id" title="var">x</span> <span class="id" title="var">_</span><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#bc1ad27deabe143d39d35abe6be2c1a4"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.hoas.html#x"><span class="id" title="variable">x</span></a>.<br/>
 <span class="id" title="keyword">Global</span> <span class="id" title="var">Arguments</span> <a class="idref" href="D.Dot.examples.hoas.html#pureS"><span class="id" title="definition">pureS</span></a> /.<br/>
@@ -119,7 +159,6 @@ Utilities to lift syntax to <span class="inlinecode"><a class="idref" href="D.Do
 &nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#con"><span class="id" title="variable">con</span></a> (<a class="idref" href="D.Dot.examples.hoas.html#a1"><span class="id" title="variable">a1</span></a> <a class="idref" href="D.Dot.examples.hoas.html#i"><span class="id" title="variable">i</span></a>) (<a class="idref" href="D.Dot.examples.hoas.html#a2"><span class="id" title="variable">a2</span></a> <a class="idref" href="D.Dot.examples.hoas.html#i"><span class="id" title="variable">i</span></a>) (<a class="idref" href="D.Dot.examples.hoas.html#a3"><span class="id" title="variable">a3</span></a> <a class="idref" href="D.Dot.examples.hoas.html#i"><span class="id" title="variable">i</span></a>).<br/>
 
 <br/>
-<span class="comment">(*&nbsp;Here&nbsp;and&nbsp;below,&nbsp;the&nbsp;point&nbsp;of&nbsp;<span class="inlinecode"><span class="id" title="keyword">Eval</span></span> <span class="inlinecode"><span class="id" title="tactic">cbv</span></span>&nbsp;is&nbsp;to&nbsp;improve&nbsp;the&nbsp;results&nbsp;of&nbsp;simplification.&nbsp;*)</span><br/>
 <span class="id" title="keyword">Definition</span> <a name="hterm_lifting.liftBind"><span class="id" title="definition">liftBind</span></a> (<span class="id" title="var">con</span> : <a class="idref" href="D.Dot.examples.hoas.html#hterm_lifting.lifting.s1"><span class="id" title="variable">s1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hterm_lifting.lifting.s2"><span class="id" title="variable">s2</span></a>) (<span class="id" title="var">f</span> : <a class="idref" href="D.Dot.examples.hoas.html#hvl"><span class="id" title="definition">hvl</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hterm"><span class="id" title="definition">hterm</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hterm_lifting.lifting.s1"><span class="id" title="variable">s1</span></a>) : <a class="idref" href="D.Dot.examples.hoas.html#hterm"><span class="id" title="definition">hterm</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hterm_lifting.lifting.s2"><span class="id" title="variable">s2</span></a> := <span class="id" title="keyword">Eval</span> <span class="id" title="tactic">cbv</span> -[<span class="id" title="var">minus</span>] <span class="id" title="tactic">in</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#bc1ad27deabe143d39d35abe6be2c1a4"><span class="id" title="notation">λ</span></a> <span class="id" title="var">i</span><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#bc1ad27deabe143d39d35abe6be2c1a4"><span class="id" title="notation">,</span></a><br/>
 &nbsp;&nbsp;<span class="id" title="keyword">let</span> <span class="id" title="var">i'</span> := <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#S"><span class="id" title="constructor">S</span></a> <a class="idref" href="D.Dot.examples.hoas.html#i"><span class="id" title="variable">i</span></a> <span class="id" title="tactic">in</span><br/>
 &nbsp;&nbsp;<span class="id" title="keyword">let</span> <span class="id" title="var">v</span> := <a class="idref" href="'https://www.ps.uni-saarland.de/autosubst/doc/'/Autosubst.Autosubst_Classes.html#ren"><span class="id" title="definition">ren</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#bc1ad27deabe143d39d35abe6be2c1a4"><span class="id" title="notation">λ</span></a> <span class="id" title="var">j</span><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#bc1ad27deabe143d39d35abe6be2c1a4"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.hoas.html#j"><span class="id" title="variable">j</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Peano.html#7825ccc99f23b0d30c9d40c317ba7af0"><span class="id" title="notation">-</span></a> <a class="idref" href="D.Dot.examples.hoas.html#i'"><span class="id" title="variable">i'</span></a>) <span class="id" title="tactic">in</span><br/>

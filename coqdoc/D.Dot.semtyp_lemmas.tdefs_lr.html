@@ -51,14 +51,6 @@
 &nbsp;&nbsp;<span class="id" title="keyword">Context</span> `{!<a class="idref" href="D.Dot.lr.dlang_inst.html#dlangG"><span class="id" title="class">dlangG</span></a> <span class="id" title="var">Σ</span>}.<br/>
 
 <br/>
-&nbsp;&nbsp;<span class="comment">(*&nbsp;Beware:&nbsp;here&nbsp;we&nbsp;must&nbsp;use&nbsp;<span class="inlinecode">∞</span> <span class="inlinecode">σ.|[ρ]</span>,&nbsp;not&nbsp;<span class="inlinecode">∞</span> <span class="inlinecode">σ</span> <span class="inlinecode">&gt;&gt;</span> <span class="inlinecode">ρ</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;since&nbsp;the&nbsp;former&nbsp;is&nbsp;what&nbsp;we&nbsp;need&nbsp;to&nbsp;prove&nbsp;<span class="inlinecode"><span class="id" title="var">sD_Typ_Abs</span></span>&nbsp;below.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not&nbsp;sure&nbsp;that's&nbsp;still&nbsp;true&nbsp;if&nbsp;we&nbsp;change&nbsp;dm_to_type,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;but&nbsp;quite&nbsp;possibly&nbsp;yes..&nbsp;*)</span><br/>
-&nbsp;&nbsp;<span class="comment">(*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Even&nbsp;if&nbsp;semantic&nbsp;types&nbsp;use&nbsp;infinite&nbsp;substitutions,&nbsp;we&nbsp;can&nbsp;still&nbsp;reuse&nbsp;the<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;current&nbsp;stamping&nbsp;theory,&nbsp;based&nbsp;on&nbsp;finite&nbsp;substitutions.<br/>
-&nbsp;&nbsp;*)</span><br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Import</span> <span class="id" title="var">stamp_transfer</span>.<br/>
 
 <br/>
