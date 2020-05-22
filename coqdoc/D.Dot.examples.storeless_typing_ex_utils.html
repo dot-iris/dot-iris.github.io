@@ -174,7 +174,6 @@ wrappers for <span class="inlinecode"><a class="idref" href="D.Dot.examples.hoas
 
 <br/>
 <span class="id" title="keyword">Definition</span> <a name="psAddStys"><span class="id" title="definition">psAddStys</span></a> {<span class="id" title="var">nvl</span>} : <a class="idref" href="D.Dot.stamping.core_stamping_defs.html#stys"><span class="id" title="abbreviation">stys</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> (<a class="idref" href="D.Dot.examples.ex_utils.html#packedStampedTyDefs.preTyMem"><span class="id" title="record">preTyMem</span></a> <a class="idref" href="D.Dot.examples.storeless_typing_ex_utils.html#nvl"><span class="id" title="variable">nvl</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.stamping.core_stamping_defs.html#stys"><span class="id" title="abbreviation">stys</span></a> := <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.list.html#foldr"><span class="id" title="abbreviation">foldr</span></a> <a class="idref" href="D.Dot.examples.storeless_typing_ex_utils.html#pAddStys"><span class="id" title="definition">pAddStys</span></a>.<br/>
-<span class="comment">(*&nbsp;XXX&nbsp;prove&nbsp;its&nbsp;correctness,&nbsp;or&nbsp;just&nbsp;test&nbsp;it&nbsp;via&nbsp;vm_compute?&nbsp;*)</span><br/>
 
 <br/>
 <span class="comment">(****************)</span><br/>
@@ -610,17 +609,6 @@ Would be much easier to formalize with setoid rewriting.
 &nbsp;&nbsp;<span class="id" title="var">all</span>: <span class="id" title="var">tcrush</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">ettrans</span>; <span class="id" title="tactic">first</span> <span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.examples.storeless_typing_ex_utils.html#comm_and"><span class="id" title="lemma">comm_and</span></a>; <span class="id" title="var">tcrush</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
-
-<br/>
-<span class="comment">(*&nbsp;Lemma&nbsp;AddIB_stp&nbsp;Γ&nbsp;T&nbsp;U&nbsp;i:<br/>
-&nbsp;&nbsp;is_stamped_ty&nbsp;(length&nbsp;Γ)&nbsp;g&nbsp;T&nbsp;→<br/>
-&nbsp;&nbsp;is_stamped_ty&nbsp;(length&nbsp;Γ)&nbsp;g&nbsp;U&nbsp;→<br/>
-&nbsp;&nbsp;Γ&nbsp;v⊢ₜ<span class="inlinecode"></span> <span class="inlinecode"><span class="id" title="var">g</span></span> <span class="inlinecode"></span>&nbsp;T,&nbsp;0&nbsp;&lt;:&nbsp;U,&nbsp;0&nbsp;→<br/>
-&nbsp;&nbsp;Γ&nbsp;v⊢ₜ<span class="inlinecode"></span> <span class="inlinecode"><span class="id" title="var">g</span></span> <span class="inlinecode"></span>&nbsp;T,&nbsp;i&nbsp;&lt;:&nbsp;U,&nbsp;i.<br/>
-Proof.<br/>
-&nbsp;&nbsp;move&nbsp;=&gt;&nbsp;Hst&nbsp;Hsu&nbsp;Hstp;&nbsp;elim:&nbsp;i&nbsp;=&gt;&nbsp;<span class="inlinecode">|<span class="id" title="var">n</span></span> <span class="inlinecode"><span class="id" title="var">IHn</span></span>;&nbsp;first&nbsp;tcrush.<br/>
-&nbsp;&nbsp;exact:&nbsp;iSub_Mono.<br/>
-Qed.&nbsp;*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a name="is_stamped_pvar"><span class="id" title="lemma">is_stamped_pvar</span></a> <span class="id" title="var">i</span> <span class="id" title="var">n</span> : <a class="idref" href="D.Dot.examples.storeless_typing_ex_utils.html#i"><span class="id" title="variable">i</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Peano.html#00fe0eaf5e6949f0a31725357afa4bba"><span class="id" title="notation">&lt;</span></a> <a class="idref" href="D.Dot.examples.storeless_typing_ex_utils.html#n"><span class="id" title="variable">n</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.stamping.core_stamping_defs.html#is_stamped_path"><span class="id" title="abbreviation">is_stamped_path</span></a> <a class="idref" href="D.Dot.examples.storeless_typing_ex_utils.html#n"><span class="id" title="variable">n</span></a> <a class="idref" href="D.Dot.examples.storeless_typing_ex_utils.html#examples_lemmas.g"><span class="id" title="variable">g</span></a> (<a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a> (<a class="idref" href="D.Dot.syn.syn.html#VlSorts.var_vl"><span class="id" title="constructor">var_vl</span></a> <a class="idref" href="D.Dot.examples.storeless_typing_ex_utils.html#i"><span class="id" title="variable">i</span></a>)).<br/>

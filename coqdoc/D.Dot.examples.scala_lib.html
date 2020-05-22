@@ -45,7 +45,7 @@
 </div>
 
 <div class="doc">
-<a name="lab125"></a><h1 class="section">Infinite loops</h1>
+<a name="lab126"></a><h1 class="section">Infinite loops</h1>
 
 </div>
 <div class="code">
@@ -82,7 +82,7 @@
 </div>
 
 <div class="doc">
-<a name="lab126"></a><h1 class="section">Booleans, Church-encoded.</h1>
+<a name="lab127"></a><h1 class="section">Booleans, Church-encoded.</h1>
  Sec. 5 of WadlerFest DOT.
 IFTFun ≡ { if: ∀(x: {A: ⊥..⊤})∀(t: x.A)∀(f: x.A): x.A }
 IFT ≡ { if: IFTFun }
@@ -112,9 +112,6 @@ let bool = boolImplV : μ { Boolean: IFT..IFT; true : b.Boolean; false : b.Boole
 <span class="id" title="keyword">Definition</span> <a name="hBool.hIFT"><span class="id" title="definition">hIFT</span></a> : <a class="idref" href="D.Dot.examples.hoas.html#hty"><span class="id" title="definition">hty</span></a> :=<br/>
 &nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">∀:</span></a> <span class="id" title="var">x</span> <a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.tparam"><span class="id" title="abbreviation">tparam</span></a> "A"<a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#hBool.hIFTBody"><span class="id" title="definition">hIFTBody</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#x"><span class="id" title="variable">x</span></a>.<br/>
 <span class="id" title="keyword">Definition</span> <a name="hBool.IFT"><span class="id" title="definition">IFT</span></a> := <a class="idref" href="D.Dot.examples.hoas.html#hclose"><span class="id" title="definition">hclose</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#hBool.hIFT"><span class="id" title="definition">hIFT</span></a>.<br/>
-
-<br/>
-<span class="comment">(*&nbsp;Definition&nbsp;hIFT&nbsp;:&nbsp;hty&nbsp;:=&nbsp;{@&nbsp;val&nbsp;"if"&nbsp;:&nbsp;hIFTFun&nbsp;}.&nbsp;*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Definition</span> <a name="hBool.hiftTrue"><span class="id" title="definition">hiftTrue</span></a> : <a class="idref" href="D.Dot.examples.hoas.html#hvl"><span class="id" title="definition">hvl</span></a> := <a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">λ</span></a><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">:</span></a> <span class="id" title="var">x</span><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.hoas.html#24b701070b286b1d37f5be56d7684c1c"><span class="id" title="notation">λ</span></a><a class="idref" href="D.Dot.examples.hoas.html#24b701070b286b1d37f5be56d7684c1c"><span class="id" title="notation">::</span></a> <span class="id" title="var">t</span> <span class="id" title="var">f</span><a class="idref" href="D.Dot.examples.hoas.html#24b701070b286b1d37f5be56d7684c1c"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.hoas.html#syn.htv"><span class="id" title="definition">htv</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#t"><span class="id" title="variable">t</span></a>.<br/>

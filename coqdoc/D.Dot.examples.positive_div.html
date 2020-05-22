@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab123"></a><h1 class="section">Semantic typing for positive numbers and division.</h1>
+<a name="lab124"></a><h1 class="section">Semantic typing for positive numbers and division.</h1>
 
 </div>
 <div class="code">
@@ -60,7 +60,7 @@
 </div>
 
 <div class="doc">
-<a name="lab124"></a><h2 class="section">Example code.</h2>
+<a name="lab125"></a><h2 class="section">Example code.</h2>
 
 </div>
 <div class="code">
@@ -155,8 +155,7 @@ Actual type
 <br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a name="V_TVMem_I"><span class="id" title="lemma">V_TVMem_I</span></a> <span class="id" title="var">T</span> <span class="id" title="var">v</span> <span class="id" title="var">w</span> <span class="id" title="var">l</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">Hclv</span> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.nclosed_vl"><span class="id" title="definition">nclosed_vl</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#v"><span class="id" title="variable">v</span></a> 0)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;XXX&nbsp;should&nbsp;be&nbsp;(Hlook&nbsp;:&nbsp;v&nbsp;@&nbsp;l&nbsp;↘&nbsp;(dpt&nbsp;(pv&nbsp;w)))&nbsp;*)</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">Hlook</span> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.objLookup"><span class="id" title="definition">objLookup</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#v"><span class="id" title="variable">v</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#l"><span class="id" title="variable">l</span></a> (<a class="idref" href="D.Dot.syn.syn.html#VlSorts.dpt"><span class="id" title="constructor">dpt</span></a> (<a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#w"><span class="id" title="variable">w</span></a>))):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">Hlook</span> : <a class="idref" href="D.Dot.examples.positive_div.html#v"><span class="id" title="variable">v</span></a> <a class="idref" href="D.Dot.syn.syn.html#b68e63b11bb21f5f72a220cdbaeb45d5"><span class="id" title="notation">@</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#l"><span class="id" title="variable">l</span></a> <a class="idref" href="D.Dot.syn.syn.html#b68e63b11bb21f5f72a220cdbaeb45d5"><span class="id" title="notation">↘</span></a> <a class="idref" href="D.Dot.syn.syn.html#b68e63b11bb21f5f72a220cdbaeb45d5"><span class="id" title="notation">(</span></a><a class="idref" href="D.Dot.syn.syn.html#VlSorts.dpt"><span class="id" title="constructor">dpt</span></a> (<a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#w"><span class="id" title="variable">w</span></a>)<a class="idref" href="D.Dot.syn.syn.html#b68e63b11bb21f5f72a220cdbaeb45d5"><span class="id" title="notation">)</span></a>) :<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Lists.List.html#ae9a5e1034e143b218b09d8e454472bd"><span class="id" title="notation">[]</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">⊨</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#w"><span class="id" title="variable">w</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#T"><span class="id" title="variable">T</span></a> <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/iris/'/iris.bi.interface.html#0f70793a7efc24c230ef5e3a6ac95b68"><span class="id" title="notation">-∗</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Lists.List.html#ae9a5e1034e143b218b09d8e454472bd"><span class="id" title="notation">[]</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">⊨</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#v"><span class="id" title="variable">v</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.TVMem"><span class="id" title="constructor">TVMem</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#l"><span class="id" title="variable">l</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#T"><span class="id" title="variable">T</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>

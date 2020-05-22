@@ -51,7 +51,6 @@
 <span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">by</span> <span class="id" title="tactic">move</span> ⇒ /<a class="idref" href="D.Dot.typing.unstamped_typing_derived_rules.html#unstamped_subject_closed"><span class="id" title="lemma">unstamped_subject_closed</span></a>/<a class="idref" href="D.Dot.syn.syn.html#VlSorts.fv_of_val_inv"><span class="id" title="lemma">fv_of_val_inv</span></a>/<a class="idref" href="D.Dot.syn.syn.html#VlSorts.nclosed_var_lt"><span class="id" title="lemma">nclosed_var_lt</span></a>. <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;Ltac&nbsp;tcrush&nbsp;:=&nbsp;repeat&nbsp;first&nbsp;<span class="inlinecode"></span> <span class="inlinecode"><span class="id" title="var">fast_done</span></span> <span class="inlinecode">|</span> <span class="inlinecode"><span class="id" title="var">typconstructor</span></span> <span class="inlinecode">|</span> <span class="inlinecode"><span class="id" title="var">stcrush</span></span> <span class="inlinecode"></span>.&nbsp;*)</span><br/>
 <span class="id" title="keyword">Ltac</span> <span class="id" title="var">tcrush</span> := <span class="id" title="tactic">repeat</span> <span class="id" title="tactic">first</span> [ <span class="id" title="var">eassumption</span> | <span class="id" title="tactic">reflexivity</span> | <span class="id" title="var">typconstructor</span> | <span class="id" title="var">stcrush</span> ].<br/>
 
 <br/>
@@ -230,21 +229,10 @@ Specialization of <span class="inlinecode"><a class="idref" href="D.Dot.examples
 <span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">apply</span> <a class="idref" href="D.Dot.typing.unstamped_typing_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>. <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;Worse&nbsp;than&nbsp;iD_Typ_Abs,&nbsp;but&nbsp;shown&nbsp;in&nbsp;the&nbsp;paper.&nbsp;*)</span><br/>
-<span class="comment">(*&nbsp;Lemma&nbsp;iD_Typ_Abs_intermediate&nbsp;Γ&nbsp;T&nbsp;l&nbsp;L&nbsp;U:<br/>
-&nbsp;&nbsp;is_unstamped_ty'&nbsp;(length&nbsp;Γ)&nbsp;L&nbsp;→<br/>
-&nbsp;&nbsp;is_unstamped_ty'&nbsp;(length&nbsp;Γ)&nbsp;T&nbsp;→<br/>
-&nbsp;&nbsp;is_unstamped_ty'&nbsp;(length&nbsp;Γ)&nbsp;U&nbsp;→<br/>
-&nbsp;&nbsp;Γ&nbsp;u⊢ₜ&nbsp;L,&nbsp;0&nbsp;&lt;:&nbsp;T,&nbsp;0&nbsp;→<br/>
-&nbsp;&nbsp;Γ&nbsp;u⊢ₜ&nbsp;T,&nbsp;0&nbsp;&lt;:&nbsp;U,&nbsp;0&nbsp;→<br/>
-&nbsp;&nbsp;Γ&nbsp;u⊢{&nbsp;l&nbsp;:=&nbsp;dtysyn&nbsp;T&nbsp;}&nbsp;:&nbsp;TTMem&nbsp;l&nbsp;L&nbsp;U.<br/>
-Proof.&nbsp;intros;&nbsp;apply&nbsp;iD_Typ_Abs&nbsp;=&gt;&nbsp;//;&nbsp;tcrush;&nbsp;exact:&nbsp;iSub_Mono.&nbsp;Qed.&nbsp;*)</span><br/>
-
-<br/>
 </div>
 
 <div class="doc">
-<a name="lab104"></a><h1 class="section">Manipulating laters, basics.</h1>
+<a name="lab105"></a><h1 class="section">Manipulating laters, basics.</h1>
 
 </div>
 <div class="code">
@@ -279,21 +267,10 @@ Proof.&nbsp;intros;&nbsp;apply&nbsp;iD_Typ_Abs&nbsp;=&gt;&nbsp;//;&nbsp;tcrush;&
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;Lemma&nbsp;AddIB_stp&nbsp;Γ&nbsp;T&nbsp;U&nbsp;i:<br/>
-&nbsp;&nbsp;is_unstamped_ty'&nbsp;(length&nbsp;Γ)&nbsp;T&nbsp;→<br/>
-&nbsp;&nbsp;is_unstamped_ty'&nbsp;(length&nbsp;Γ)&nbsp;U&nbsp;→<br/>
-&nbsp;&nbsp;Γ&nbsp;u⊢ₜ&nbsp;T,&nbsp;0&nbsp;&lt;:&nbsp;U,&nbsp;0&nbsp;→<br/>
-&nbsp;&nbsp;Γ&nbsp;u⊢ₜ&nbsp;T,&nbsp;i&nbsp;&lt;:&nbsp;U,&nbsp;i.<br/>
-Proof.<br/>
-&nbsp;&nbsp;move&nbsp;=&gt;&nbsp;HuT&nbsp;HuU&nbsp;Hstp;&nbsp;elim:&nbsp;i&nbsp;=&gt;&nbsp;<span class="inlinecode">|<span class="id" title="var">n</span></span> <span class="inlinecode"><span class="id" title="var">IHn</span></span>;&nbsp;first&nbsp;tcrush.<br/>
-&nbsp;&nbsp;exact:&nbsp;iSub_Mono.<br/>
-Qed.&nbsp;*)</span><br/>
-
-<br/>
 </div>
 
 <div class="doc">
-<a name="lab105"></a><h1 class="section">Derived constructions.</h1>
+<a name="lab106"></a><h1 class="section">Derived constructions.</h1>
 
 </div>
 <div class="code">
@@ -537,7 +514,7 @@ This subtyping premise is needed to perform "avoidance", as in compilers
 </div>
 
 <div class="doc">
-<a name="lab106"></a><h1 class="section">Manipulating laters, more.</h1>
+<a name="lab107"></a><h1 class="section">Manipulating laters, more.</h1>
 
 
 <div class="paragraph"> </div>

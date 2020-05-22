@@ -31,6 +31,23 @@
 <div class="doc">
 <a name="lab58"></a><h1 class="section">Path substitution and replacement.</h1>
 
+
+<div class="paragraph"> </div>
+
+Path replacement replaces one occurrence of a path <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span> by another path <span class="inlinecode"><a class="idref" href="D.Dot.syn.path_repl.html#q"><span class="id" title="variable">q</span></a></span>,
+without affecting other occurrences of <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span>.
+
+<div class="paragraph"> </div>
+
+Path substitution replaces all occurrences of path <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a></span> <span class="inlinecode">(<a class="idref" href="'https://www.ps.uni-saarland.de/autosubst/doc/'/Autosubst.Autosubst_Classes.html#ids"><span class="id" title="definition">ids</span></a></span> <span class="inlinecode">0)</span> by another
+path <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span>, and shifts
+
+<div class="paragraph"> </div>
+
+We define these operations as relations (whose definition is comparatively
+clear), and then we define functions and prove them correct (here and in
+<span class="inlinecode"><span class="id" title="var">path_repl_lemmas.v</span></span>).
+
 </div>
 <div class="code">
 <span class="id" title="keyword">From</span> <span class="id" title="var">stdpp</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.relations.html#"><span class="id" title="library">relations</span></a>.<br/>
@@ -73,20 +90,14 @@
 </div>
 
 <div class="doc">
-The path replacement judgment, as defined in the pDOT paper. 
+<a name="lab59"></a><h2 class="section">The path replacement judgment, as defined in the pDOT paper.</h2>
+
+<span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T1"><span class="id" title="variable">T1</span></a></span> <span class="inlinecode">¬<span class="id" title="var">Tp</span>[</span> <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span> <span class="inlinecode">:=</span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.path_repl.html#q"><span class="id" title="variable">q</span></a></span> <span class="inlinecode">]</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T2"><span class="id" title="variable">T2</span></a></span> means that <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T2"><span class="id" title="variable">T2</span></a></span> is obtained from <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T1"><span class="id" title="variable">T1</span></a></span> by replacing
+<i>one</i> occurrence of <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span> by <span class="inlinecode"><a class="idref" href="D.Dot.syn.path_repl.html#q"><span class="id" title="variable">q</span></a></span>. We also use the reflexive-transitive closure
+of this judgemnt.
+
 </div>
 <div class="code">
-<span class="comment">(*<br/>
-&nbsp;&nbsp;This&nbsp;does&nbsp;only&nbsp;one&nbsp;replacement,&nbsp;as&nbsp;path&nbsp;replacement&nbsp;in&nbsp;the&nbsp;pDOT&nbsp;paper.<br/>
-&nbsp;&nbsp;Path&nbsp;substitution&nbsp;is&nbsp;a&nbsp;particular&nbsp;sequene&nbsp;of&nbsp;such&nbsp;replacements,&nbsp;but&nbsp;if&nbsp;q&nbsp;contains&nbsp;p,<br/>
-&nbsp;&nbsp;there&nbsp;are&nbsp;sequences&nbsp;of&nbsp;replacements&nbsp;that&nbsp;don't&nbsp;correspond&nbsp;to&nbsp;a&nbsp;single&nbsp;path&nbsp;substitution,<br/>
-&nbsp;&nbsp;but&nbsp;to&nbsp;iterated&nbsp;path&nbsp;substitutions.<br/>
-&nbsp;&nbsp;Nevertheless,&nbsp;as&nbsp;long&nbsp;as&nbsp;both&nbsp;p&nbsp;and&nbsp;q&nbsp;are&nbsp;valid&nbsp;in&nbsp;the&nbsp;same&nbsp;scope,&nbsp;both<br/>
-&nbsp;&nbsp;are&nbsp;fine.<br/>
-&nbsp;&nbsp;However,&nbsp;substitution&nbsp;can&nbsp;be&nbsp;sound&nbsp;in&nbsp;contexts&nbsp;where&nbsp;path&nbsp;replacements&nbsp;aren't&nbsp;sound.<br/>
-<br/>
-&nbsp;&nbsp;Still,&nbsp;path_repl_one&nbsp;uses&nbsp;path&nbsp;replacement&nbsp;with&nbsp;*disjoints*&nbsp;paths!<br/>
-*)</span><br/>
 <span class="id" title="keyword">Inductive</span> <a name="ty_path_repl"><span class="id" title="inductive">ty_path_repl</span></a> (<span class="id" title="var">p</span> <span class="id" title="var">q</span> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.path"><span class="id" title="inductive">path</span></a>) : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Prop</span> :=<br/>
 | <a name="ty_path_repl_TAnd1"><span class="id" title="constructor">ty_path_repl_TAnd1</span></a> <span class="id" title="var">T1</span> <span class="id" title="var">T2</span> <span class="id" title="var">U</span> :<br/>
 &nbsp;&nbsp;<a class="idref" href="D.Dot.syn.path_repl.html#T1"><span class="id" title="variable">T1</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#bd0fcc72e2b3359780846be5fa7732f7"><span class="id" title="notation">¬</span></a><a class="idref" href="D.Dot.syn.path_repl.html#bd0fcc72e2b3359780846be5fa7732f7"><span class="id" title="notation">Tp</span></a><a class="idref" href="D.Dot.syn.path_repl.html#bd0fcc72e2b3359780846be5fa7732f7"><span class="id" title="notation">[</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#p"><span class="id" title="variable">p</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#bd0fcc72e2b3359780846be5fa7732f7"><span class="id" title="notation">:=</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#q"><span class="id" title="variable">q</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#bd0fcc72e2b3359780846be5fa7732f7"><span class="id" title="notation">]</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#T2"><span class="id" title="variable">T2</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a><br/>
@@ -144,10 +155,10 @@ The path replacement judgment, as defined in the pDOT paper.
 </div>
 
 <div class="doc">
-Define substitution of <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a></span> <span class="inlinecode">(<a class="idref" href="'https://www.ps.uni-saarland.de/autosubst/doc/'/Autosubst.Autosubst_Classes.html#ids"><span class="id" title="definition">ids</span></a></span> <span class="inlinecode">0)</span> by <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span> in terms of the
-    transitive closure of path replacement.
-    Here it's crucial to use the transitive closure of path replacement
-    to substitute all occurrences. 
+Define substitution of <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a></span> <span class="inlinecode">(<a class="idref" href="'https://www.ps.uni-saarland.de/autosubst/doc/'/Autosubst.Autosubst_Classes.html#ids"><span class="id" title="definition">ids</span></a></span> <span class="inlinecode">0)</span> by <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span> as a relation, in terms of the
+transitive closure of path replacement.
+Since the result of path substitution is <span class="inlinecode"><a class="idref" href="D.prelude.html#shift"><span class="id" title="abbreviation">shift</span></a></span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.path_repl.html#T'"><span class="id" title="variable">T'</span></a></span>, it's clear that all
+occurrences of <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a></span> <span class="inlinecode">(<a class="idref" href="'https://www.ps.uni-saarland.de/autosubst/doc/'/Autosubst.Autosubst_Classes.html#ids"><span class="id" title="definition">ids</span></a></span> <span class="inlinecode">0)</span> have been replaced. 
 </div>
 <div class="code">
 <span class="id" title="keyword">Definition</span> <a name="path_repl_one"><span class="id" title="definition">path_repl_one</span></a> <span class="id" title="var">T</span> <span class="id" title="var">p</span> <span class="id" title="var">T'</span> :=<br/>
@@ -155,12 +166,33 @@ Define substitution of <span class="inlinecode"><a class="idref" href="D.Dot.syn
 <span class="id" title="keyword">Notation</span> <a name="5c926395e5994d6d5936c51e5122e14f"><span class="id" title="notation">&quot;</span></a>T .Tp[ p /]~ T'" := (<a class="idref" href="D.Dot.syn.path_repl.html#path_repl_one"><span class="id" title="definition">path_repl_one</span></a> <span class="id" title="var">T</span> <span class="id" title="var">p</span> <span class="id" title="var">T'</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 65).<br/>
 
 <br/>
+</div>
+
+<div class="doc">
+We also define path replacement as a function, and prove it correct in
+<span class="inlinecode"><a class="idref" href="D.Dot.syn.path_repl.html#psubst_ty_rtc_sufficient"><span class="id" title="lemma">psubst_ty_rtc_sufficient</span></a></span>.
+
+</div>
+<div class="code">
 <span class="id" title="keyword">Reserved Notation</span> &quot;r .p[ p := q  ]" (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 65).<br/>
 <span class="id" title="keyword">Fixpoint</span> <a name="psubst_path"><span class="id" title="definition">psubst_path</span></a> <span class="id" title="var">p</span> <span class="id" title="var">q</span> <span class="id" title="var">r</span> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.path"><span class="id" title="inductive">path</span></a> := <span class="id" title="keyword">match</span> (<a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.base.html#decide"><span class="id" title="definition">decide</span></a> (<a class="idref" href="D.Dot.syn.path_repl.html#r"><span class="id" title="variable">r</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#p"><span class="id" title="variable">p</span></a>)) <span class="id" title="keyword">with</span><br/>
 | <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Specif.html#left"><span class="id" title="constructor">left</span></a> <span class="id" title="var">_</span> ⇒ <a class="idref" href="D.Dot.syn.path_repl.html#q"><span class="id" title="variable">q</span></a><br/>
 | <span class="id" title="var">_</span> ⇒<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">match</span> <a class="idref" href="D.Dot.syn.path_repl.html#r"><span class="id" title="variable">r</span></a> <span class="id" title="keyword">with</span><br/>
-&nbsp;&nbsp;| <a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a> <span class="id" title="var">_</span> ⇒ <a class="idref" href="D.Dot.syn.path_repl.html#r"><span class="id" title="variable">r</span></a> <span class="comment">(*&nbsp;XXX&nbsp;no,&nbsp;values&nbsp;can&nbsp;contain&nbsp;paths!&nbsp;OTOH,&nbsp;pDOT&nbsp;path&nbsp;replacement&nbsp;doesn't&nbsp;do&nbsp;this.&nbsp;*)</span><br/>
+&nbsp;&nbsp;| <a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a> <span class="id" title="var">_</span> ⇒ <a class="idref" href="D.Dot.syn.path_repl.html#r"><span class="id" title="variable">r</span></a><br/>
+&nbsp;&nbsp;<span class="comment">(*&nbsp;While&nbsp;these&nbsp;values&nbsp;can&nbsp;in&nbsp;turn&nbsp;contain&nbsp;paths,&nbsp;pDOT&nbsp;path&nbsp;replacement<br/>
+&nbsp;&nbsp;doesn't&nbsp;substitute&nbsp;inside&nbsp;such&nbsp;values&nbsp;(because&nbsp;in&nbsp;pDOT&nbsp;such&nbsp;values&nbsp;cannot<br/>
+&nbsp;&nbsp;appear&nbsp;in&nbsp;paths);&nbsp;lemma&nbsp;<span class="inlinecode"><span class="id" title="var">psubst_path_rtc_sufficient</span></span>&nbsp;shows&nbsp;this<br/>
+&nbsp;&nbsp;functional&nbsp;path&nbsp;replacement&nbsp;agrees&nbsp;with&nbsp;relational&nbsp;path&nbsp;replacement.<br/>
+<br/>
+&nbsp;&nbsp;This&nbsp;operation&nbsp;is&nbsp;also&nbsp;used&nbsp;to&nbsp;build&nbsp;functional&nbsp;path&nbsp;substitution,&nbsp;for&nbsp;use<br/>
+&nbsp;&nbsp;on&nbsp;unstamped&nbsp;types.&nbsp;And&nbsp;for&nbsp;unstamped&nbsp;types,&nbsp;lemma&nbsp;<span class="inlinecode"><span class="id" title="var">psubst_one_implies</span></span><br/>
+&nbsp;&nbsp;shows&nbsp;this&nbsp;function&nbsp;is&nbsp;correct,&nbsp;relative&nbsp;to&nbsp;relational&nbsp;path&nbsp;substitution.<br/>
+<br/>
+&nbsp;&nbsp;This&nbsp;design&nbsp;was&nbsp;chosen&nbsp;when&nbsp;values&nbsp;could&nbsp;not&nbsp;contain&nbsp;paths;&nbsp;now&nbsp;that&nbsp;values<br/>
+&nbsp;&nbsp;_can_&nbsp;contain&nbsp;paths,&nbsp;we&nbsp;could&nbsp;probably&nbsp;modify&nbsp;substitution&nbsp;to&nbsp;traverse<br/>
+&nbsp;&nbsp;paths&nbsp;inside&nbsp;values.<br/>
+&nbsp;&nbsp;*)</span><br/>
 &nbsp;&nbsp;| <a class="idref" href="D.Dot.syn.syn.html#VlSorts.pself"><span class="id" title="constructor">pself</span></a> <span class="id" title="var">r'</span> <span class="id" title="var">l</span> ⇒ <a class="idref" href="D.Dot.syn.syn.html#VlSorts.pself"><span class="id" title="constructor">pself</span></a> (<span class="id" title="var">r'</span> <a class="idref" href="D.Dot.syn.path_repl.html#995d4863b9dafe100b17909731700e2a"><span class="id" title="notation">.</span></a><a class="idref" href="D.Dot.syn.path_repl.html#995d4863b9dafe100b17909731700e2a"><span class="id" title="notation">p</span></a><a class="idref" href="D.Dot.syn.path_repl.html#995d4863b9dafe100b17909731700e2a"><span class="id" title="notation">[</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#p"><span class="id" title="variable">p</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#995d4863b9dafe100b17909731700e2a"><span class="id" title="notation">:=</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#q"><span class="id" title="variable">q</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#995d4863b9dafe100b17909731700e2a"><span class="id" title="notation">]</span></a>) <span class="id" title="var">l</span><br/>
 &nbsp;&nbsp;<span class="id" title="keyword">end</span><br/>
 <span class="id" title="keyword">end</span><br/>
@@ -268,6 +300,15 @@ The reflexive, transitive closure of path replacement agrees with path
 <span class="id" title="keyword">End</span> <a class="idref" href="D.Dot.syn.path_repl.html#decide_psubst"><span class="id" title="section">decide_psubst</span></a>.<br/>
 
 <br/>
+</div>
+
+<div class="doc">
+Finally, we can also define path substitution as a function.
+Its proofs of correctness is in <span class="inlinecode"><span class="id" title="var">path_repl_lemmas.v</span></span>, in lemmas
+<span class="inlinecode"><a class="idref" href="D.Dot.syn.path_repl_lemmas.html#psubst_one_implies"><span class="id" title="lemma">psubst_one_implies</span></a></span> and <span class="inlinecode"><a class="idref" href="D.Dot.syn.path_repl_lemmas.html#psubst_subst_agree_ty"><span class="id" title="lemma">psubst_subst_agree_ty</span></a></span>.
+
+</div>
+<div class="code">
 <span class="id" title="keyword">Definition</span> <a name="psubst_one_path_base"><span class="id" title="definition">psubst_one_path_base</span></a> <span class="id" title="var">q</span> <span class="id" title="var">p</span> := <a class="idref" href="D.Dot.syn.path_repl.html#q"><span class="id" title="variable">q</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#995d4863b9dafe100b17909731700e2a"><span class="id" title="notation">.</span></a><a class="idref" href="D.Dot.syn.path_repl.html#995d4863b9dafe100b17909731700e2a"><span class="id" title="notation">p</span></a><a class="idref" href="D.Dot.syn.path_repl.html#995d4863b9dafe100b17909731700e2a"><span class="id" title="notation">[</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a> (<a class="idref" href="'https://www.ps.uni-saarland.de/autosubst/doc/'/Autosubst.Autosubst_Classes.html#ids"><span class="id" title="definition">ids</span></a> 0) <a class="idref" href="D.Dot.syn.path_repl.html#995d4863b9dafe100b17909731700e2a"><span class="id" title="notation">:=</span></a> <a class="idref" href="D.prelude.html#shift"><span class="id" title="abbreviation">shift</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#p"><span class="id" title="variable">p</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#995d4863b9dafe100b17909731700e2a"><span class="id" title="notation">]</span></a>.<br/>
 <span class="id" title="keyword">Definition</span> <a name="psubst_one_path"><span class="id" title="definition">psubst_one_path</span></a> <span class="id" title="var">q</span> <span class="id" title="var">p</span> := <a class="idref" href="D.Dot.syn.path_repl.html#unshift"><span class="id" title="abbreviation">unshift</span></a> (<a class="idref" href="D.Dot.syn.path_repl.html#psubst_one_path_base"><span class="id" title="definition">psubst_one_path_base</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#q"><span class="id" title="variable">q</span></a> <a class="idref" href="D.Dot.syn.path_repl.html#p"><span class="id" title="variable">p</span></a>).<br/>
 <span class="id" title="keyword">Notation</span> <a name="9b9108e405df55f886791ca7cf5824c3"><span class="id" title="notation">&quot;</span></a>q .pp[ p /]" := (<a class="idref" href="D.Dot.syn.path_repl.html#psubst_one_path"><span class="id" title="definition">psubst_one_path</span></a> <span class="id" title="var">q</span> <span class="id" title="var">p</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 65).<br/>

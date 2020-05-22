@@ -260,18 +260,6 @@ Derived swap laws, for uniform predicates.
 &nbsp;&nbsp;<span class="id" title="tactic">∃</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#bc1ad27deabe143d39d35abe6be2c1a4"><span class="id" title="notation">λ</span></a> <span class="id" title="var">x</span><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#bc1ad27deabe143d39d35abe6be2c1a4"><span class="id" title="notation">,</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Specif.html#proj1_sig"><span class="id" title="definition">proj1_sig</span></a> (<span class="id" title="var">FUN</span> <a class="idref" href="D.iris_extra.swap_later_impl.html#x"><span class="id" title="variable">x</span></a>)); <span class="id" title="var">split_and</span>! ⇒ <span class="id" title="var">a</span>;<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">mx</span>; <span class="id" title="tactic">rewrite</span> /= ?<a class="idref" href="'https://plv.mpi-sws.org/coqdoc/iris/'/iris.algebra.cmra.html#discrete_fun_lookup_op"><span class="id" title="definition">discrete_fun_lookup_op</span></a> //;<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">FUN</span> <span class="id" title="var">a</span>) <span class="id" title="keyword">as</span> (?&amp;<span class="id" title="var">HP1</span>&amp;<span class="id" title="var">HP2</span>); <span class="id" title="tactic">eauto</span>.<br/>
-
-<br/>
-&nbsp;&nbsp;<span class="comment">(*&nbsp;Alternative&nbsp;proof.&nbsp;*)</span><br/>
-&nbsp;&nbsp;<span class="comment">(*&nbsp;Restart.<br/>
-<br/>
-&nbsp;&nbsp;split&nbsp;=&gt;&nbsp;n&nbsp;<span class="inlinecode"><span class="id" title="var">x</span>|</span>&nbsp;/=&nbsp;z&nbsp;Hvmx&nbsp;Hvzmx.<br/>
-&nbsp;&nbsp;-&nbsp;assert&nbsp;(FUN&nbsp;:=&nbsp;λ&nbsp;a,&nbsp;cmra_extend_included&nbsp;n&nbsp;(Some&nbsp;(x&nbsp;a))&nbsp;(z&nbsp;a)&nbsp;(Hvmx&nbsp;a)&nbsp;(Hvzmx&nbsp;a)).<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;exists&nbsp;(λ&nbsp;x,&nbsp;proj1_sig&nbsp;(FUN&nbsp;x));&nbsp;split_and!&nbsp;=&gt;&nbsp;a;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;rewrite&nbsp;/=&nbsp;?discrete_fun_lookup_op&nbsp;//;&nbsp;by&nbsp;destruct&nbsp;(FUN&nbsp;a)&nbsp;as&nbsp;(?&amp;?&amp;?).<br/>
-&nbsp;&nbsp;-&nbsp;assert&nbsp;(FUN&nbsp;:=&nbsp;λ&nbsp;a,&nbsp;cmra_extend_included&nbsp;n&nbsp;None&nbsp;(z&nbsp;a)&nbsp;I&nbsp;(Hvzmx&nbsp;a)).<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;exists&nbsp;(λ&nbsp;x,&nbsp;proj1_sig&nbsp;(FUN&nbsp;x));&nbsp;split_and!&nbsp;=&gt;&nbsp;a;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;destruct&nbsp;(FUN&nbsp;a)&nbsp;as&nbsp;(?&amp;?&amp;?).&nbsp;*)</span><br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
