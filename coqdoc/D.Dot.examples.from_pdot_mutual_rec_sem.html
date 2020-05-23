@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab110"></a><h1 class="section">Motivating example, semantic version.</h1>
+<a name="lab115"></a><h1 class="section">Motivating example, semantic version.</h1>
 
 
 <div class="paragraph"> </div>
@@ -249,7 +249,7 @@ The syntactic stamp map we use in our syntactic judgments.
 <a class="idref" href="D.Dot.examples.ex_utils.html#1cfa4020d8445cb6b5be520807449fbd"><span class="id" title="notation">}</span></a>.<br/>
 
 <br/>
-<span class="id" title="keyword">Ltac</span> <span class="id" title="var">semTMember</span> <span class="id" title="var">i</span> := <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.tdefs_lr.html#D_Typ"><span class="id" title="lemma">D_Typ</span></a>; <span class="id" title="var">iApply</span> <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/iris/'/iris.proofmode.ltac_tactics.html#c65a9d4b357f2165cc71fe44c81db669"><span class="id" title="notation">(</span></a><a class="idref" href="D.Dot.fundamental.html#extraction_to_leadsto_envD_equiv"><span class="id" title="lemma">extraction_to_leadsto_envD_equiv</span></a> (<span class="id" title="var">n</span> := <span class="id" title="var">i</span>) <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/iris/'/iris.proofmode.ltac_tactics.html#c65a9d4b357f2165cc71fe44c81db669"><span class="id" title="notation">with</span></a> "Hs"<a class="idref" href="'https://plv.mpi-sws.org/coqdoc/iris/'/iris.proofmode.ltac_tactics.html#c65a9d4b357f2165cc71fe44c81db669"><span class="id" title="notation">)</span></a>; <span class="id" title="var">by_extcrush</span>.<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">semTMember</span> <span class="id" title="var">i</span> := <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.defs_lr.html#D_Typ"><span class="id" title="lemma">D_Typ</span></a>; <span class="id" title="var">iApply</span> <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/iris/'/iris.proofmode.ltac_tactics.html#c65a9d4b357f2165cc71fe44c81db669"><span class="id" title="notation">(</span></a><a class="idref" href="D.Dot.fundamental.html#extraction_to_leadsto_envD_equiv"><span class="id" title="lemma">extraction_to_leadsto_envD_equiv</span></a> (<span class="id" title="var">n</span> := <span class="id" title="var">i</span>) <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/iris/'/iris.proofmode.ltac_tactics.html#c65a9d4b357f2165cc71fe44c81db669"><span class="id" title="notation">with</span></a> "Hs"<a class="idref" href="'https://plv.mpi-sws.org/coqdoc/iris/'/iris.proofmode.ltac_tactics.html#c65a9d4b357f2165cc71fe44c81db669"><span class="id" title="notation">)</span></a>; <span class="id" title="var">by_extcrush</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Tactic Notation</span> "smart_wp_bind'" <span class="id" title="var">uconstr</span>(<span class="id" title="var">ctxs</span>) <span class="id" title="var">ident</span>(<span class="id" title="var">v</span>) <span class="id" title="keyword">constr</span>(<span class="id" title="var">Hv</span>) <span class="id" title="var">uconstr</span>(<span class="id" title="var">Hp</span>) :=<br/>

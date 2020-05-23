@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab111"></a><h1 class="section">Exercise: Semantic typing for positive numbers (smallest example).</h1>
+<a name="lab116"></a><h1 class="section">Exercise: Semantic typing for positive numbers (smallest example).</h1>
 
 </div>
 <div class="code">
@@ -59,7 +59,7 @@
 </div>
 
 <div class="doc">
-<a name="lab112"></a><h2 class="section">Example code.</h2>
+<a name="lab117"></a><h2 class="section">Example code.</h2>
 
 </div>
 <div class="code">
@@ -179,7 +179,7 @@ Under Iris assumption <span class="inlinecode"><a class="idref" href="D.Dot.exam
 &nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> /<a class="idref" href="D.Dot.examples.small_sem_ex.html#miniV"><span class="id" title="definition">miniV</span></a> /<a class="idref" href="D.Dot.examples.small_sem_ex.html#hminiV"><span class="id" title="definition">hminiV</span></a> /<a class="idref" href="D.Dot.examples.small_sem_ex.html#sminiVT2Concr"><span class="id" title="definition">sminiVT2Concr</span></a> /<a class="idref" href="D.Dot.examples.small_sem_ex.html#sminiVT2ConcrBody"><span class="id" title="definition">sminiVT2ConcrBody</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.defs_lr.html#sT_Obj_I"><span class="id" title="lemma">sT_Obj_I</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.defs_lr.html#sD_Cons"><span class="id" title="lemma">sD_Cons</span></a>; <span class="id" title="tactic">first</span> <span class="id" title="var">done</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> (<a class="idref" href="D.Dot.semtyp_lemmas.tdefs_lr.html#sD_Typ_Abs"><span class="id" title="lemma">sD_Typ_Abs</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#ipos"><span class="id" title="definition">ipos</span></a>); [<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.lr.unary_lr.html#sSub_Refl"><span class="id" title="lemma">sSub_Refl</span></a>..|<span class="id" title="tactic">by</span> <span class="id" title="var">iExists</span> <span class="id" title="var">_</span>; <span class="id" title="var">iFrame</span> "Hs"].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> (<a class="idref" href="D.Dot.semtyp_lemmas.defs_lr.html#sD_Typ_Abs"><span class="id" title="lemma">sD_Typ_Abs</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#ipos"><span class="id" title="definition">ipos</span></a>); [<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.lr.unary_lr.html#sSub_Refl"><span class="id" title="lemma">sSub_Refl</span></a>..|<span class="id" title="tactic">by</span> <span class="id" title="var">iExists</span> <span class="id" title="var">_</span>; <span class="id" title="var">iFrame</span> "Hs"].<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.defs_lr.html#sD_Cons"><span class="id" title="lemma">sD_Cons</span></a>; [<span class="id" title="var">done</span>| |<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.defs_lr.html#sD_Nil"><span class="id" title="lemma">sD_Nil</span></a>].<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.defs_lr.html#sD_Val"><span class="id" title="lemma">sD_Val</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> (<a class="idref" href="D.Dot.semtyp_lemmas.binding_lr.html#sT_Sub"><span class="id" title="lemma">sT_Sub</span></a> (<span class="id" title="var">i</span> := 0) (<span class="id" title="var">T1</span> := <a class="idref" href="D.Dot.examples.positive_div.html#ipos"><span class="id" title="definition">ipos</span></a>)).<br/>
@@ -188,7 +188,7 @@ Under Iris assumption <span class="inlinecode"><a class="idref" href="D.Dot.exam
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.lr.unary_lr.html#sSub_Trans"><span class="id" title="lemma">sSub_Trans</span></a>; <span class="id" title="tactic">first</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.sub_lr.html#sSub_Add_Later"><span class="id" title="lemma">sSub_Add_Later</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.examples_lr.html#sSub_Later_Sub"><span class="id" title="lemma">sSub_Later_Sub</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.sub_lr.html#sSub_Sel"><span class="id" title="lemma">sSub_Sel</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.tsel_lr.html#sP_Later"><span class="id" title="lemma">sP_Later</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.examples_lr.html#sP_Later"><span class="id" title="lemma">sP_Later</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.lr.unary_lr.html#sP_Val"><span class="id" title="lemma">sP_Val</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> (<a class="idref" href="D.Dot.semtyp_lemmas.binding_lr.html#sT_Sub"><span class="id" title="lemma">sT_Sub</span></a> (<span class="id" title="var">i</span> := 0)).<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.examples_lr.html#sT_Var0"><span class="id" title="lemma">sT_Var0</span></a>.<br/>
