@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab126"></a><h1 class="section">Motivating example, syntactic version.</h1>
+<a name="lab128"></a><h1 class="section">Motivating example, syntactic version.</h1>
 
 
 <div class="paragraph"> </div>
@@ -157,7 +157,7 @@ From&nbsp;D.Dot&nbsp;Require&nbsp;Import&nbsp;hoas.&nbsp;*)</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">repeat</span> <span class="id" title="tactic">first</span> [<span class="id" title="var">var</span> | <span class="id" title="var">typconstructor</span> | <span class="id" title="var">tcrush</span>].<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="var">ettrans</span>; <span class="id" title="tactic">first</span> <span class="id" title="var">last</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>; <span class="id" title="tactic">first</span> <span class="id" title="var">last</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="tactic">constructor</span>; <span class="id" title="var">varsub</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="var">typconstructor</span>; <span class="id" title="var">varsub</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltcrush</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="var">tcrush</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="var">tcrush</span>; <span class="id" title="var">last</span> <span class="id" title="tactic">apply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iSub_Bind_1"><span class="id" title="lemma">iSub_Bind_1</span></a>; <span class="id" title="var">tcrush</span>.<br/>
@@ -186,7 +186,7 @@ From&nbsp;D.Dot&nbsp;Require&nbsp;Import&nbsp;hoas.&nbsp;*)</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">repeat</span> <span class="id" title="tactic">first</span> [<span class="id" title="var">var</span> | <span class="id" title="var">typconstructor</span> | <span class="id" title="var">tcrush</span>].<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="var">ettrans</span>; <span class="id" title="tactic">first</span> <span class="id" title="var">last</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>; <span class="id" title="tactic">first</span> <span class="id" title="var">last</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="tactic">constructor</span>; <span class="id" title="var">varsub</span>; <span class="id" title="var">tcrush</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="var">typconstructor</span>; <span class="id" title="var">varsub</span>; <span class="id" title="var">tcrush</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="var">tcrush</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="var">mltcrush</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
@@ -250,7 +250,7 @@ From&nbsp;D.Dot&nbsp;Require&nbsp;Import&nbsp;hoas.&nbsp;*)</span><br/>
 &nbsp;&nbsp;<span class="id" title="var">have</span> <span class="id" title="var">HpxSubst</span>: <span class="id" title="var">Γ'</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#e7a61adb884afffa7c28f7304a3b68a8"><span class="id" title="notation">u</span></a><a class="idref" href="D.Dot.typing.old_unstamped_typing.html#e7a61adb884afffa7c28f7304a3b68a8"><span class="id" title="notation">⊢ₚ</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#DBNotation.x0"><span class="id" title="abbreviation">x0</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#135d56891ed952e50829c63a9f76210c"><span class="id" title="notation">@</span></a> "types" <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#e7a61adb884afffa7c28f7304a3b68a8"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.from_pdot_mutual_rec.html#fromPDotPaperAbsTypesTBodySubst"><span class="id" title="definition">fromPDotPaperAbsTypesTBodySubst</span></a><a class="idref" href="D.Dot.typing.old_unstamped_typing.html#e7a61adb884afffa7c28f7304a3b68a8"><span class="id" title="notation">,</span></a> 0.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">by</span> <span class="id" title="tactic">eapply</span> (<a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iP_Mu_E"><span class="id" title="constructor">iP_Mu_E</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="D.Dot.examples.from_pdot_mutual_rec.html#fromPDotPaperAbsTypesTBody"><span class="id" title="definition">fromPDotPaperAbsTypesTBody</span></a>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">p</span> := <a class="idref" href="D.Dot.examples.ex_utils.html#DBNotation.x0"><span class="id" title="abbreviation">x0</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#135d56891ed952e50829c63a9f76210c"><span class="id" title="notation">@</span></a> "types")), <span class="id" title="var">Hpx</span>; <span class="id" title="var">tcrush</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> (<a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iT_Path"><span class="id" title="constructor">iT_Path</span></a> (<span class="id" title="var">p</span> := <a class="idref" href="D.Dot.examples.ex_utils.html#DBNotation.x0"><span class="id" title="abbreviation">x0</span></a>)), <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iP_Fld_I"><span class="id" title="constructor">iP_Fld_I</span></a>, (<a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iP_Sub"><span class="id" title="constructor">iP_Sub</span></a> (<span class="id" title="var">i</span> := 0)), <span class="id" title="var">HpxSubst</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iT_Path'"><span class="id" title="lemma">iT_Path'</span></a>, <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iP_Fld_I"><span class="id" title="constructor">iP_Fld_I</span></a>, (<a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iP_Sub"><span class="id" title="constructor">iP_Sub</span></a> (<span class="id" title="var">i</span> := 0)), <span class="id" title="var">HpxSubst</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">ltcrush</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 

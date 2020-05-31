@@ -43,7 +43,7 @@
 </div>
 
 <div class="doc">
-<a name="lab145"></a><h2 class="section">Infinite loops; typed using old unstamped typing.</h2>
+<a name="lab147"></a><h2 class="section">Infinite loops; typed using old unstamped typing.</h2>
 
 </div>
 <div class="code">
@@ -75,7 +75,7 @@
 </div>
 
 <div class="doc">
-<a name="lab146"></a><h1 class="section">Booleans, Church-encoded.</h1>
+<a name="lab148"></a><h1 class="section">Booleans, Church-encoded.</h1>
  Sec. 5 of WadlerFest DOT.
 IFTFun ≡ { if: ∀(x: {A: ⊥..⊤})∀(t: x.A)∀(f: x.A): x.A }
 IFT ≡ { if: IFTFun }
@@ -201,7 +201,7 @@ let bool = boolImplV : μ { Boolean: IFT..IFT; true : b.Boolean; false : b.Boole
 <span class="id" title="keyword">Example</span> <a name="hBoolSing.iftTrueSingTyp"><span class="id" title="definition">iftTrueSingTyp</span></a> <span class="id" title="var">Γ</span> : <a class="idref" href="D.Dot.examples.scala_lib.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">u</span></a><a class="idref" href="D.Dot.typing.old_unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">⊢ₜ</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#hBool.hiftTrue"><span class="id" title="definition">hiftTrue</span></a> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#hBoolSing.hIFTTrueT"><span class="id" title="definition">hIFTTrueT</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">tcrush</span>; <span class="id" title="tactic">cbv</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> (<a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iT_Path"><span class="id" title="constructor">iT_Path</span></a> (<span class="id" title="var">p</span> := <a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a> <span class="id" title="var">_</span>)), <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iP_Sngl_Refl"><span class="id" title="constructor">iP_Sngl_Refl</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iT_Path'"><span class="id" title="lemma">iT_Path'</span></a>, <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iP_Sngl_Refl"><span class="id" title="constructor">iP_Sngl_Refl</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">typconstructor</span>; <span class="id" title="var">var</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
@@ -209,7 +209,7 @@ let bool = boolImplV : μ { Boolean: IFT..IFT; true : b.Boolean; false : b.Boole
 <span class="id" title="keyword">Example</span> <a name="hBoolSing.iftFalseSingTyp"><span class="id" title="definition">iftFalseSingTyp</span></a> <span class="id" title="var">Γ</span> : <a class="idref" href="D.Dot.examples.scala_lib.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">u</span></a><a class="idref" href="D.Dot.typing.old_unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">⊢ₜ</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#hBool.hiftFalse"><span class="id" title="definition">hiftFalse</span></a> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#hBoolSing.hIFTFalseT"><span class="id" title="definition">hIFTFalseT</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">tcrush</span>; <span class="id" title="tactic">cbv</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> (<a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iT_Path"><span class="id" title="constructor">iT_Path</span></a> (<span class="id" title="var">p</span> := <a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a> <span class="id" title="var">_</span>)), <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iP_Sngl_Refl"><span class="id" title="constructor">iP_Sngl_Refl</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iT_Path'"><span class="id" title="lemma">iT_Path'</span></a>, <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iP_Sngl_Refl"><span class="id" title="constructor">iP_Sngl_Refl</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">typconstructor</span>; <span class="id" title="var">var</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 

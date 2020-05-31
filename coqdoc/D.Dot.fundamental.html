@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab119"></a><h1 class="section">Fundamental theorem and type safety for gDOT.</h1>
+<a name="lab121"></a><h1 class="section">Fundamental theorem and type safety for gDOT.</h1>
 
 </div>
 <div class="code">
@@ -98,8 +98,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.binding_lr.html#T_Var"><span class="id" title="lemma">T_Var</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.binding_lr.html#T_Sub"><span class="id" title="lemma">T_Sub</span></a>; [<span class="id" title="var">iApply</span> <span class="id" title="var">H0</span>|<span class="id" title="var">iApply</span> <span class="id" title="var">H</span>].<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.binding_lr.html#T_Path"><span class="id" title="lemma">T_Path</span></a>. <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <span class="id" title="var">H</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.prims_lr.html#sT_Nat_I"><span class="id" title="lemma">sT_Nat_I</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.prims_lr.html#sT_Bool_I"><span class="id" title="lemma">sT_Bool_I</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.prims_lr.html#T_Un"><span class="id" title="lemma">T_Un</span></a>; [|<span class="id" title="var">iApply</span> <span class="id" title="var">H</span>].<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.prims_lr.html#T_Bin"><span class="id" title="lemma">T_Bin</span></a>; [| <span class="id" title="var">iApply</span> <span class="id" title="var">H</span>| <span class="id" title="var">iApply</span> <span class="id" title="var">H0</span>].<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.prims_lr.html#sT_If"><span class="id" title="lemma">sT_If</span></a>; [<span class="id" title="var">iApply</span> <span class="id" title="var">H</span>|<span class="id" title="var">iApply</span> <span class="id" title="var">H0</span>|<span class="id" title="var">iApply</span> <span class="id" title="var">H1</span>].<br/>
@@ -119,7 +117,10 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="comment">(*&nbsp;XXX&nbsp;unclean,&nbsp;but&nbsp;temporary.&nbsp;*)</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.lr.unary_lr.html#sP_Val"><span class="id" title="lemma">sP_Val</span></a>. <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <span class="id" title="var">H</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.lr.unary_lr.html#sP_Val"><span class="id" title="lemma">sP_Val</span></a>. <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <span class="id" title="var">H</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.prims_lr.html#sP_Nat_I"><span class="id" title="lemma">sP_Nat_I</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.prims_lr.html#sP_Bool_I"><span class="id" title="lemma">sP_Bool_I</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.path_repl_lr.html#P_Fld_E"><span class="id" title="lemma">P_Fld_E</span></a>. <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <span class="id" title="var">H</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.path_repl_lr.html#sP_Sub"><span class="id" title="lemma">sP_Sub</span></a>; [<span class="id" title="var">iApply</span> <span class="id" title="var">H0</span>|<span class="id" title="var">iApply</span> <span class="id" title="var">H</span>].<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.path_repl_lr.html#P_Mu_I"><span class="id" title="lemma">P_Mu_I</span></a>; [|<span class="id" title="var">iApply</span> <span class="id" title="var">H</span>].<br/>
@@ -166,7 +167,7 @@
 </div>
 
 <div class="doc">
-<a name="lab120"></a><h1 class="section">Fundamental theorem 5.4.</h1>
+<a name="lab122"></a><h1 class="section">Fundamental theorem 5.4.</h1>
 
 </div>
 <div class="code">
