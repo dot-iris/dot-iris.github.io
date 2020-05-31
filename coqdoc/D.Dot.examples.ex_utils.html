@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-Infrastructure for examples of DOT programs.
+<a name="lab122"></a><h1 class="section">Infrastructure for examples of DOT programs.</h1>
 
 </div>
 <div class="code">
@@ -41,11 +41,12 @@ Infrastructure for examples of DOT programs.
 <span class="id" title="keyword">Implicit</span> <span class="id" title="keyword">Types</span> (<span class="id" title="var">L</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span>: <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a>) (<span class="id" title="var">v</span>: <a class="idref" href="D.Dot.syn.syn.html#VlSorts.vl"><span class="id" title="definition">vl</span></a>) (<span class="id" title="var">e</span>: <a class="idref" href="D.Dot.syn.syn.html#VlSorts.tm"><span class="id" title="inductive">tm</span></a>) (<span class="id" title="var">d</span>: <a class="idref" href="D.Dot.syn.syn.html#VlSorts.dm"><span class="id" title="inductive">dm</span></a>) (<span class="id" title="var">ds</span>: <a class="idref" href="D.Dot.syn.syn.html#VlSorts.dms"><span class="id" title="definition">dms</span></a>) (<span class="id" title="var">Γ</span> : <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a>).<br/>
 
 <br/>
-<span class="comment">(****************)</span><br/>
+<span class="comment">(*******************)</span><br/>
 </div>
 
 <div class="doc">
-NOTATIONS  
+<a name="lab123"></a><h1 class="section">NOTATIONS</h1>
+
 </div>
 <div class="code">
 
@@ -118,10 +119,8 @@ NOTATIONS
 </div>
 
 <div class="doc">
-Let's define some nicer notation. 
-<div class="paragraph"> </div>
+<a name="lab124"></a><h2 class="section">Notation for object values.</h2>
 
- Notation for object values. 
 </div>
 <div class="code">
 
@@ -212,11 +211,12 @@ Notation for object types.
 <span class="id" title="keyword">End</span> <a class="idref" href="D.Dot.examples.ex_utils.html#DBNotation"><span class="id" title="module">DBNotation</span></a>.<br/>
 
 <br/>
-<span class="comment">(****************)</span><br/>
+<span class="comment">(******************)</span><br/>
 </div>
 
 <div class="doc">
-AUTOMATION 
+<a name="lab125"></a><h1 class="section">AUTOMATION</h1>
+
 </div>
 <div class="code">
 
@@ -255,7 +255,12 @@ AUTOMATION
 <span class="id" title="keyword">Definition</span> <a name="lett"><span class="id" title="definition">lett</span></a> <span class="id" title="var">t</span> <span class="id" title="var">u</span> := <a class="idref" href="D.Dot.syn.syn.html#VlSorts.tapp"><span class="id" title="constructor">tapp</span></a> (<a class="idref" href="D.Dot.syn.syn.html#VlSorts.vabs"><span class="id" title="constructor">vabs</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#u"><span class="id" title="variable">u</span></a>) <a class="idref" href="D.Dot.examples.ex_utils.html#t"><span class="id" title="variable">t</span></a>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;Simplify&nbsp;substitution&nbsp;operations&nbsp;on&nbsp;concrete&nbsp;terms.&nbsp;*)</span><br/>
+</div>
+
+<div class="doc">
+Simplify substitution operations on concrete terms. 
+</div>
+<div class="code">
 <span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplSubst</span> := <span class="id" title="tactic">rewrite</span> /= /<a class="idref" href="'https://www.ps.uni-saarland.de/autosubst/doc/'/Autosubst.Autosubst_Classes.html#up"><span class="id" title="definition">up</span></a>/= /<a class="idref" href="'https://www.ps.uni-saarland.de/autosubst/doc/'/Autosubst.Autosubst_Classes.html#ids"><span class="id" title="definition">ids</span></a>/<a class="idref" href="D.Dot.syn.syn.html#VlSorts.ids_vl"><span class="id" title="instance">ids_vl</span></a>/=.<br/>
 </div>
 </div>

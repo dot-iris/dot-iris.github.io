@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab135"></a><h1 class="section">Semantic typing for positive numbers and division.</h1>
+<a name="lab142"></a><h1 class="section">Semantic typing for positive numbers and division.</h1>
 
 </div>
 <div class="code">
@@ -41,7 +41,6 @@
 <span class="id" title="keyword">From</span> <span class="id" title="var">D</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.iris_extra.swap_later_impl.html#"><span class="id" title="library">swap_later_impl</span></a>.<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.syn.syn_lemmas.html#"><span class="id" title="library">syn_lemmas</span></a>.<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.examples.ex_iris_utils.html#"><span class="id" title="library">ex_iris_utils</span></a>.<br/>
-<span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.examples.scala_lib.html#"><span class="id" title="library">scala_lib</span></a> <a class="idref" href="D.Dot.examples.hoas.html#"><span class="id" title="library">hoas</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#"><span class="id" title="library">ex_utils</span></a> <a class="idref" href="D.Dot.examples.storeless_typing_ex_utils.html#"><span class="id" title="library">storeless_typing_ex_utils</span></a>.<br/>
 
 <br/>
 <span class="id" title="keyword">Import</span> <span class="id" title="var">dlang_adequacy</span>.<br/>
@@ -54,13 +53,13 @@
 <span class="id" title="keyword">Implicit</span> <span class="id" title="keyword">Types</span> (<span class="id" title="var">v</span> <span class="id" title="var">w</span> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.vl"><span class="id" title="definition">vl</span></a>) (<span class="id" title="var">d</span> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.dm"><span class="id" title="inductive">dm</span></a>) (<span class="id" title="var">ds</span> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.dms"><span class="id" title="definition">dms</span></a>).<br/>
 
 <br/>
-<span class="id" title="keyword">Import</span> <span class="id" title="var">hoas.syn</span>.<br/>
+<span class="id" title="keyword">Import</span> <span class="id" title="var">hoas.syn</span>. <span class="comment">(*&nbsp;For&nbsp;implicit&nbsp;conversions.&nbsp;*)</span><br/>
 
 <br/>
 </div>
 
 <div class="doc">
-<a name="lab136"></a><h2 class="section">Example code.</h2>
+<a name="lab143"></a><h2 class="section">Example code.</h2>
 
 </div>
 <div class="code">
@@ -69,7 +68,7 @@
 
 <br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a name="hdivV"><span class="id" title="definition">hdivV</span></a> := <a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">λ</span></a><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">:</span></a> <span class="id" title="var">m</span> <span class="id" title="var">n</span><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#m"><span class="id" title="variable">m</span></a> <a class="idref" href="D.Dot.examples.hoas.html#90a405aa01cbefe9ef7e77e5f7662bf5"><span class="id" title="notation">`</span></a><a class="idref" href="D.Dot.examples.hoas.html#90a405aa01cbefe9ef7e77e5f7662bf5"><span class="id" title="notation">div</span></a><a class="idref" href="D.Dot.examples.hoas.html#90a405aa01cbefe9ef7e77e5f7662bf5"><span class="id" title="notation">`</span></a> <a class="idref" href="D.Dot.examples.hoas.html#90a405aa01cbefe9ef7e77e5f7662bf5"><span class="id" title="notation">(</span></a><a class="idref" href="D.Dot.examples.hoas.html#syn.htskip"><span class="id" title="definition">htskip</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#n"><span class="id" title="variable">n</span></a><a class="idref" href="D.Dot.examples.hoas.html#90a405aa01cbefe9ef7e77e5f7662bf5"><span class="id" title="notation">)</span></a>.<br/>
-&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a name="hmkPosBodyV"><span class="id" title="definition">hmkPosBodyV</span></a> (<span class="id" title="var">n</span> : <a class="idref" href="D.Dot.examples.hoas.html#hvl"><span class="id" title="definition">hvl</span></a>) := <a class="idref" href="D.Dot.examples.hoas.html#syn.htif"><span class="id" title="definition">htif</span></a> (<a class="idref" href="D.Dot.examples.positive_div.html#n"><span class="id" title="variable">n</span></a> <a class="idref" href="D.Dot.examples.hoas.html#fc4657c778521b970668ff93a714cb01"><span class="id" title="notation">&gt;</span></a> 0) <a class="idref" href="D.Dot.examples.positive_div.html#n"><span class="id" title="variable">n</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#loop.hloopTm"><span class="id" title="definition">hloopTm</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a name="hmkPosBodyV"><span class="id" title="definition">hmkPosBodyV</span></a> (<span class="id" title="var">n</span> : <a class="idref" href="D.Dot.examples.hoas.html#hvl"><span class="id" title="definition">hvl</span></a>) := <a class="idref" href="D.Dot.examples.hoas.html#syn.htif"><span class="id" title="definition">htif</span></a> (<a class="idref" href="D.Dot.examples.positive_div.html#n"><span class="id" title="variable">n</span></a> <a class="idref" href="D.Dot.examples.hoas.html#fc4657c778521b970668ff93a714cb01"><span class="id" title="notation">&gt;</span></a> 0) <a class="idref" href="D.Dot.examples.positive_div.html#n"><span class="id" title="variable">n</span></a> <a class="idref" href="D.Dot.examples.hoas_ex_utils.html#loopTms.hloopTm"><span class="id" title="definition">hloopTm</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a name="hmkPosV"><span class="id" title="definition">hmkPosV</span></a> := <a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">λ</span></a><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">:</span></a> <span class="id" title="var">n</span><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#hmkPosBodyV"><span class="id" title="definition">hmkPosBodyV</span></a> <a class="idref" href="D.Dot.examples.positive_div.html#n"><span class="id" title="variable">n</span></a>.<br/>
 
 <br/>

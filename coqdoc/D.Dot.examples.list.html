@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab125"></a><h1 class="section">Encoding covariant lists.</h1>
+<a name="lab132"></a><h1 class="section">Encoding covariant lists.</h1>
 
 
 <div class="paragraph"> </div>
@@ -87,7 +87,7 @@ implementation we provide, and how to <i>use</i> lists.
 </div>
 
 <div class="doc">
-<a name="lab126"></a><h2 class="section">Interface of the list module.</h2>
+<a name="lab133"></a><h2 class="section">Interface of the list module.</h2>
 
 </div>
 <div class="code">
@@ -105,7 +105,7 @@ implementation we provide, and how to <i>use</i> lists.
 </div>
 
 <div class="doc">
-<a name="lab127"></a><h3 class="section">The list type itself.</h3>
+<a name="lab134"></a><h3 class="section">The list type itself.</h3>
 
 </div>
 <div class="code">
@@ -164,15 +164,15 @@ mod stands for module.
 </div>
 
 <div class="doc">
-<a name="lab128"></a><h2 class="section">Implementation of the list module.</h2>
+<a name="lab135"></a><h2 class="section">Implementation of the list module.</h2>
 
 </div>
 <div class="code">
 <span class="id" title="keyword">Definition</span> <a name="hnilV"><span class="id" title="definition">hnilV</span></a> <span class="id" title="var">bool</span> : <a class="idref" href="D.Dot.examples.hoas.html#hvl"><span class="id" title="definition">hvl</span></a> := <a class="idref" href="D.Dot.examples.hoas.html#b765f911d00e667273c5726a29666d70"><span class="id" title="notation">ν</span></a><a class="idref" href="D.Dot.examples.hoas.html#b765f911d00e667273c5726a29666d70"><span class="id" title="notation">:</span></a> <span class="id" title="var">self</span><a class="idref" href="D.Dot.examples.hoas.html#b765f911d00e667273c5726a29666d70"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.hoas.html#228bb38a1d1ce7d86c8f11e064584a00"><span class="id" title="notation">{@</span></a><br/>
 &nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#94acf627d08efa4f0a1f69dc193a1fb3"><span class="id" title="notation">type</span></a> "A" <a class="idref" href="D.Dot.examples.hoas.html#94acf627d08efa4f0a1f69dc193a1fb3"><span class="id" title="notation">=</span></a> <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.base.html#49af51f22ba6081c5259453e85aa12b3"><span class="id" title="notation">⊥</span></a><a class="idref" href="D.Dot.examples.hoas.html#228bb38a1d1ce7d86c8f11e064584a00"><span class="id" title="notation">;</span></a><br/>
 &nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">val</span></a> "isEmpty" <a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">=</span></a> <a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">λ</span></a><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">:</span></a> <span class="id" title="var">_</span><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.list.html#htrueTm"><span class="id" title="definition">htrueTm</span></a> <a class="idref" href="D.Dot.examples.list.html#bool"><span class="id" title="variable">bool</span></a><a class="idref" href="D.Dot.examples.hoas.html#228bb38a1d1ce7d86c8f11e064584a00"><span class="id" title="notation">;</span></a><br/>
-&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">val</span></a> "head" <a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">=</span></a> <a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">λ</span></a><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">:</span></a> <span class="id" title="var">_</span><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#loop.hloopTm"><span class="id" title="definition">hloopTm</span></a><a class="idref" href="D.Dot.examples.hoas.html#228bb38a1d1ce7d86c8f11e064584a00"><span class="id" title="notation">;</span></a><br/>
-&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">val</span></a> "tail" <a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">=</span></a> <a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">λ</span></a><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">:</span></a> <span class="id" title="var">_</span><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#loop.hloopTm"><span class="id" title="definition">hloopTm</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">val</span></a> "head" <a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">=</span></a> <a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">λ</span></a><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">:</span></a> <span class="id" title="var">_</span><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.hoas_ex_utils.html#loopTms.hloopTm"><span class="id" title="definition">hloopTm</span></a><a class="idref" href="D.Dot.examples.hoas.html#228bb38a1d1ce7d86c8f11e064584a00"><span class="id" title="notation">;</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">val</span></a> "tail" <a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">=</span></a> <a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">λ</span></a><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">:</span></a> <span class="id" title="var">_</span><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.hoas_ex_utils.html#loopTms.hloopTm"><span class="id" title="definition">hloopTm</span></a><br/>
 <a class="idref" href="D.Dot.examples.hoas.html#228bb38a1d1ce7d86c8f11e064584a00"><span class="id" title="notation">}</span></a>.<br/>
 
 <br/>
@@ -198,7 +198,7 @@ mod stands for module.
 </div>
 
 <div class="doc">
-<a name="lab129"></a><h2 class="section">Auxiliary types, needed in derivations of typing judgments.</h2>
+<a name="lab136"></a><h2 class="section">Auxiliary types, needed in derivations of typing judgments.</h2>
 
 </div>
 <div class="code">
@@ -225,7 +225,7 @@ mod stands for module.
 </div>
 
 <div class="doc">
-<a name="lab130"></a><h2 class="section">Lemmas for proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
+<a name="lab137"></a><h2 class="section">Lemmas for proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
 
 </div>
 <div class="code">
@@ -321,7 +321,7 @@ We do it using <span class="inlinecode"><a class="idref" href="D.Dot.examples.st
 </div>
 
 <div class="doc">
-<a name="lab131"></a><h2 class="section">Proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
+<a name="lab138"></a><h2 class="section">Proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
 
 </div>
 <div class="code">
@@ -336,7 +336,7 @@ We do it using <span class="inlinecode"><a class="idref" href="D.Dot.examples.st
 </div>
 
 <div class="doc">
-<a name="lab132"></a><h2 class="section">Link lists with booleans.</h2>
+<a name="lab139"></a><h2 class="section">Link lists with booleans.</h2>
 
 </div>
 <div class="code">
@@ -414,7 +414,7 @@ I'd rather not.
 </div>
 
 <div class="doc">
-<a name="lab133"></a><h2 class="section">Link lists with booleans and with a client using the list API.</h2>
+<a name="lab140"></a><h2 class="section">Link lists with booleans and with a client using the list API.</h2>
 
 </div>
 <div class="code">

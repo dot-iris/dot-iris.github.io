@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab122"></a><h1 class="section">Motivating example, semantic version.</h1>
+<a name="lab127"></a><h1 class="section">Motivating example, semantic version.</h1>
 
 
 <div class="paragraph"> </div>
@@ -69,10 +69,9 @@ The implementation also uses, for convenience, storeless typing.
 
 <br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">D</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.tactics.html#"><span class="id" title="library">tactics</span></a> <a class="idref" href="D.iris_extra.swap_later_impl.html#"><span class="id" title="library">swap_later_impl</span></a>.<br/>
-<span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.examples.ex_iris_utils.html#"><span class="id" title="library">ex_iris_utils</span></a>.<br/>
-<span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.syn.path_repl.html#"><span class="id" title="library">path_repl</span></a>.<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot.typing</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.typing.storeless_typing.html#"><span class="id" title="library">storeless_typing</span></a>.<br/>
-<span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.examples.ex_utils.html#"><span class="id" title="library">ex_utils</span></a> <a class="idref" href="D.Dot.examples.storeless_typing_ex_utils.html#"><span class="id" title="library">storeless_typing_ex_utils</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#"><span class="id" title="library">scala_lib</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.syn.path_repl.html#"><span class="id" title="library">path_repl</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.examples.ex_iris_utils.html#"><span class="id" title="library">ex_iris_utils</span></a>.<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.examples.prim_boolean_option.html#"><span class="id" title="library">prim_boolean_option</span></a>.<br/>
 
 <br/>
@@ -181,7 +180,7 @@ The syntactic stamp map we use in our syntactic judgments.
 
 <br/>
 <span class="id" title="keyword">Definition</span> <a name="assert"><span class="id" title="definition">assert</span></a> <span class="id" title="var">cond</span> :=<br/>
-&nbsp;&nbsp;<a class="idref" href="D.Dot.syn.syn.html#VlSorts.tif"><span class="id" title="constructor">tif</span></a> <a class="idref" href="D.Dot.examples.from_pdot_mutual_rec_sem.html#cond"><span class="id" title="variable">cond</span></a> 0 <a class="idref" href="D.Dot.examples.scala_lib.html#loop.hloopTm"><span class="id" title="definition">hloopTm</span></a>.<br/>
+&nbsp;&nbsp;<a class="idref" href="D.Dot.syn.syn.html#VlSorts.tif"><span class="id" title="constructor">tif</span></a> <a class="idref" href="D.Dot.examples.from_pdot_mutual_rec_sem.html#cond"><span class="id" title="variable">cond</span></a> 0 <a class="idref" href="D.Dot.examples.hoas_ex_utils.html#loopTms.hloopTm"><span class="id" title="definition">hloopTm</span></a>.<br/>
 <span class="id" title="keyword">Definition</span> <a name="seq"><span class="id" title="definition">seq</span></a> (<span class="id" title="var">e1</span> <span class="id" title="var">e2</span> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.tm"><span class="id" title="inductive">tm</span></a>) := <a class="idref" href="D.Dot.examples.ex_utils.html#lett"><span class="id" title="definition">lett</span></a> <a class="idref" href="D.Dot.examples.from_pdot_mutual_rec_sem.html#e1"><span class="id" title="variable">e1</span></a> (<a class="idref" href="D.prelude.html#shift"><span class="id" title="abbreviation">shift</span></a> <a class="idref" href="D.Dot.examples.from_pdot_mutual_rec_sem.html#e2"><span class="id" title="variable">e2</span></a>).<br/>
 
 <br/>
