@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab135"></a><h1 class="section">Encoding covariant lists.</h1>
+<a name="lab138"></a><h1 class="section">Encoding covariant lists.</h1>
 
 
 <div class="paragraph"> </div>
@@ -87,7 +87,7 @@ implementation we provide, and how to <i>use</i> lists.
 </div>
 
 <div class="doc">
-<a name="lab136"></a><h2 class="section">Interface of the list module.</h2>
+<a name="lab139"></a><h2 class="section">Interface of the list module.</h2>
 
 </div>
 <div class="code">
@@ -105,7 +105,7 @@ implementation we provide, and how to <i>use</i> lists.
 </div>
 
 <div class="doc">
-<a name="lab137"></a><h3 class="section">The list type itself.</h3>
+<a name="lab140"></a><h3 class="section">The list type itself.</h3>
 
 </div>
 <div class="code">
@@ -164,7 +164,7 @@ mod stands for module.
 </div>
 
 <div class="doc">
-<a name="lab138"></a><h2 class="section">Implementation of the list module.</h2>
+<a name="lab141"></a><h2 class="section">Implementation of the list module.</h2>
 
 </div>
 <div class="code">
@@ -198,7 +198,7 @@ mod stands for module.
 </div>
 
 <div class="doc">
-<a name="lab139"></a><h2 class="section">Auxiliary types, needed in derivations of typing judgments.</h2>
+<a name="lab142"></a><h2 class="section">Auxiliary types, needed in derivations of typing judgments.</h2>
 
 </div>
 <div class="code">
@@ -225,7 +225,7 @@ mod stands for module.
 </div>
 
 <div class="doc">
-<a name="lab140"></a><h2 class="section">Lemmas for proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
+<a name="lab143"></a><h2 class="section">Lemmas for proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
 
 </div>
 <div class="code">
@@ -240,9 +240,9 @@ mod stands for module.
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> {}/<span class="id" title="var">T</span>/= ⇒ <span class="id" title="var">Ht</span> <span class="id" title="var">Hl</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">tcrush</span>; <span class="id" title="tactic">apply</span> (<a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iT_Sub_nocoerce"><span class="id" title="lemma">iT_Sub_nocoerce</span></a> <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.base.html#49af51f22ba6081c5259453e85aa12b3"><span class="id" title="notation">⊥</span></a>); <span class="id" title="var">tcrush</span>.<br/>
 &nbsp;&nbsp;- <span class="id" title="var">tcrush</span>; <span class="id" title="var">last</span> <span class="id" title="var">mltcrush</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ettrans</span>; <span class="id" title="tactic">first</span> <span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iSub_Add_Later"><span class="id" title="constructor">iSub_Add_Later</span></a>; <span class="id" title="var">stcrush</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ettrans</span>; <span class="id" title="tactic">first</span> <span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_subtyping.html#iSub_Add_Later"><span class="id" title="constructor">iSub_Add_Later</span></a>; <span class="id" title="var">stcrush</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">asideLaters</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>; <span class="id" title="var">tcrush</span>. <span class="id" title="var">varsub</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>; <span class="id" title="var">tcrush</span>. <span class="id" title="var">varsub</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">asideLaters</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltcrush</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
@@ -259,7 +259,7 @@ mod stands for module.
 Typecheck returned head: 
 </div>
 <div class="code">
-&nbsp;&nbsp;<span class="id" title="tactic">by</span> <span class="id" title="var">varsub</span>; <span class="id" title="tactic">eapply</span> (<a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a> (<a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx4"><span class="id" title="abbreviation">hx4</span></a> <a class="idref" href="D.Dot.examples.hoas.html#20eaa41cf53828edc65b75a9d71d904c"><span class="id" title="notation">@;</span></a> "T")); <span class="id" title="var">tcrush</span>; <span class="id" title="var">varsub</span>; <span class="id" title="var">ltcrush</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">by</span> <span class="id" title="var">varsub</span>; <span class="id" title="tactic">eapply</span> (<a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a> (<a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx4"><span class="id" title="abbreviation">hx4</span></a> <a class="idref" href="D.Dot.examples.hoas.html#20eaa41cf53828edc65b75a9d71d904c"><span class="id" title="notation">@;</span></a> "T")); <span class="id" title="var">tcrush</span>; <span class="id" title="var">varsub</span>; <span class="id" title="var">ltcrush</span>.<br/>
 </div>
 
 <div class="doc">
@@ -293,19 +293,19 @@ It suffices to show that <span class="inlinecode"><span class="id" title="var">x
 </div>
 
 <div class="doc">
-We do it using <span class="inlinecode"><a class="idref" href="D.Dot.examples.storeless_typing_ex_utils.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a></span> on <span class="inlinecode"><span class="id" title="var">self.A</span></span>, and looking up <span class="inlinecode"><a class="idref" href="D.iris_extra.iris_prelude.html#A"><span class="id" title="variable">A</span></a></span> on <span class="inlinecode"><a class="idref" href="D.Dot.examples.from_pdot_mutual_rec_sem.html#self"><span class="id" title="variable">self</span></a></span>'s type. 
+We do it using <span class="inlinecode"><a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a></span> on <span class="inlinecode"><span class="id" title="var">self.A</span></span>, and looking up <span class="inlinecode"><a class="idref" href="D.iris_extra.iris_prelude.html#A"><span class="id" title="variable">A</span></a></span> on <span class="inlinecode"><a class="idref" href="D.Dot.examples.from_pdot_mutual_rec_sem.html#self"><span class="id" title="variable">self</span></a></span>'s type. 
 </div>
 <div class="code">
-&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>, (<a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#path_tp_delay"><span class="id" title="lemma">path_tp_delay</span></a> (<span class="id" title="var">i</span> := 0)); <span class="id" title="var">wtcrush</span>. <span class="id" title="var">varsub</span>; <span class="id" title="var">ltcrush</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>, (<a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#path_tp_delay"><span class="id" title="lemma">path_tp_delay</span></a> (<span class="id" title="var">i</span> := 0)); <span class="id" title="var">wtcrush</span>. <span class="id" title="var">varsub</span>; <span class="id" title="var">ltcrush</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Ltac</span> <span class="id" title="var">norm</span> := <span class="id" title="tactic">cbv</span>; <span class="id" title="var">hideCtx</span>.<br/>
-<span class="id" title="keyword">Lemma</span> <a name="consTSub"><span class="id" title="lemma">consTSub</span></a> <span class="id" title="var">Γ</span> : <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">(</span></a><a class="idref" href="D.Dot.examples.list.html#hlistModTConcrBody"><span class="id" title="definition">hlistModTConcrBody</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx1"><span class="id" title="abbreviation">hx1</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.ssr.ssreflect.html#aed478b27f23b4f753c27c8ac393febc"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">::</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#boolImplT"><span class="id" title="definition">boolImplT</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">::</span></a> <a class="idref" href="D.Dot.examples.list.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#a5cc8b0c9a64d0dbf103c1b15f7a84f9"><span class="id" title="notation">u</span></a><a class="idref" href="D.Dot.typing.old_unstamped_typing.html#a5cc8b0c9a64d0dbf103c1b15f7a84f9"><span class="id" title="notation">⊢ₜ</span></a><br/>
-&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.list.html#hconsTConcr"><span class="id" title="definition">hconsTConcr</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx1"><span class="id" title="abbreviation">hx1</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a><a class="idref" href="D.Dot.typing.old_unstamped_typing.html#a5cc8b0c9a64d0dbf103c1b15f7a84f9"><span class="id" title="notation">,</span></a> 0 <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#a5cc8b0c9a64d0dbf103c1b15f7a84f9"><span class="id" title="notation">&lt;:</span></a> <a class="idref" href="D.Dot.examples.list.html#hconsT"><span class="id" title="definition">hconsT</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a><a class="idref" href="D.Dot.typing.old_unstamped_typing.html#a5cc8b0c9a64d0dbf103c1b15f7a84f9"><span class="id" title="notation">,</span></a> 0.<br/>
+<span class="id" title="keyword">Lemma</span> <a name="consTSub"><span class="id" title="lemma">consTSub</span></a> <span class="id" title="var">Γ</span> : <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">(</span></a><a class="idref" href="D.Dot.examples.list.html#hlistModTConcrBody"><span class="id" title="definition">hlistModTConcrBody</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx1"><span class="id" title="abbreviation">hx1</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.ssr.ssreflect.html#aed478b27f23b4f753c27c8ac393febc"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">::</span></a> <a class="idref" href="D.Dot.examples.scala_lib.html#boolImplT"><span class="id" title="definition">boolImplT</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">::</span></a> <a class="idref" href="D.Dot.examples.list.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.typing.old_subtyping.html#a5cc8b0c9a64d0dbf103c1b15f7a84f9"><span class="id" title="notation">u</span></a><a class="idref" href="D.Dot.typing.old_subtyping.html#a5cc8b0c9a64d0dbf103c1b15f7a84f9"><span class="id" title="notation">⊢ₜ</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.list.html#hconsTConcr"><span class="id" title="definition">hconsTConcr</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx1"><span class="id" title="abbreviation">hx1</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a><a class="idref" href="D.Dot.typing.old_subtyping.html#a5cc8b0c9a64d0dbf103c1b15f7a84f9"><span class="id" title="notation">,</span></a> 0 <a class="idref" href="D.Dot.typing.old_subtyping.html#a5cc8b0c9a64d0dbf103c1b15f7a84f9"><span class="id" title="notation">&lt;:</span></a> <a class="idref" href="D.Dot.examples.list.html#hconsT"><span class="id" title="definition">hconsT</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a><a class="idref" href="D.Dot.typing.old_subtyping.html#a5cc8b0c9a64d0dbf103c1b15f7a84f9"><span class="id" title="notation">,</span></a> 0.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">tcrush</span>; <span class="id" title="tactic">rewrite</span> !<a class="idref" href="'https://www.ps.uni-saarland.de/autosubst/doc/'/Autosubst.Autosubst_Basics.html#iterate_S"><span class="id" title="lemma">iterate_S</span></a> !<a class="idref" href="'https://www.ps.uni-saarland.de/autosubst/doc/'/Autosubst.Autosubst_Basics.html#iterate_0"><span class="id" title="lemma">iterate_0</span></a>; <span class="id" title="var">hideCtx</span>; <span class="id" title="var">last</span> <span class="id" title="var">mltcrush</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>, (<a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#path_tp_delay"><span class="id" title="lemma">path_tp_delay</span></a> (<span class="id" title="var">i</span> := 0)); <span class="id" title="var">wtcrush</span>; <span class="id" title="var">varsub</span>; <span class="id" title="tactic">by</span> <span class="id" title="var">ltcrush</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>, (<a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#path_tp_delay"><span class="id" title="lemma">path_tp_delay</span></a> (<span class="id" title="var">i</span> := 0)); <span class="id" title="var">wtcrush</span>; <span class="id" title="var">varsub</span>; <span class="id" title="tactic">by</span> <span class="id" title="var">ltcrush</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
@@ -321,7 +321,7 @@ We do it using <span class="inlinecode"><a class="idref" href="D.Dot.examples.st
 </div>
 
 <div class="doc">
-<a name="lab141"></a><h2 class="section">Proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
+<a name="lab144"></a><h2 class="section">Proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
 
 </div>
 <div class="code">
@@ -336,7 +336,7 @@ We do it using <span class="inlinecode"><a class="idref" href="D.Dot.examples.st
 </div>
 
 <div class="doc">
-<a name="lab142"></a><h2 class="section">Link lists with booleans.</h2>
+<a name="lab145"></a><h2 class="section">Link lists with booleans.</h2>
 
 </div>
 <div class="code">
@@ -414,7 +414,7 @@ I'd rather not.
 </div>
 
 <div class="doc">
-<a name="lab143"></a><h2 class="section">Link lists with booleans and with a client using the list API.</h2>
+<a name="lab146"></a><h2 class="section">Link lists with booleans and with a client using the list API.</h2>
 
 </div>
 <div class="code">
@@ -444,7 +444,7 @@ I'd rather not.
 &nbsp;&nbsp;<span class="id" title="var">have</span> <span class="id" title="var">Hsnil</span>: <span class="id" title="var">Γ'</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">u</span></a><a class="idref" href="D.Dot.typing.old_unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">⊢ₜ</span></a> <a class="idref" href="D.Dot.examples.hoas.html#syn.htskip"><span class="id" title="definition">htskip</span></a> (<a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hxm"><span class="id" title="definition">hxm</span></a> 2 <a class="idref" href="D.Dot.examples.hoas.html#c85e36e9b233cbdeb3214538b1e4a566"><span class="id" title="notation">@:</span></a> "nil") 2<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.typing.old_unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.hoas.html#syn.hTAnd"><span class="id" title="definition">hTAnd</span></a> (<a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a> <a class="idref" href="D.Dot.examples.hoas.html#20eaa41cf53828edc65b75a9d71d904c"><span class="id" title="notation">@;</span></a> "List") (<a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.typeEq"><span class="id" title="definition">typeEq</span></a> "A" <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.base.html#49af51f22ba6081c5259453e85aa12b3"><span class="id" title="notation">⊥</span></a>). {<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> (<a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iT_Sub"><span class="id" title="constructor">iT_Sub</span></a> (<span class="id" title="var">i</span> := 1)), <span class="id" title="var">Hnil</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">by</span> <span class="id" title="var">tcrush</span>; [<span class="id" title="var">lThis</span> | <span class="id" title="var">lNext</span>; <span class="id" title="tactic">apply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iSub_AddI"><span class="id" title="lemma">iSub_AddI</span></a>; <span class="id" title="var">tcrush</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">by</span> <span class="id" title="var">tcrush</span>; [<span class="id" title="var">lThis</span> | <span class="id" title="var">lNext</span>; <span class="id" title="tactic">apply</span> <a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#iSub_AddI"><span class="id" title="lemma">iSub_AddI</span></a>; <span class="id" title="var">tcrush</span>].<br/>
 &nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;<span class="id" title="var">have</span> <span class="id" title="var">Hcons</span>: <span class="id" title="var">Γ'</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">u</span></a><a class="idref" href="D.Dot.typing.old_unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">⊢ₜ</span></a> (<a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hxm"><span class="id" title="definition">hxm</span></a> 2 <a class="idref" href="D.Dot.examples.hoas.html#c85e36e9b233cbdeb3214538b1e4a566"><span class="id" title="notation">@:</span></a> "cons") 2 <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#90fa6feef7d9684c409ad19e24b1fb7c"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.list.html#hconsT"><span class="id" title="definition">hconsT</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a>. {<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">tcrush</span>.<br/>
@@ -461,7 +461,7 @@ I'd rather not.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> (<a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iT_Mu_E'"><span class="id" title="lemma">iT_Mu_E'</span></a> (<span class="id" title="var">T1</span> := (<a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">val</span></a> "head" <a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">:</span></a> <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.base.html#6c0a583aa94fbbce6fcf0f655cf1cbb7"><span class="id" title="notation">⊤</span></a> <a class="idref" href="D.Dot.examples.hoas.html#d71d9a5ce88ae18071782d76f145573c"><span class="id" title="notation">→:</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a> <a class="idref" href="D.Dot.examples.hoas.html#20eaa41cf53828edc65b75a9d71d904c"><span class="id" title="notation">@;</span></a> "A")%<span class="id" title="var">HS</span>));<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ | <span class="id" title="var">done</span> | <span class="id" title="var">tcrush</span> ..].<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">varsub</span>; <span class="id" title="var">asideLaters</span>; <span class="id" title="var">lThis</span>; <span class="id" title="var">ltcrush</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">by</span> <span class="id" title="tactic">apply</span> (<a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iSel_SubL"><span class="id" title="lemma">iSel_SubL</span></a> (<span class="id" title="var">L</span> := <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.base.html#49af51f22ba6081c5259453e85aa12b3"><span class="id" title="notation">⊥</span></a>)), (<a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#path_tp_delay"><span class="id" title="lemma">path_tp_delay</span></a> (<span class="id" title="var">i</span> := 0)); <span class="id" title="var">wtcrush</span>; <span class="id" title="var">varsub</span>; <span class="id" title="var">ltcrush</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">by</span> <span class="id" title="tactic">apply</span> (<a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#iSel_SubL"><span class="id" title="lemma">iSel_SubL</span></a> (<span class="id" title="var">L</span> := <a class="idref" href="'https://plv.mpi-sws.org/coqdoc/stdpp/'/stdpp.base.html#49af51f22ba6081c5259453e85aa12b3"><span class="id" title="notation">⊥</span></a>)), (<a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#path_tp_delay"><span class="id" title="lemma">path_tp_delay</span></a> (<span class="id" title="var">i</span> := 0)); <span class="id" title="var">wtcrush</span>; <span class="id" title="var">varsub</span>; <span class="id" title="var">ltcrush</span>.<br/>
 &nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">eapply</span> (<a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iT_Sub"><span class="id" title="constructor">iT_Sub</span></a> (<span class="id" title="var">i</span> := 1) (<span class="id" title="var">T1</span> := <a class="idref" href="D.Dot.examples.hoas.html#syn.hTAnd"><span class="id" title="definition">hTAnd</span></a> (<a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.hx0"><span class="id" title="abbreviation">hx0</span></a> <a class="idref" href="D.Dot.examples.hoas.html#20eaa41cf53828edc65b75a9d71d904c"><span class="id" title="notation">@;</span></a> "List") <span class="id" title="var">U</span>)).<br/>
 &nbsp;&nbsp;<span class="comment">(******)</span><br/>
@@ -473,10 +473,10 @@ I'd rather not.
 &nbsp;&nbsp;(▶:&nbsp;(ListBody&nbsp;&amp;&nbsp;{&nbsp;A&nbsp;&lt;:&nbsp;Nat&nbsp;}),&nbsp;and&nbsp;we're&nbsp;back&nbsp;in&nbsp;business!<br/>
 &nbsp;&nbsp;&nbsp;*)</span><br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ettrans</span>; <span class="id" title="var">last</span> <span class="id" title="tactic">apply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iLater_Sub"><span class="id" title="constructor">iLater_Sub</span></a>; <span class="id" title="var">stcrush</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ettrans</span>; [|<span class="id" title="tactic">apply</span>: <a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iAnd_Later_Sub_Distr"><span class="id" title="lemma">iAnd_Later_Sub_Distr</span></a>; <span class="id" title="var">stcrush</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ettrans</span>; <span class="id" title="var">last</span> <span class="id" title="tactic">apply</span> <a class="idref" href="D.Dot.typing.old_subtyping.html#iLater_Sub"><span class="id" title="constructor">iLater_Sub</span></a>; <span class="id" title="var">stcrush</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ettrans</span>; [|<span class="id" title="tactic">apply</span>: <a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#iAnd_Later_Sub_Distr"><span class="id" title="lemma">iAnd_Later_Sub_Distr</span></a>; <span class="id" title="var">stcrush</span>].<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">tcrush</span>; [<span class="id" title="var">lThis</span> | <span class="id" title="var">lNext</span>].<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iSel_Sub"><span class="id" title="constructor">iSel_Sub</span></a>; <span class="id" title="var">tcrush</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_subtyping.html#iSel_Sub"><span class="id" title="constructor">iSel_Sub</span></a>; <span class="id" title="var">tcrush</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iT_Sub_nocoerce"><span class="id" title="lemma">iT_Sub_nocoerce</span></a>; <span class="id" title="var">ltcrush</span>.<br/>
 &nbsp;&nbsp;}<br/>
 <br/>
@@ -484,9 +484,9 @@ I'd rather not.
 &nbsp;&nbsp;<span class="id" title="tactic">eapply</span> (<a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iT_All_E"><span class="id" title="constructor">iT_All_E</span></a> (<span class="id" title="var">T1</span> := <a class="idref" href="D.Dot.examples.ex_utils.html#9acbcffb20db69ef700fcb30f172df05"><span class="id" title="notation">𝐙</span></a>)); <span class="id" title="var">last</span> <span class="id" title="var">tcrush</span>.<br/>
 &nbsp;&nbsp;<span class="comment">(*&nbsp;Perform&nbsp;avoidance&nbsp;on&nbsp;the&nbsp;type&nbsp;application.&nbsp;*)</span><br/>
 &nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#tyApp_typed"><span class="id" title="lemma">tyApp_typed</span></a> <span class="id" title="keyword">with</span> (<span class="id" title="var">T</span> := <a class="idref" href="D.Dot.examples.hoas.html#49045ffec38a75053344fc4b3dd8a9a9"><span class="id" title="notation">𝐙</span></a>%<span class="id" title="var">HS</span>); <span class="id" title="tactic">first</span> <span class="id" title="var">done</span>; <span class="id" title="tactic">intros</span>; <span class="id" title="var">ltcrush</span>; <span class="id" title="tactic">cbv</span> -[<span class="id" title="var">Γ'</span>].<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">by</span> <span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>, (<a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#path_tp_delay"><span class="id" title="lemma">path_tp_delay</span></a> (<span class="id" title="var">i</span> := 0)); <span class="id" title="tactic">try</span> (<span class="id" title="var">typconstructor</span>; <span class="id" title="var">var</span>); <span class="id" title="var">wtcrush</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">by</span> <span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>, (<a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#path_tp_delay"><span class="id" title="lemma">path_tp_delay</span></a> (<span class="id" title="var">i</span> := 0)); <span class="id" title="tactic">try</span> (<span class="id" title="var">typconstructor</span>; <span class="id" title="var">var</span>); <span class="id" title="var">wtcrush</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">by</span> <span class="id" title="var">lNext</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="var">lNext</span>; <span class="id" title="tactic">by</span> <span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_unstamped_typing.html#iSel_Sub"><span class="id" title="constructor">iSel_Sub</span></a>, (<a class="idref" href="D.Dot.typing.old_unstamped_typing_derived_rules.html#path_tp_delay"><span class="id" title="lemma">path_tp_delay</span></a> (<span class="id" title="var">i</span> := 0)); <span class="id" title="tactic">try</span> (<span class="id" title="var">typconstructor</span>; <span class="id" title="var">var</span>); <span class="id" title="var">wtcrush</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">lNext</span>; <span class="id" title="tactic">by</span> <span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.typing.old_subtyping.html#iSel_Sub"><span class="id" title="constructor">iSel_Sub</span></a>, (<a class="idref" href="D.Dot.typing.old_subtyping_derived_rules.html#path_tp_delay"><span class="id" title="lemma">path_tp_delay</span></a> (<span class="id" title="var">i</span> := 0)); <span class="id" title="tactic">try</span> (<span class="id" title="var">typconstructor</span>; <span class="id" title="var">var</span>); <span class="id" title="var">wtcrush</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
