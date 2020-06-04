@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab126"></a><h1 class="section">Infrastructure for examples of DOT programs.</h1>
+<a name="lab105"></a><h1 class="section">Infrastructure for examples of DOT programs.</h1>
 
 </div>
 <div class="code">
@@ -45,7 +45,7 @@
 </div>
 
 <div class="doc">
-<a name="lab127"></a><h1 class="section">NOTATIONS</h1>
+<a name="lab106"></a><h1 class="section">NOTATIONS</h1>
 
 </div>
 <div class="code">
@@ -119,7 +119,7 @@
 </div>
 
 <div class="doc">
-<a name="lab128"></a><h2 class="section">Notation for object values.</h2>
+<a name="lab107"></a><h2 class="section">Notation for object values.</h2>
 
 </div>
 <div class="code">
@@ -215,7 +215,7 @@ Notation for object types.
 </div>
 
 <div class="doc">
-<a name="lab129"></a><h1 class="section">AUTOMATION</h1>
+<a name="lab108"></a><h1 class="section">AUTOMATION</h1>
 
 </div>
 <div class="code">
@@ -226,18 +226,18 @@ Notation for object types.
 <span class="id" title="keyword">Ltac</span> <span class="id" title="var">by_dcrush</span> := <span class="id" title="tactic">by</span> <span class="id" title="var">dcrush</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.stamping.traversals.html#"><span class="id" title="library">traversals</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.syn.traversals.html#"><span class="id" title="library">traversals</span></a>.<br/>
 
 <br/>
 <span class="id" title="keyword">Import</span> <span class="id" title="var">Trav1</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Ltac</span> <span class="id" title="var">stconstructor</span> := <span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
-&nbsp;&nbsp;| |- <a class="idref" href="D.Dot.stamping.traversals.html#Trav1.forall_traversal_tm"><span class="id" title="inductive">forall_traversal_tm</span></a>   <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">constructor</span><br/>
-&nbsp;&nbsp;| |- <a class="idref" href="D.Dot.stamping.traversals.html#Trav1.forall_traversal_vl"><span class="id" title="inductive">forall_traversal_vl</span></a>   <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">constructor</span><br/>
-&nbsp;&nbsp;| |- <a class="idref" href="D.Dot.stamping.traversals.html#Trav1.forall_traversal_dm"><span class="id" title="inductive">forall_traversal_dm</span></a>   <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">constructor</span><br/>
-&nbsp;&nbsp;| |- <a class="idref" href="D.Dot.stamping.traversals.html#Trav1.forall_traversal_path"><span class="id" title="inductive">forall_traversal_path</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">constructor</span><br/>
-&nbsp;&nbsp;| |- <a class="idref" href="D.Dot.stamping.traversals.html#Trav1.forall_traversal_ty"><span class="id" title="inductive">forall_traversal_ty</span></a>   <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">constructor</span><br/>
+&nbsp;&nbsp;| |- <a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_tm"><span class="id" title="inductive">forall_traversal_tm</span></a>   <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">constructor</span><br/>
+&nbsp;&nbsp;| |- <a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_vl"><span class="id" title="inductive">forall_traversal_vl</span></a>   <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">constructor</span><br/>
+&nbsp;&nbsp;| |- <a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_dm"><span class="id" title="inductive">forall_traversal_dm</span></a>   <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">constructor</span><br/>
+&nbsp;&nbsp;| |- <a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_path"><span class="id" title="inductive">forall_traversal_path</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">constructor</span><br/>
+&nbsp;&nbsp;| |- <a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_ty"><span class="id" title="inductive">forall_traversal_ty</span></a>   <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">constructor</span><br/>
 &nbsp;&nbsp;| |- <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Lists.List.html#Forall"><span class="id" title="inductive">Forall</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">constructor</span><br/>
 &nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
 <span class="id" title="keyword">Ltac</span> <span class="id" title="var">stcrush</span> := <span class="id" title="tactic">try</span> ((<span class="id" title="tactic">progress</span> <span class="id" title="tactic">repeat</span> <span class="id" title="var">stconstructor</span>); <span class="id" title="tactic">eauto</span>).<br/>

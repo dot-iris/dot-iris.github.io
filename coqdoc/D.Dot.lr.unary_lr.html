@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab79"></a><h1 class="section">Logical relation and semantic judgments.</h1>
+<a name="lab76"></a><h1 class="section">Logical relation and semantic judgments.</h1>
 
 </div>
 <div class="code">
@@ -57,7 +57,7 @@
 </div>
 
 <div class="doc">
-The logical relation on values is <span class="inlinecode"><a class="idref" href="D.iris_extra.gen_iheap.html#V"><span class="id" title="variable">V</span></a>⟦<a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a>⟧</span>. We also define the logical
+The logical relation on values is <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦<a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a>⟧</span>. We also define the logical
     relation on definitions <span class="inlinecode"><span class="id" title="var">Ds</span>⟦<a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a>⟧</span>.
 
 <div class="paragraph"> </div>
@@ -72,8 +72,8 @@ The logical relation on values is <span class="inlinecode"><a class="idref" href
 <div class="paragraph"> </div>
 
     Both relations interprets *open* types into predicates over values that
-    are meant to be closed. So for instance <span class="inlinecode"><a class="idref" href="D.iris_extra.gen_iheap.html#V"><span class="id" title="variable">V</span></a>⟦<a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a>⟧</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.dlang.html#args"><span class="id" title="variable">args</span></a></span> <span class="inlinecode">ρ</span> <span class="inlinecode"><a class="idref" href="D.Dot.examples.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> applies substitution <span class="inlinecode">ρ</span>
-    to <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span>, but not to <span class="inlinecode"><a class="idref" href="D.Dot.examples.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span>. We don't actually require that <span class="inlinecode"><a class="idref" href="D.Dot.examples.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> be closed.
+    are meant to be closed. So for instance <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦<a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a>⟧</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.dlang.html#args"><span class="id" title="variable">args</span></a></span> <span class="inlinecode">ρ</span> <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> applies substitution <span class="inlinecode">ρ</span>
+    to <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span>, but not to <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span>. We don't actually require that <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> be closed.
 
 <div class="paragraph"> </div>
 
@@ -87,7 +87,7 @@ The logical relation on values is <span class="inlinecode"><a class="idref" href
  
 <div class="paragraph"> </div>
 
-<a name="lab80"></a><h2 class="section">Define fully semantic judgments. They accept arbitrary semantic types.</h2>
+<a name="lab77"></a><h2 class="section">Define fully semantic judgments. They accept arbitrary semantic types.</h2>
 
 </div>
 <div class="code">
@@ -237,7 +237,7 @@ When a definition points to a semantic type. Inlined in paper.
 </div>
 
 <div class="doc">
-<a name="lab81"></a><h2 class="section">Semantic path substitution and replacement.</h2>
+<a name="lab78"></a><h2 class="section">Semantic path substitution and replacement.</h2>
 
 <div class="paragraph"> </div>
 
@@ -299,7 +299,7 @@ sufficient for our goals and faster to use in certain proofs.
 </div>
 
 <div class="doc">
-<a name="lab82"></a><h2 class="section">gDOT semantic types.</h2>
+<a name="lab79"></a><h2 class="section">gDOT semantic types.</h2>
 
 </div>
 <div class="code">
@@ -362,7 +362,7 @@ sufficient for our goals and faster to use in certain proofs.
 Lift <span class="inlinecode"><a class="idref" href="D.Dot.lr.unary_lr.html#oDTMem"><span class="id" title="definition">oDTMem</span></a></span> and <span class="inlinecode"><a class="idref" href="D.Dot.lr.unary_lr.html#oDVMem"><span class="id" title="definition">oDVMem</span></a></span> to full <span class="inlinecode"><a class="idref" href="D.Dot.lr.dot_lty.html#clty"><span class="id" title="record">clty</span></a></span>s, <span class="inlinecode"><a class="idref" href="D.Dot.lr.unary_lr.html#cTMem"><span class="id" title="definition">cTMem</span></a></span> and <span class="inlinecode"><a class="idref" href="D.Dot.lr.unary_lr.html#cVMem"><span class="id" title="definition">cVMem</span></a></span>. 
 <div class="paragraph"> </div>
 
- <span class="inlinecode"></span> <span class="inlinecode"><span class="id" title="var">Ds</span>⟦</span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.gen_iheap.html#l"><span class="id" title="variable">l</span></a></span> <span class="inlinecode">::</span> <span class="inlinecode">τ1</span> <span class="inlinecode">..</span> <span class="inlinecode">τ2</span> <span class="inlinecode">}</span> <span class="inlinecode">⟧</span> and <span class="inlinecode"></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.gen_iheap.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.gen_iheap.html#l"><span class="id" title="variable">l</span></a></span> <span class="inlinecode">::</span> <span class="inlinecode">τ1</span> <span class="inlinecode">..</span> <span class="inlinecode">τ2</span> <span class="inlinecode">}</span> <span class="inlinecode">⟧</span> <span class="inlinecode"></span>. 
+ <span class="inlinecode"></span> <span class="inlinecode"><span class="id" title="var">Ds</span>⟦</span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#l"><span class="id" title="variable">l</span></a></span> <span class="inlinecode">::</span> <span class="inlinecode">τ1</span> <span class="inlinecode">..</span> <span class="inlinecode">τ2</span> <span class="inlinecode">}</span> <span class="inlinecode">⟧</span> and <span class="inlinecode"></span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#l"><span class="id" title="variable">l</span></a></span> <span class="inlinecode">::</span> <span class="inlinecode">τ1</span> <span class="inlinecode">..</span> <span class="inlinecode">τ2</span> <span class="inlinecode">}</span> <span class="inlinecode">⟧</span> <span class="inlinecode"></span>. 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a name="cTMem"><span class="id" title="definition">cTMem</span></a> <span class="id" title="var">l</span> τ1 τ2 : <a class="idref" href="D.Dot.lr.dot_lty.html#clty"><span class="id" title="record">clty</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#0ce9935768a4f61376857a9a960895f5"><span class="id" title="variable">Σ</span></a> := <a class="idref" href="D.Dot.lr.dot_lty.html#dty2clty"><span class="id" title="definition">dty2clty</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#l"><span class="id" title="variable">l</span></a> (<a class="idref" href="D.Dot.lr.unary_lr.html#oDTMem"><span class="id" title="definition">oDTMem</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#d2bf239da53026c9c58d9d2eb1ceb59e"><span class="id" title="variable">τ1</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#1a9bbb066d1dbf3bd69c91ff0cb537ee"><span class="id" title="variable">τ2</span></a>).<br/>
@@ -378,7 +378,7 @@ Lift <span class="inlinecode"><a class="idref" href="D.Dot.lr.unary_lr.html#oDTM
 </div>
 
 <div class="doc">
-<span class="inlinecode"></span> <span class="inlinecode"><span class="id" title="var">Ds</span>⟦</span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.gen_iheap.html#l"><span class="id" title="variable">l</span></a></span> <span class="inlinecode">:</span> <span class="inlinecode">τ</span> <span class="inlinecode">}</span> <span class="inlinecode">⟧</span> and <span class="inlinecode"></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.gen_iheap.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.gen_iheap.html#l"><span class="id" title="variable">l</span></a></span> <span class="inlinecode">:</span> <span class="inlinecode">τ</span> <span class="inlinecode">}</span> <span class="inlinecode">⟧</span> <span class="inlinecode"></span>. 
+<span class="inlinecode"></span> <span class="inlinecode"><span class="id" title="var">Ds</span>⟦</span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#l"><span class="id" title="variable">l</span></a></span> <span class="inlinecode">:</span> <span class="inlinecode">τ</span> <span class="inlinecode">}</span> <span class="inlinecode">⟧</span> and <span class="inlinecode"></span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#l"><span class="id" title="variable">l</span></a></span> <span class="inlinecode">:</span> <span class="inlinecode">τ</span> <span class="inlinecode">}</span> <span class="inlinecode">⟧</span> <span class="inlinecode"></span>. 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a name="cVMem"><span class="id" title="definition">cVMem</span></a> <span class="id" title="var">l</span> τ : <a class="idref" href="D.Dot.lr.dot_lty.html#clty"><span class="id" title="record">clty</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#0ce9935768a4f61376857a9a960895f5"><span class="id" title="variable">Σ</span></a> := <a class="idref" href="D.Dot.lr.dot_lty.html#dty2clty"><span class="id" title="definition">dty2clty</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#l"><span class="id" title="variable">l</span></a> (<a class="idref" href="D.Dot.lr.unary_lr.html#oDVMem"><span class="id" title="definition">oDVMem</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#a788b57bb5319497a4de11f3392dcbc3"><span class="id" title="variable">τ</span></a>).<br/>
@@ -400,7 +400,7 @@ Lift <span class="inlinecode"><a class="idref" href="D.Dot.lr.unary_lr.html#oDTM
 </div>
 
 <div class="doc">
-<span class="inlinecode"></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.gen_iheap.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><span class="id" title="var">p.type</span></span> <span class="inlinecode">⟧</span>. 
+<span class="inlinecode"></span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><span class="id" title="var">p.type</span></span> <span class="inlinecode">⟧</span>. 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a name="oSing"><span class="id" title="definition">oSing</span></a> `{!<a class="idref" href="D.Dot.lr.dlang_inst.html#dlangG"><span class="id" title="class">dlangG</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#0ce9935768a4f61376857a9a960895f5"><span class="id" title="variable">Σ</span></a>} <span class="id" title="var">p</span> : <a class="idref" href="D.Dot.lr.dot_lty.html#olty"><span class="id" title="definition">olty</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#0ce9935768a4f61376857a9a960895f5"><span class="id" title="variable">Σ</span></a> 0 := <a class="idref" href="D.Dot.lr.dot_lty.html#olty0"><span class="id" title="definition">olty0</span></a> (<a class="idref" href="D.iris_extra.iris_prelude.html#20319bb2b4b1b488f74bc651672f060a"><span class="id" title="notation">λI</span></a> ρ <span class="id" title="var">v</span><a class="idref" href="D.iris_extra.iris_prelude.html#20319bb2b4b1b488f74bc651672f060a"><span class="id" title="notation">,</span></a> <a class="idref" href="https://plv.mpi-sws.org/coqdoc/iris//iris.bi.interface.html#08ba0c98aaa0db435a5f99ebae3ae8e7"><span class="id" title="notation">⌜</span></a><a class="idref" href="D.Dot.syn.lr_syn_aux.html#alias_paths"><span class="id" title="definition">alias_paths</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#p"><span class="id" title="variable">p</span></a><a class="idref" href="https://www.ps.uni-saarland.de/autosubst/doc//Autosubst.Autosubst_Classes.html#6e9577796b11d951bea86f7d274e37fd"><span class="id" title="notation">.|[</span></a><a class="idref" href="D.Dot.lr.unary_lr.html#1af91fb19f8f622aa9ec8998986a6bf9"><span class="id" title="variable">ρ</span></a><a class="idref" href="https://www.ps.uni-saarland.de/autosubst/doc//Autosubst.Autosubst_Classes.html#6e9577796b11d951bea86f7d274e37fd"><span class="id" title="notation">]</span></a> (<a class="idref" href="D.Dot.syn.syn.html#VlSorts.pv"><span class="id" title="constructor">pv</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#v"><span class="id" title="variable">v</span></a>)<a class="idref" href="https://plv.mpi-sws.org/coqdoc/iris//iris.bi.interface.html#08ba0c98aaa0db435a5f99ebae3ae8e7"><span class="id" title="notation">⌝</span></a>).<br/>
@@ -409,7 +409,7 @@ Lift <span class="inlinecode"><a class="idref" href="D.Dot.lr.unary_lr.html#oDTM
 </div>
 
 <div class="doc">
-<span class="inlinecode"></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.gen_iheap.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode">∀</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#x"><span class="id" title="variable">x</span></a>:</span> <span class="inlinecode">τ1.</span> <span class="inlinecode">τ2</span> <span class="inlinecode">⟧</span>. 
+<span class="inlinecode"></span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode">∀</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#x"><span class="id" title="variable">x</span></a>:</span> <span class="inlinecode">τ1.</span> <span class="inlinecode">τ2</span> <span class="inlinecode">⟧</span>. 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="comment">(*&nbsp;Function&nbsp;types;&nbsp;this&nbsp;definition&nbsp;is&nbsp;contractive&nbsp;(similarly&nbsp;to&nbsp;what's<br/>
@@ -436,7 +436,7 @@ Semantics of primitive types.
 </div>
 
 <div class="doc">
-Dispatch function defining <span class="inlinecode"><a class="idref" href="D.iris_extra.gen_iheap.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span> and <span class="inlinecode"><span class="id" title="var">Ds</span>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span>. 
+Dispatch function defining <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span> and <span class="inlinecode"><span class="id" title="var">Ds</span>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span>. 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="comment">(*&nbsp;Observe&nbsp;the&nbsp;naming&nbsp;pattern&nbsp;for&nbsp;semantic&nbsp;type&nbsp;constructors:<br/>
@@ -476,7 +476,7 @@ Unfolding lemma for <span class="inlinecode"><a class="idref" href="D.Dot.syn.sy
 </div>
 
 <div class="doc">
-Binding lemmas for <span class="inlinecode"><a class="idref" href="D.iris_extra.gen_iheap.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span> and <span class="inlinecode"><span class="id" title="var">Ds</span>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span>. 
+Binding lemmas for <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span> and <span class="inlinecode"><span class="id" title="var">Ds</span>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span>. 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="id" title="keyword">Global Instance</span> <a name="pinterp_lemmas"><span class="id" title="instance">pinterp_lemmas</span></a>: <a class="idref" href="D.Dot.lr.dot_lty.html#CTyInterpLemmas"><span class="id" title="class">CTyInterpLemmas</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#0ce9935768a4f61376857a9a960895f5"><span class="id" title="variable">Σ</span></a>.<br/>
@@ -558,7 +558,7 @@ Expression typing
 </div>
 
 <div class="doc">
-<a name="lab83"></a><h2 class="section">Show these typing judgments are equivalent to what we present in the paper.</h2>
+<a name="lab80"></a><h2 class="section">Show these typing judgments are equivalent to what we present in the paper.</h2>
 
 </div>
 <div class="code">
@@ -956,7 +956,7 @@ semantic type.
 </div>
 
 <div class="doc">
-<a name="lab84"></a><h1 class="section">Theorem 5.5: adequacy/safety of (stamped) semantic typing.</h1>
+<a name="lab81"></a><h1 class="section">Theorem 5.5: adequacy/safety of (stamped) semantic typing.</h1>
 
 Corollary of <span class="inlinecode"><span class="id" title="var">adequacy_mapped_semtyping</span></span>. 
 </div>
