@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab102"></a><h1 class="section">Fundamental theorem and type safety for gDOT.</h1>
+<a name="lab104"></a><h1 class="section">Fundamental theorem and type safety for gDOT.</h1>
 
 </div>
 <div class="code">
@@ -170,7 +170,7 @@
 </div>
 
 <div class="doc">
-<a name="lab103"></a><h1 class="section">Fundamental theorem 5.4.</h1>
+<a name="lab105"></a><h1 class="section">Fundamental theorem 5.3.</h1>
 
 </div>
 <div class="code">
@@ -200,17 +200,15 @@ Adequacy of our logical relation: semantically well-typed terms are safe.
 </div>
 
 <div class="doc">
-The overall proof of type soundness, as outlined in Sec. 5 of the paper. 
-<div class="paragraph"> </div>
-
- Theorem 5.2: Type soundness for gDOT. 
+The overall proof of type soundness, as outlined in Sec. 5 of the paper.  Theorem 5.2: Type soundness for gDOT. 
 </div>
 <div class="code">
 <span class="id" title="keyword">Theorem</span> <a name="type_soundness"><span class="id" title="lemma">type_soundness</span></a> {<span class="id" title="var">e</span> <span class="id" title="var">T</span>}<br/>
 &nbsp;&nbsp;(<span class="id" title="var">Ht</span>: <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Lists.List.html#ae9a5e1034e143b218b09d8e454472bd"><span class="id" title="notation">[]</span></a> <a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">t</span></a><a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">⊢ₜ</span></a> <a class="idref" href="D.Dot.fundamental.html#e"><span class="id" title="variable">e</span></a> <a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.fundamental.html#T"><span class="id" title="variable">T</span></a>): <a class="idref" href="D.iris_extra.det_reduction.html#safe"><span class="id" title="definition">safe</span></a> <a class="idref" href="D.Dot.fundamental.html#e"><span class="id" title="variable">e</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
-&nbsp;&nbsp;<span class="comment">(*&nbsp;Apply&nbsp;5.5:&nbsp;Adequacy&nbsp;of&nbsp;semantic&nbsp;typing.&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="comment">(*&nbsp;Apply&nbsp;adequacy&nbsp;of&nbsp;unstamped&nbsp;semantic&nbsp;typing&nbsp;(Theorem&nbsp;5.4).&nbsp;*)</span><br/>
 &nbsp;&nbsp;<span class="id" title="tactic">apply</span>: (<a class="idref" href="D.Dot.lr.sem_unstamped_typing.html#unstamped_safety_dot_sem"><span class="id" title="lemma">unstamped_safety_dot_sem</span></a> <a class="idref" href="D.Dot.lr.dlang_inst.html#c5f9d1fd168be04c4d6a0288f34d3e58"><span class="id" title="definition">dlangΣ</span></a>); <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="comment">(*&nbsp;Apply&nbsp;fundamental&nbsp;theorem&nbsp;(Theorem&nbsp;5.3).&nbsp;*)</span><br/>
 &nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="D.Dot.fundamental.html#fundamental_typed"><span class="id" title="lemma">fundamental_typed</span></a>, <span class="id" title="var">Ht</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
