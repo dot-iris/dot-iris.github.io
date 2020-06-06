@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab138"></a><h1 class="section">Motivating example, syntactic version.</h1>
+<a name="lab136"></a><h1 class="section">Motivating example, syntactic version.</h1>
 
 
 <div class="paragraph"> </div>
@@ -159,7 +159,6 @@ From&nbsp;D.Dot&nbsp;Require&nbsp;Import&nbsp;hoas.&nbsp;*)</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.examples.old_typing.old_subtyping_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>; <span class="id" title="tactic">first</span> <span class="id" title="var">last</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="var">typconstructor</span>; <span class="id" title="var">varsub</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltcrush</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="var">tcrush</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="var">tcrush</span>; <span class="id" title="var">last</span> <span class="id" title="tactic">apply</span> <a class="idref" href="D.Dot.examples.old_typing.old_subtyping_derived_rules.html#iSub_Bind_1"><span class="id" title="lemma">iSub_Bind_1</span></a>; <span class="id" title="var">tcrush</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> (<a class="idref" href="D.Dot.examples.old_typing.old_subtyping.html#iSub_Trans"><span class="id" title="constructor">iSub_Trans</span></a> (<span class="id" title="var">T2</span> := <a class="idref" href="https://plv.mpi-sws.org/coqdoc/stdpp//stdpp.base.html#6c0a583aa94fbbce6fcf0f655cf1cbb7"><span class="id" title="notation">⊤</span></a>)); <span class="id" title="var">tcrush</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.examples.old_typing.old_subtyping_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>; <span class="id" title="var">tcrush</span>.<br/>
@@ -187,7 +186,6 @@ From&nbsp;D.Dot&nbsp;Require&nbsp;Import&nbsp;hoas.&nbsp;*)</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="var">ettrans</span>; <span class="id" title="tactic">first</span> <span class="id" title="var">last</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.examples.old_typing.old_subtyping_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>; <span class="id" title="tactic">first</span> <span class="id" title="var">last</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="var">typconstructor</span>; <span class="id" title="var">varsub</span>; <span class="id" title="var">tcrush</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="var">tcrush</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="var">mltcrush</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
@@ -219,9 +217,6 @@ From&nbsp;D.Dot&nbsp;Require&nbsp;Import&nbsp;hoas.&nbsp;*)</span><br/>
 <span class="id" title="keyword">Definition</span> <a name="getAnyTypeT"><span class="id" title="definition">getAnyTypeT</span></a> <span class="id" title="var">pOpt</span> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a> :=<br/>
 &nbsp;&nbsp;<a class="idref" href="D.Dot.syn.syn.html#VlSorts.TAll"><span class="id" title="constructor">TAll</span></a> (<a class="idref" href="D.Dot.examples.ex_utils.html#de54bd15804a49ff154d74c387ead2aa"><span class="id" title="notation">μ</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#de54bd15804a49ff154d74c387ead2aa"><span class="id" title="notation">(</span></a><a class="idref" href="D.Dot.examples.syn.from_pdot_mutual_rec.html#fromPDotPaperAbsTBody"><span class="id" title="definition">fromPDotPaperAbsTBody</span></a> (<a class="idref" href="D.prelude.html#shift"><span class="id" title="abbreviation">shift</span></a> <a class="idref" href="D.Dot.examples.syn.from_pdot_mutual_rec.html#pOpt"><span class="id" title="variable">pOpt</span></a>)<a class="idref" href="D.Dot.examples.ex_utils.html#de54bd15804a49ff154d74c387ead2aa"><span class="id" title="notation">)</span></a>) (<a class="idref" href="https://plv.mpi-sws.org/coqdoc/stdpp//stdpp.base.html#6c0a583aa94fbbce6fcf0f655cf1cbb7"><span class="id" title="notation">⊤</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#0aaa022b3f362eee348503093ff678c1"><span class="id" title="notation">→:</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#DBNotation.x0"><span class="id" title="abbreviation">x0</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#135d56891ed952e50829c63a9f76210c"><span class="id" title="notation">@</span></a> "types" <a class="idref" href="D.Dot.examples.ex_utils.html#da52a1f50d481ecf7cf1e1628db90795"><span class="id" title="notation">@;</span></a> "TypeTop").<br/>
 <span class="id" title="keyword">Definition</span> <a name="getAnyType"><span class="id" title="definition">getAnyType</span></a> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.vl"><span class="id" title="definition">vl</span></a> := <a class="idref" href="D.Dot.syn.syn.html#VlSorts.vabs"><span class="id" title="constructor">vabs</span></a> (<a class="idref" href="D.Dot.syn.syn.html#VlSorts.tskip"><span class="id" title="constructor">tskip</span></a> (<a class="idref" href="D.Dot.syn.syn.html#VlSorts.tproj"><span class="id" title="constructor">tproj</span></a> (<a class="idref" href="D.Dot.syn.syn.html#VlSorts.tproj"><span class="id" title="constructor">tproj</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#DBNotation.x0"><span class="id" title="abbreviation">x0</span></a> "types") "newTypeTop")).<br/>
-
-<br/>
-<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplSubst</span> := <span class="id" title="tactic">rewrite</span> /= /<a class="idref" href="https://www.ps.uni-saarland.de/autosubst/doc//Autosubst.Autosubst_Classes.html#up"><span class="id" title="definition">up</span></a>/= /<a class="idref" href="https://www.ps.uni-saarland.de/autosubst/doc//Autosubst.Autosubst_Classes.html#ids"><span class="id" title="definition">ids</span></a>/<a class="idref" href="D.Dot.syn.syn.html#VlSorts.ids_vl"><span class="id" title="instance">ids_vl</span></a>/=.<br/>
 
 <br/>
 <span class="id" title="keyword">Definition</span> <a name="fromPDotPaperAbsTypesTBodySubst"><span class="id" title="definition">fromPDotPaperAbsTypesTBodySubst</span></a> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a> := <a class="idref" href="D.Dot.examples.ex_utils.html#79b8469010b1fdc3441f00818b43b642"><span class="id" title="notation">{@</span></a><br/>

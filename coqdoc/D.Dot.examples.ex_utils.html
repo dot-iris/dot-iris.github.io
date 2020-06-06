@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab105"></a><h1 class="section">Infrastructure for examples of DOT programs.</h1>
+<a name="lab104"></a><h1 class="section">Infrastructure for examples of DOT programs.</h1>
 
 </div>
 <div class="code">
@@ -45,7 +45,7 @@
 </div>
 
 <div class="doc">
-<a name="lab106"></a><h1 class="section">NOTATIONS</h1>
+<a name="lab105"></a><h1 class="section">NOTATIONS</h1>
 
 </div>
 <div class="code">
@@ -60,31 +60,6 @@
 <br/>
 <span class="id" title="keyword">Identity</span> <span class="id" title="keyword">Coercion</span> <span class="id" title="var">vl2vl_</span> : <span class="id" title="var">vl</span> &gt;-&gt; <span class="id" title="var">vl_</span>.<br/>
 <span class="id" title="keyword">Coercion</span> <span class="id" title="var">vl_2vl</span> := <a class="idref" href="https://www.ps.uni-saarland.de/autosubst/doc//Autosubst.Autosubst_Basics.html#id"><span class="id" title="definition">id</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.ssr.ssreflect.html#aed478b27f23b4f753c27c8ac393febc"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.vl_"><span class="id" title="inductive">vl_</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Logic.html#1c93e43e07fbeaeb6a625cb6614beb5d"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.vl"><span class="id" title="definition">vl</span></a>.<br/>
-
-<br/>
-<span class="id" title="keyword">Module</span> <span class="id" title="keyword">Export</span> <a name="packedStampedTyDefs"><span class="id" title="module">packedStampedTyDefs</span></a>.<br/>
-
-<br/>
-<span class="id" title="keyword">Record</span> <a name="packedStampedTyDefs.preTyMem"><span class="id" title="record">preTyMem</span></a> {<span class="id" title="var">nvl</span>} := <a name="packedStampedTyDefs.MkTy"><span class="id" title="constructor">MkTy</span></a> {<br/>
-&nbsp;&nbsp;<a name="packedStampedTyDefs.pStamp"><span class="id" title="projection">pStamp</span></a> : <a class="idref" href="D.prelude.html#stamp"><span class="id" title="definition">stamp</span></a>;<br/>
-&nbsp;&nbsp;<a name="packedStampedTyDefs.pSubst"><span class="id" title="projection">pSubst</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#nvl"><span class="id" title="variable">nvl</span></a>;<br/>
-&nbsp;&nbsp;<a name="packedStampedTyDefs.pTy"><span class="id" title="projection">pTy</span></a> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a>;<br/>
-&nbsp;&nbsp;<a name="packedStampedTyDefs.pNoVars"><span class="id" title="projection">pNoVars</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>;<br/>
-}.<br/>
-<span class="id" title="keyword">Add</span> <span class="id" title="keyword">Printing</span> <span class="id" title="var">Constructor</span> <span class="id" title="var">preTyMem</span>.<br/>
-
-<br/>
-<span class="id" title="var">Arguments</span> <a class="idref" href="D.Dot.examples.ex_utils.html#packedStampedTyDefs.preTyMem"><span class="id" title="record">preTyMem</span></a> : <span class="id" title="tactic">clear</span> <span class="id" title="var">implicits</span>.<br/>
-<span class="id" title="var">Arguments</span> <a class="idref" href="D.Dot.examples.ex_utils.html#packedStampedTyDefs.MkTy"><span class="id" title="constructor">MkTy</span></a> {<span class="id" title="var">_</span>}.<br/>
-<span class="id" title="var">Arguments</span> <a class="idref" href="D.Dot.examples.ex_utils.html#packedStampedTyDefs.pStamp"><span class="id" title="projection">pStamp</span></a> {<span class="id" title="var">_</span>} !<span class="id" title="var">_</span> /.<br/>
-<span class="id" title="var">Arguments</span> <a class="idref" href="D.Dot.examples.ex_utils.html#packedStampedTyDefs.pSubst"><span class="id" title="projection">pSubst</span></a> {<span class="id" title="var">_</span>} !<span class="id" title="var">_</span> /.<br/>
-<span class="id" title="var">Arguments</span> <a class="idref" href="D.Dot.examples.ex_utils.html#packedStampedTyDefs.pTy"><span class="id" title="projection">pTy</span></a> {<span class="id" title="var">_</span>} !<span class="id" title="var">_</span> /.<br/>
-<span class="id" title="var">Arguments</span> <a class="idref" href="D.Dot.examples.ex_utils.html#packedStampedTyDefs.pNoVars"><span class="id" title="projection">pNoVars</span></a> {<span class="id" title="var">_</span>} !<span class="id" title="var">_</span> /.<br/>
-
-<br/>
-<span class="id" title="keyword">Notation</span> <a name="packedStampedTyDefs.stampTy"><span class="id" title="abbreviation">stampTy</span></a> := (<a class="idref" href="D.Dot.examples.ex_utils.html#packedStampedTyDefs.preTyMem"><span class="id" title="record">preTyMem</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.vl"><span class="id" title="definition">vl</span></a>).<br/>
-<span class="id" title="keyword">Definition</span> <a name="packedStampedTyDefs.dtysem'"><span class="id" title="definition">dtysem'</span></a> : <a class="idref" href="D.Dot.examples.ex_utils.html#packedStampedTyDefs.stampTy"><span class="id" title="abbreviation">stampTy</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Logic.html#1c93e43e07fbeaeb6a625cb6614beb5d"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.dm"><span class="id" title="inductive">dm</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#bc1ad27deabe143d39d35abe6be2c1a4"><span class="id" title="notation">λ</span></a> '(<a class="idref" href="D.Dot.examples.ex_utils.html#packedStampedTyDefs.MkTy"><span class="id" title="constructor">MkTy</span></a> <span class="id" title="var">s</span> σ <span class="id" title="var">_</span> <span class="id" title="var">_</span>)<a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#bc1ad27deabe143d39d35abe6be2c1a4"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.dtysem"><span class="id" title="constructor">dtysem</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#3122c41ebe889f745cb9bbe1c92165c3"><span class="id" title="variable">σ</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#s"><span class="id" title="variable">s</span></a>.<br/>
-<span class="id" title="keyword">End</span> <a class="idref" href="D.Dot.examples.ex_utils.html#packedStampedTyDefs"><span class="id" title="module">packedStampedTyDefs</span></a>.<br/>
 
 <br/>
 <span class="id" title="keyword">Module</span> <span class="id" title="keyword">Import</span> <a name="DBNotation"><span class="id" title="module">DBNotation</span></a>.<br/>
@@ -119,7 +94,7 @@
 </div>
 
 <div class="doc">
-<a name="lab107"></a><h2 class="section">Notation for object values.</h2>
+<a name="lab106"></a><h2 class="section">Notation for object values.</h2>
 
 </div>
 <div class="code">
@@ -141,7 +116,6 @@
 <span class="id" title="keyword">Notation</span> <a name="7814dbee5cfb2f965301a4c116080147"><span class="id" title="notation">&quot;</span></a>'ν' ds " := (<a class="idref" href="D.Dot.syn.syn.html#VlSorts.vobj"><span class="id" title="constructor">vobj</span></a> <span class="id" title="var">ds</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 60, <span class="id" title="var">ds</span> <span class="id" title="tactic">at</span> <span class="id" title="var">next</span> <span class="id" title="keyword">level</span>).<br/>
 <span class="id" title="keyword">Notation</span> <a name="11ed4ae77dfa0a8a04bbf176c5b663ab"><span class="id" title="notation">&quot;</span></a>'val' l = v" := <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">(</span></a><span class="id" title="var">l</span><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.dpt"><span class="id" title="constructor">dpt</span></a> <span class="id" title="var">v</span><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">)</span></a> (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 60, <span class="id" title="var">l</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 50).<br/>
 <span class="id" title="keyword">Notation</span> <a name="18cbea44f75dbca62e37c085a60abaa2"><span class="id" title="notation">&quot;</span></a>'type' l = T  " := <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">(</span></a><span class="id" title="var">l</span><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.dtysyn"><span class="id" title="constructor">dtysyn</span></a> <span class="id" title="var">T</span><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">)</span></a> (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 60, <span class="id" title="var">l</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 50).<br/>
-<span class="id" title="keyword">Notation</span> <a name="7e890c3c3a13faf64315474d96d19494"><span class="id" title="notation">&quot;</span></a>'type' l '=[' T ']'" := <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">(</span></a><span class="id" title="var">l</span><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.ex_utils.html#packedStampedTyDefs.dtysem'"><span class="id" title="definition">dtysem'</span></a> <span class="id" title="var">T</span><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">)</span></a> (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 60, <span class="id" title="var">l</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 50, <span class="id" title="var">T</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 200).<br/>
 
 <br/>
 </div>
@@ -215,20 +189,13 @@ Notation for object types.
 </div>
 
 <div class="doc">
-<a name="lab108"></a><h1 class="section">AUTOMATION</h1>
+<a name="lab107"></a><h1 class="section">AUTOMATION</h1>
 
 </div>
 <div class="code">
 
 <br/>
-<span class="comment">(*&nbsp;Deterministic&nbsp;crush.&nbsp;*)</span><br/>
-<span class="id" title="keyword">Ltac</span> <span class="id" title="var">dcrush</span> := <span class="id" title="tactic">repeat</span> <span class="id" title="tactic">constructor</span>.<br/>
-<span class="id" title="keyword">Ltac</span> <span class="id" title="var">by_dcrush</span> := <span class="id" title="tactic">by</span> <span class="id" title="var">dcrush</span>.<br/>
-
-<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.syn.traversals.html#"><span class="id" title="library">traversals</span></a>.<br/>
-
-<br/>
 <span class="id" title="keyword">Import</span> <span class="id" title="var">Trav1</span>.<br/>
 
 <br/>
