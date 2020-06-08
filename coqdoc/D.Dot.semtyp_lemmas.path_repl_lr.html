@@ -271,8 +271,8 @@ But these minor difficulties don't affect proofs of <span class="inlinecode"><a 
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Definition&nbsp;sptp&nbsp;`{!dlangG&nbsp;Σ}&nbsp;p&nbsp;i&nbsp;Γ&nbsp;(T&nbsp;:&nbsp;oltyO&nbsp;Σ&nbsp;0):&nbsp;iProp&nbsp;Σ&nbsp;:=<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;□∀&nbsp;ρ,&nbsp;sG⟦Γ⟧*&nbsp;ρ&nbsp;→<br/>
--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▷^i&nbsp;path_wp&nbsp;(p.|<span class="inlinecode">ρ</span>)&nbsp;(λ&nbsp;v,&nbsp;oClose&nbsp;T&nbsp;ρ&nbsp;v).<br/>
-+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path_wp&nbsp;(p.|<span class="inlinecode">ρ</span>)&nbsp;(λ&nbsp;v,&nbsp;▷^i&nbsp;oClose&nbsp;T&nbsp;ρ&nbsp;v).<br/>
+-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▷^i&nbsp;path_wp&nbsp;p.|<span class="inlinecode">ρ</span>&nbsp;(λ&nbsp;v,&nbsp;oClose&nbsp;T&nbsp;ρ&nbsp;v).<br/>
++&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path_wp&nbsp;p.|<span class="inlinecode">ρ</span>&nbsp;(λ&nbsp;v,&nbsp;▷^i&nbsp;oClose&nbsp;T&nbsp;ρ&nbsp;v).<br/>
 <br/>
 &nbsp;&nbsp;Then&nbsp;this&nbsp;lemma&nbsp;would&nbsp;already&nbsp;fail:&nbsp;the&nbsp;hypothesis&nbsp;implies&nbsp;that&nbsp;<span class="inlinecode"><span class="id" title="var">p</span></span><br/>
 &nbsp;&nbsp;terminates&nbsp;now,&nbsp;but&nbsp;that&nbsp;<span class="inlinecode"><span class="id" title="var">pself</span></span> <span class="inlinecode"><span class="id" title="var">p</span></span> <span class="inlinecode"><span class="id" title="var">l</span></span>&nbsp;terminates&nbsp;*only&nbsp;under&nbsp;later^i*!<br/>
