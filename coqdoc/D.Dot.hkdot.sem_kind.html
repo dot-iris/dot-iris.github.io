@@ -106,7 +106,7 @@ subtyping on types of arity <span class="inlinecode"><a class="idref" href="D.pu
 </div>
 
 <div class="doc">
-<a name="lab149"></a><h1 class="section">Semantic Full Kind.</h1>
+<a name="lab150"></a><h1 class="section">Semantic Full Kind.</h1>
 
 </div>
 <div class="code">
@@ -370,9 +370,6 @@ Analogue of <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.htm
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;Lemma&nbsp;hoLty_equiv_split0&nbsp;{Σ}&nbsp;(T1&nbsp;T2&nbsp;:&nbsp;hoLtyO&nbsp;Σ&nbsp;0)&nbsp;:<br/>
-&nbsp;&nbsp;hoLty_equiv&nbsp;T1&nbsp;T2&nbsp;-∗&nbsp;oClose&nbsp;T1&nbsp;⊆&nbsp;oClose&nbsp;T2&nbsp;∗&nbsp;oClose&nbsp;T2&nbsp;⊆&nbsp;oClose&nbsp;T1.<br/>
-Proof.&nbsp;apply&nbsp;foo.&nbsp;Qed.&nbsp;*)</span><br/>
 <span class="id" title="keyword">Program Definition</span> <a name="HoSemTypes.sf_kintv"><span class="id" title="definition">sf_kintv</span></a> {<span class="id" title="var">Σ</span>} (<span class="id" title="var">L</span> <span class="id" title="var">U</span> : <a class="idref" href="D.Dot.hkdot.sem_kind.html#L.oltyO"><span class="id" title="abbreviation">oltyO</span></a> <a class="idref" href="D.Dot.hkdot.sem_kind.html#e15c0eb40e61adefe95778c26e7840f6"><span class="id" title="variable">Σ</span></a> 0) : <a class="idref" href="D.Dot.hkdot.sem_kind.html#HoSemTypes.sf_kind"><span class="id" title="record">sf_kind</span></a> <a class="idref" href="D.Dot.hkdot.sem_kind.html#e15c0eb40e61adefe95778c26e7840f6"><span class="id" title="variable">Σ</span></a> 0 :=<br/>
 &nbsp;&nbsp;<a class="idref" href="D.Dot.hkdot.sem_kind.html#HoSemTypes.SfKind"><span class="id" title="abbreviation">SfKind</span></a> (<a class="idref" href="D.Dot.hkdot.sem_kind.html#HoSemTypes.sr_kintv"><span class="id" title="definition">sr_kintv</span></a> <a class="idref" href="D.Dot.hkdot.sem_kind.html#L"><span class="id" title="variable">L</span></a> <a class="idref" href="D.Dot.hkdot.sem_kind.html#U"><span class="id" title="variable">U</span></a>).<br/>
 <span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>. <span class="id" title="var">cbn</span>; <span class="id" title="var">solve_proper_ho</span>. <span class="id" title="keyword">Qed</span>.<br/>
