@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab94"></a><h1 class="section">Judgments defining syntactic gDOT definition and term typing.</h1>
+<a name="lab93"></a><h1 class="section">Judgments defining syntactic gDOT definition and term typing.</h1>
 
 </div>
 <div class="code">
@@ -54,7 +54,7 @@
 </div>
 
 <div class="doc">
-<a name="lab95"></a><h2 class="section">Judgments for typing, subtyping, path and definition typing.</h2>
+<a name="lab94"></a><h2 class="section">Judgments for typing, subtyping, path and definition typing.</h2>
 
 </div>
 <div class="code">
@@ -66,7 +66,7 @@ First, elimination forms  Dependent application; only allowed if the argument is
 </div>
 <div class="code">
 | <a name="iT_All_E_p"><span class="id" title="constructor">iT_All_E_p</span></a> <span class="id" title="var">p2</span> <span class="id" title="var">e1</span> <span class="id" title="var">T1</span> <span class="id" title="var">T2</span>:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.syn.core_stamping_defs.html#is_unstamped_ty'"><span class="id" title="abbreviation">is_unstamped_ty'</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#S"><span class="id" title="constructor">S</span></a> (<a class="idref" href="https://plv.mpi-sws.org/coqdoc/stdpp//stdpp.base.html#length"><span class="id" title="abbreviation">length</span></a> <a class="idref" href="D.Dot.typing.typing.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a>)) <a class="idref" href="D.Dot.typing.typing.html#T2"><span class="id" title="variable">T2</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.syn.core_stamping_defs.html#is_unstamped_ty'"><span class="id" title="abbreviation">is_unstamped_ty'</span></a> <a class="idref" href="D.succ_notation.html#bda89d73ec4a8f23ae92b565ffb5aaa6"><span class="id" title="notation">(</span></a><a class="idref" href="https://plv.mpi-sws.org/coqdoc/stdpp//stdpp.base.html#length"><span class="id" title="abbreviation">length</span></a> <a class="idref" href="D.Dot.typing.typing.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a><a class="idref" href="D.succ_notation.html#bda89d73ec4a8f23ae92b565ffb5aaa6"><span class="id" title="notation">).+1</span></a> <a class="idref" href="D.Dot.typing.typing.html#T2"><span class="id" title="variable">T2</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.typing.typing.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">t</span></a><a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">⊢ₜ</span></a> <a class="idref" href="D.Dot.typing.typing.html#e1"><span class="id" title="variable">e1</span></a><a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.TAll"><span class="id" title="constructor">TAll</span></a> <a class="idref" href="D.Dot.typing.typing.html#T1"><span class="id" title="variable">T1</span></a> <a class="idref" href="D.Dot.typing.typing.html#T2"><span class="id" title="variable">T2</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.typing.typing.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.typing.subtyping.html#4f2711d2ea994964122212f3aa81e6d8"><span class="id" title="notation">t</span></a><a class="idref" href="D.Dot.typing.subtyping.html#4f2711d2ea994964122212f3aa81e6d8"><span class="id" title="notation">⊢ₚ</span></a> <a class="idref" href="D.Dot.typing.typing.html#p2"><span class="id" title="variable">p2</span></a> <a class="idref" href="D.Dot.typing.subtyping.html#4f2711d2ea994964122212f3aa81e6d8"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.typing.typing.html#T1"><span class="id" title="variable">T1</span></a><a class="idref" href="D.Dot.typing.subtyping.html#4f2711d2ea994964122212f3aa81e6d8"><span class="id" title="notation">,</span></a> 0 <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*────────────────────────────────────────────────────────────*)</span><br/>
@@ -190,7 +190,7 @@ Primitives.
 </div>
 
 <div class="doc">
-<a name="lab96"></a><h2 class="section">A few derived rules, and some automation to use them in examples.</h2>
+<a name="lab95"></a><h2 class="section">A few derived rules, and some automation to use them in examples.</h2>
 
 </div>
 <div class="code">
