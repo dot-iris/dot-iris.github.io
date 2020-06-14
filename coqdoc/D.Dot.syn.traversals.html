@@ -174,6 +174,63 @@
 <span class="id" title="keyword">Global Hint Extern</span> 0 (<a class="idref" href="D.Dot.syn.traversals.html#Trav1.dtysynP"><span class="id" title="projection">dtysynP</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>)   ⇒ <span class="id" title="tactic">progress</span> <span class="id" title="var">cbn</span> : <span class="id" title="var">core</span>.<br/>
 <span class="id" title="keyword">Global Hint Extern</span> 0 (<a class="idref" href="D.Dot.syn.traversals.html#Trav1.dtysemP"><span class="id" title="projection">dtysemP</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>)   ⇒ <span class="id" title="tactic">progress</span> <span class="id" title="var">cbn</span> : <span class="id" title="var">core</span>.<br/>
 <span class="id" title="keyword">Global Hint Extern</span> 0 (<a class="idref" href="D.Dot.syn.traversals.html#Trav1.pathRootP"><span class="id" title="projection">pathRootP</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>) ⇒ <span class="id" title="tactic">progress</span> <span class="id" title="var">cbn</span> : <span class="id" title="var">core</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Global Hint Extern</span> 0 (<a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_tm"><span class="id" title="inductive">forall_traversal_tm</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>)   ⇒ <span class="id" title="tactic">progress</span> <span class="id" title="var">cbn</span> : <span class="id" title="var">core</span>.<br/>
+<span class="id" title="keyword">Global Hint Extern</span> 0 (<a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_vl"><span class="id" title="inductive">forall_traversal_vl</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>)   ⇒ <span class="id" title="tactic">progress</span> <span class="id" title="var">cbn</span> : <span class="id" title="var">core</span>.<br/>
+<span class="id" title="keyword">Global Hint Extern</span> 0 (<a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_dm"><span class="id" title="inductive">forall_traversal_dm</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>)   ⇒ <span class="id" title="tactic">progress</span> <span class="id" title="var">cbn</span> : <span class="id" title="var">core</span>.<br/>
+<span class="id" title="keyword">Global Hint Extern</span> 0 (<a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_path"><span class="id" title="inductive">forall_traversal_path</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>) ⇒ <span class="id" title="tactic">progress</span> <span class="id" title="var">cbn</span> : <span class="id" title="var">core</span>.<br/>
+<span class="id" title="keyword">Global Hint Extern</span> 0 (<a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_ty"><span class="id" title="inductive">forall_traversal_ty</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>)   ⇒ <span class="id" title="tactic">progress</span> <span class="id" title="var">cbn</span> : <span class="id" title="var">core</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Tactics to invert uses of <span class="inlinecode"><span class="id" title="var">forall_traversal_</span>×</span>. 
+<div class="paragraph"> </div>
+
+ Use <span class="inlinecode"><span class="id" title="var">inverse</span></span> on <span class="inlinecode"><span class="id" title="var">H</span></span>, but only if it produces at most one goal, and mark
+<span class="inlinecode"><span class="id" title="var">H</span></span> as used. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">inverse_once</span> <span class="id" title="var">H</span> := <span class="id" title="var">nosplit</span> (<span class="id" title="var">try_once_tac</span> <span class="id" title="var">H</span> (<span class="id" title="var">inverse</span> <span class="id" title="var">H</span>)).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Using cbn exposes further assumption of form is{un,}stamped, allowing for
+further inversions. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">inverse_once_cbn</span> <span class="id" title="var">H</span> := <span class="id" title="var">nosplit</span> (<span class="id" title="var">try_once_tac</span> <span class="id" title="var">H</span> (<span class="id" title="var">inverse</span> <span class="id" title="var">H</span>)); <span class="id" title="var">cbn</span> <span class="id" title="tactic">in</span> ×.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Apply <span class="inlinecode"><span class="id" title="var">tac</span></span> to <i>one</i> hypothesis of shape <span class="inlinecode"><span class="id" title="var">forall_traversal_</span>×</span> <span class="inlinecode"><span class="id" title="var">trav</span></span> <span class="inlinecode"><span class="id" title="var">_</span></span> <span class="inlinecode"><span class="id" title="var">_</span></span>. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">with_forall_traversal</span> <span class="id" title="var">trav</span> <span class="id" title="var">tac</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">H</span>: <a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_ty"><span class="id" title="inductive">forall_traversal_ty</span></a>   <span class="id" title="var">trav</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> |- <span class="id" title="var">_</span> ⇒ <span class="id" title="var">tac</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">H</span>: <a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_tm"><span class="id" title="inductive">forall_traversal_tm</span></a>   <span class="id" title="var">trav</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> |- <span class="id" title="var">_</span> ⇒ <span class="id" title="var">tac</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">H</span>: <a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_dm"><span class="id" title="inductive">forall_traversal_dm</span></a>   <span class="id" title="var">trav</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> |- <span class="id" title="var">_</span> ⇒ <span class="id" title="var">tac</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">H</span>: <a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_path"><span class="id" title="inductive">forall_traversal_path</span></a> <span class="id" title="var">trav</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> |- <span class="id" title="var">_</span> ⇒ <span class="id" title="var">tac</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">H</span>: <a class="idref" href="D.Dot.syn.traversals.html#Trav1.forall_traversal_vl"><span class="id" title="inductive">forall_traversal_vl</span></a>   <span class="id" title="var">trav</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> |- <span class="id" title="var">_</span> ⇒ <span class="id" title="var">tac</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+</div>
+
+<div class="doc">
+Invert once each hypothesis of shape <span class="inlinecode"><span class="id" title="var">forall_traversal_</span>×</span> <span class="inlinecode"><span class="id" title="var">trav</span></span> <span class="inlinecode"><span class="id" title="var">_</span></span> <span class="inlinecode"><span class="id" title="var">_</span></span>, as
+long as inversion only produces a single result. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">inverse_forall_traversal</span> <span class="id" title="var">trav</span> :=<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">repeat</span> <span class="id" title="var">with_forall_traversal</span> <span class="id" title="var">trav</span> <span class="id" title="var">inverse_once_cbn</span>); <span class="id" title="var">un_usedLemma</span>.<br/>
+
+<br/>
 <span class="id" title="keyword">End</span> <a class="idref" href="D.Dot.syn.traversals.html#Trav1"><span class="id" title="module">Trav1</span></a>.<br/>
 
 <br/>
