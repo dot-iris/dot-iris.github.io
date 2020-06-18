@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab140"></a><h1 class="section">Encoding covariant lists.</h1>
+<a name="lab142"></a><h1 class="section">Encoding covariant lists.</h1>
 
 
 <div class="paragraph"> </div>
@@ -87,7 +87,7 @@ implementation we provide, and how to <i>use</i> lists.
 </div>
 
 <div class="doc">
-<a name="lab141"></a><h2 class="section">Interface of the list module.</h2>
+<a name="lab143"></a><h2 class="section">Interface of the list module.</h2>
 
 </div>
 <div class="code">
@@ -105,7 +105,7 @@ implementation we provide, and how to <i>use</i> lists.
 </div>
 
 <div class="doc">
-<a name="lab142"></a><h3 class="section">The list type itself.</h3>
+<a name="lab144"></a><h3 class="section">The list type itself.</h3>
 
 </div>
 <div class="code">
@@ -164,7 +164,7 @@ mod stands for module.
 </div>
 
 <div class="doc">
-<a name="lab143"></a><h2 class="section">Implementation of the list module.</h2>
+<a name="lab145"></a><h2 class="section">Implementation of the list module.</h2>
 
 </div>
 <div class="code">
@@ -198,7 +198,7 @@ mod stands for module.
 </div>
 
 <div class="doc">
-<a name="lab144"></a><h2 class="section">Auxiliary types, needed in derivations of typing judgments.</h2>
+<a name="lab146"></a><h2 class="section">Auxiliary types, needed in derivations of typing judgments.</h2>
 
 </div>
 <div class="code">
@@ -225,7 +225,7 @@ mod stands for module.
 </div>
 
 <div class="doc">
-<a name="lab145"></a><h2 class="section">Lemmas for proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
+<a name="lab147"></a><h2 class="section">Lemmas for proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
 
 </div>
 <div class="code">
@@ -272,12 +272,12 @@ Typecheck returned head:
 <div class="paragraph"> </div>
 
     Hence, <span class="inlinecode"><span class="id" title="var">x.A</span></span> is the type argument to <span class="inlinecode"><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cons"><span class="id" title="constructor">cons</span></a></span>, and <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.list.html#tl"><span class="id" title="variable">tl</span></a></span> has type
-    <span class="inlinecode"><span class="id" title="library">List</span></span> <span class="inlinecode">&amp;</span> <span class="inlinecode">{<a class="idref" href="D.iris_extra.iris_prelude.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">=</span> <span class="inlinecode"><span class="id" title="var">x.A</span>}</span>.
+    <span class="inlinecode"><span class="id" title="library">List</span></span> <span class="inlinecode">&amp;</span> <span class="inlinecode">{<a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">=</span> <span class="inlinecode"><span class="id" title="var">x.A</span>}</span>.
 
 <div class="paragraph"> </div>
 
     Since <span class="inlinecode"><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cons"><span class="id" title="constructor">cons</span></a></span> constructs a new object, <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.list.html#hconsTConcr"><span class="id" title="definition">hconsTConcr</span></a></span> types it against
-    a *copy* of the list body, whose element type <span class="inlinecode"><span class="id" title="var">self.A</span></span> is a copy of <span class="inlinecode"><span class="id" title="var">x.A</span></span>.  Hence, we must show that <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.list.html#tl"><span class="id" title="variable">tl</span></a></span> has type <span class="inlinecode"><span class="id" title="library">List</span></span> <span class="inlinecode">&amp;</span> <span class="inlinecode">{<a class="idref" href="D.iris_extra.iris_prelude.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">=</span> <span class="inlinecode"><span class="id" title="var">self.A</span>}</span>.  It suffices to show that <span class="inlinecode"><span class="id" title="library">List</span></span> <span class="inlinecode">&amp;</span> <span class="inlinecode">{<a class="idref" href="D.iris_extra.iris_prelude.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">=</span> <span class="inlinecode"><span class="id" title="var">x.A</span>}</span> <span class="inlinecode">&lt;:</span> <span class="inlinecode"><span class="id" title="library">List</span></span> <span class="inlinecode">&amp;</span> <span class="inlinecode">{<a class="idref" href="D.iris_extra.iris_prelude.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">=</span> <span class="inlinecode"><span class="id" title="var">self.A</span>}</span>: 
+    a *copy* of the list body, whose element type <span class="inlinecode"><span class="id" title="var">self.A</span></span> is a copy of <span class="inlinecode"><span class="id" title="var">x.A</span></span>.  Hence, we must show that <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.list.html#tl"><span class="id" title="variable">tl</span></a></span> has type <span class="inlinecode"><span class="id" title="library">List</span></span> <span class="inlinecode">&amp;</span> <span class="inlinecode">{<a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">=</span> <span class="inlinecode"><span class="id" title="var">self.A</span>}</span>.  It suffices to show that <span class="inlinecode"><span class="id" title="library">List</span></span> <span class="inlinecode">&amp;</span> <span class="inlinecode">{<a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">=</span> <span class="inlinecode"><span class="id" title="var">x.A</span>}</span> <span class="inlinecode">&lt;:</span> <span class="inlinecode"><span class="id" title="library">List</span></span> <span class="inlinecode">&amp;</span> <span class="inlinecode">{<a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">=</span> <span class="inlinecode"><span class="id" title="var">self.A</span>}</span>: 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="id" title="var">varsub</span>.<br/>
@@ -293,7 +293,7 @@ It suffices to show that <span class="inlinecode"><span class="id" title="var">x
 </div>
 
 <div class="doc">
-We do it using <span class="inlinecode"><a class="idref" href="D.Dot.examples.old_typing.old_subtyping_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a></span> on <span class="inlinecode"><span class="id" title="var">self.A</span></span>, and looking up <span class="inlinecode"><a class="idref" href="D.iris_extra.iris_prelude.html#A"><span class="id" title="variable">A</span></a></span> on <span class="inlinecode"><a class="idref" href="D.Dot.examples.hoas_ex_utils.html#self"><span class="id" title="variable">self</span></a></span>'s type. 
+We do it using <span class="inlinecode"><a class="idref" href="D.Dot.examples.old_typing.old_subtyping_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a></span> on <span class="inlinecode"><span class="id" title="var">self.A</span></span>, and looking up <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span> on <span class="inlinecode"><a class="idref" href="D.Dot.examples.hoas_ex_utils.html#self"><span class="id" title="variable">self</span></a></span>'s type. 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.examples.old_typing.old_subtyping_derived_rules.html#iSub_Sel'"><span class="id" title="lemma">iSub_Sel'</span></a>, (<a class="idref" href="D.Dot.examples.old_typing.old_subtyping_derived_rules.html#path_tp_delay"><span class="id" title="lemma">path_tp_delay</span></a> (<span class="id" title="var">i</span> := 0)); <span class="id" title="var">wtcrush</span>. <span class="id" title="var">varsub</span>; <span class="id" title="var">ltcrush</span>.<br/>
@@ -321,7 +321,7 @@ We do it using <span class="inlinecode"><a class="idref" href="D.Dot.examples.ol
 </div>
 
 <div class="doc">
-<a name="lab146"></a><h2 class="section">Proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
+<a name="lab148"></a><h2 class="section">Proof that <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.list.html#hlistModV"><span class="id" title="definition">hlistModV</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.list.html#hlistModT"><span class="id" title="definition">hlistModT</span></a></span>.</h2>
 
 </div>
 <div class="code">
@@ -336,7 +336,7 @@ We do it using <span class="inlinecode"><a class="idref" href="D.Dot.examples.ol
 </div>
 
 <div class="doc">
-<a name="lab147"></a><h2 class="section">Link lists with booleans.</h2>
+<a name="lab149"></a><h2 class="section">Link lists with booleans.</h2>
 
 </div>
 <div class="code">
@@ -414,7 +414,7 @@ I'd rather not.
 </div>
 
 <div class="doc">
-<a name="lab148"></a><h2 class="section">Link lists with booleans and with a client using the list API.</h2>
+<a name="lab150"></a><h2 class="section">Link lists with booleans and with a client using the list API.</h2>
 
 </div>
 <div class="code">

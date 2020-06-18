@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab98"></a><h1 class="section">Auxiliary typing judgments and lemmas, shared between different variants of the typing judgment.</h1>
+<a name="lab100"></a><h1 class="section">Auxiliary typing judgments and lemmas, shared between different variants of the typing judgment.</h1>
 
 </div>
 <div class="code">
@@ -70,7 +70,7 @@
 </div>
 
 <div class="doc">
-<a name="lab99"></a><h2 class="section">When is a context weaker than another? While we don't give complete</h2>
+<a name="lab101"></a><h2 class="section">When is a context weaker than another? While we don't give complete</h2>
 
 rules, we develop some infrastructure to allow "stripping" laters from the
 context. 
@@ -107,7 +107,7 @@ A left inverse of TLater. Sometimes written ⊲.
 </div>
 
 <div class="doc">
-<a name="lab100"></a><h2 class="section">The <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T1"><span class="id" title="variable">T1</span></a></span> <span class="inlinecode">≫</span> <span class="inlinecode">▷</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T2"><span class="id" title="variable">T2</span></a></span> judgment, used in the <span class="inlinecode"><a class="idref" href="D.Dot.lr.later_sub_sem.html#bbb14d0bcc77c44a469e43c5550510ff"><span class="id" title="variable">Γ1</span></a></span> <span class="inlinecode">≫</span> <span class="inlinecode">▷</span> <span class="inlinecode"><a class="idref" href="D.Dot.lr.later_sub_sem.html#6c0158f5c62df1db2d6c7f19ff8ac537"><span class="id" title="variable">Γ2</span></a></span> paper judgment.</h2>
+<a name="lab102"></a><h2 class="section">The <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T1"><span class="id" title="variable">T1</span></a></span> <span class="inlinecode">≫</span> <span class="inlinecode">▷</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T2"><span class="id" title="variable">T2</span></a></span> judgment, used in the <span class="inlinecode"><a class="idref" href="D.Dot.lr.later_sub_sem.html#bbb14d0bcc77c44a469e43c5550510ff"><span class="id" title="variable">Γ1</span></a></span> <span class="inlinecode">≫</span> <span class="inlinecode">▷</span> <span class="inlinecode"><a class="idref" href="D.Dot.lr.later_sub_sem.html#6c0158f5c62df1db2d6c7f19ff8ac537"><span class="id" title="variable">Γ2</span></a></span> paper judgment.</h2>
 
 </div>
 <div class="code">
@@ -129,11 +129,11 @@ A left inverse of TLater. Sometimes written ⊲.
 </div>
 
 <div class="doc">
-Auxiliary judgment <span class="inlinecode">⊢<a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T1"><span class="id" title="variable">T1</span></a></span> <span class="inlinecode">&lt;:</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T2"><span class="id" title="variable">T2</span></a></span>; this is <i>not</i> the main subtyping judgment,
+Auxiliary judgment <span class="inlinecode">⊢<a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T1"><span class="id" title="variable">T1</span></a></span> <span class="inlinecode">&lt;:</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T2"><span class="id" title="variable">T2</span></a></span>; this is <i>not</i> the main subtyping judgment,
 and is just used for context stripping.  The actual constructor is <span class="inlinecode"><a class="idref" href="D.Dot.typing.typing_aux_defs.html#ty_sub_TLater_add_syn"><span class="id" title="constructor">ty_sub_TLater_add_syn</span></a></span>; the other ones are
 just congruence under <span class="inlinecode"><a class="idref" href="D.DSub.syn.ds_syn.html#VlSorts.TLater"><span class="id" title="constructor">TLater</span></a></span>, <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#VlSorts.TAnd"><span class="id" title="constructor">TAnd</span></a></span>, <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#VlSorts.TOr"><span class="id" title="constructor">TOr</span></a></span>.
 We also add transitivity: it is not admissible, and the counterexample is
-<span class="inlinecode">⊢<a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">&lt;:</span> <span class="inlinecode"><a class="idref" href="D.DSub.syn.ds_syn.html#VlSorts.TLater"><span class="id" title="constructor">TLater</span></a></span> <span class="inlinecode">(<a class="idref" href="D.DSub.syn.ds_syn.html#VlSorts.TLater"><span class="id" title="constructor">TLater</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a>)</span>. 
+<span class="inlinecode">⊢<a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">&lt;:</span> <span class="inlinecode"><a class="idref" href="D.DSub.syn.ds_syn.html#VlSorts.TLater"><span class="id" title="constructor">TLater</span></a></span> <span class="inlinecode">(<a class="idref" href="D.DSub.syn.ds_syn.html#VlSorts.TLater"><span class="id" title="constructor">TLater</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>)</span>. 
 </div>
 <div class="code">
 <span class="id" title="keyword">Inductive</span> <a name="ty_sub_syn"><span class="id" title="inductive">ty_sub_syn</span></a> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Prop</span> :=<br/>
@@ -187,7 +187,7 @@ Control transitivity to ensure <span class="inlinecode"><span class="id" title="
 </div>
 
 <div class="doc">
-<a name="lab101"></a><h2 class="section">The <span class="inlinecode"><a class="idref" href="D.Dot.lr.later_sub_sem.html#bbb14d0bcc77c44a469e43c5550510ff"><span class="id" title="variable">Γ1</span></a></span> <span class="inlinecode">≫▷</span> <span class="inlinecode"><a class="idref" href="D.Dot.lr.later_sub_sem.html#6c0158f5c62df1db2d6c7f19ff8ac537"><span class="id" title="variable">Γ2</span></a></span> judgment from the paper.</h2>
+<a name="lab103"></a><h2 class="section">The <span class="inlinecode"><a class="idref" href="D.Dot.lr.later_sub_sem.html#bbb14d0bcc77c44a469e43c5550510ff"><span class="id" title="variable">Γ1</span></a></span> <span class="inlinecode">≫▷</span> <span class="inlinecode"><a class="idref" href="D.Dot.lr.later_sub_sem.html#6c0158f5c62df1db2d6c7f19ff8ac537"><span class="id" title="variable">Γ2</span></a></span> judgment from the paper.</h2>
 
 </div>
 <div class="code">

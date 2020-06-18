@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab74"></a><h1 class="section">Logical relation and semantic judgments.</h1>
+<a name="lab76"></a><h1 class="section">Logical relation and semantic judgments.</h1>
 
 </div>
 <div class="code">
@@ -57,13 +57,13 @@
 </div>
 
 <div class="doc">
-The logical relation on values is <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦<a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a>⟧</span>. We also define the logical
-    relation on definitions <span class="inlinecode"><span class="id" title="var">Ds</span>⟦<a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a>⟧</span>.
+The logical relation on values is <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦<a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>⟧</span>. We also define the logical
+    relation on definitions <span class="inlinecode"><span class="id" title="var">Ds</span>⟦<a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>⟧</span>.
 
 <div class="paragraph"> </div>
 
     Both definitions follow the one on paper; concretely, they are defined
-    through <span class="inlinecode"><a class="idref" href="D.iris_extra.iris_prelude.html#C"><span class="id" title="variable">C</span></a>⟦<a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a>⟧</span> in instance <span class="inlinecode"><a class="idref" href="D.Dot.lr.unary_lr.html#dot_interp"><span class="id" title="instance">dot_interp</span></a></span>.
+    through <span class="inlinecode"><a class="idref" href="D.iris_extra.iris_prelude.html#C"><span class="id" title="variable">C</span></a>⟦<a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>⟧</span> in instance <span class="inlinecode"><a class="idref" href="D.Dot.lr.unary_lr.html#dot_interp"><span class="id" title="instance">dot_interp</span></a></span>.
 
 <div class="paragraph"> </div>
 
@@ -72,8 +72,8 @@ The logical relation on values is <span class="inlinecode"><a class="idref" href
 <div class="paragraph"> </div>
 
     Both relations interprets *open* types into predicates over values that
-    are meant to be closed. So for instance <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦<a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a>⟧</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.dlang.html#args"><span class="id" title="variable">args</span></a></span> <span class="inlinecode">ρ</span> <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> applies substitution <span class="inlinecode">ρ</span>
-    to <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span>, but not to <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span>. We don't actually require that <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> be closed.
+    are meant to be closed. So for instance <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦<a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>⟧</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.dlang.html#args"><span class="id" title="variable">args</span></a></span> <span class="inlinecode">ρ</span> <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> applies substitution <span class="inlinecode">ρ</span>
+    to <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span>, but not to <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span>. We don't actually require that <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> be closed.
 
 <div class="paragraph"> </div>
 
@@ -87,7 +87,7 @@ The logical relation on values is <span class="inlinecode"><a class="idref" href
  
 <div class="paragraph"> </div>
 
-<a name="lab75"></a><h2 class="section">Define fully semantic judgments. They accept arbitrary semantic types.</h2>
+<a name="lab77"></a><h2 class="section">Define fully semantic judgments. They accept arbitrary semantic types.</h2>
 
 </div>
 <div class="code">
@@ -254,7 +254,7 @@ When a definition points to a semantic type. Inlined in paper.
 </div>
 
 <div class="doc">
-<a name="lab76"></a><h2 class="section">Semantic path substitution and replacement.</h2>
+<a name="lab78"></a><h2 class="section">Semantic path substitution and replacement.</h2>
 
 <div class="paragraph"> </div>
 
@@ -316,7 +316,7 @@ sufficient for our goals and faster to use in certain proofs.
 </div>
 
 <div class="doc">
-<a name="lab77"></a><h2 class="section">gDOT semantic types.</h2>
+<a name="lab79"></a><h2 class="section">gDOT semantic types.</h2>
 
 </div>
 <div class="code">
@@ -339,7 +339,7 @@ sufficient for our goals and faster to use in certain proofs.
 </div>
 
 <div class="doc">
-<span class="inlinecode"></span> <span class="inlinecode"><a class="idref" href="D.DSub.lr.ds_unary_lr.html#D"><span class="id" title="abbreviation">D</span></a>⟦</span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.iris_prelude.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">::</span> <span class="inlinecode">τ1</span> <span class="inlinecode">..</span> <span class="inlinecode">τ2</span> <span class="inlinecode">}</span> <span class="inlinecode">⟧</span> <span class="inlinecode"></span>. 
+<span class="inlinecode"></span> <span class="inlinecode"><a class="idref" href="D.DSub.lr.ds_unary_lr.html#D"><span class="id" title="abbreviation">D</span></a>⟦</span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">::</span> <span class="inlinecode">τ1</span> <span class="inlinecode">..</span> <span class="inlinecode">τ2</span> <span class="inlinecode">}</span> <span class="inlinecode">⟧</span> <span class="inlinecode"></span>. 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a name="oDTMem"><span class="id" title="definition">oDTMem</span></a> τ1 τ2 : <a class="idref" href="D.Dot.lr.dot_lty.html#dltyO"><span class="id" title="abbreviation">dltyO</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#0ce9935768a4f61376857a9a960895f5"><span class="id" title="variable">Σ</span></a> := <a class="idref" href="D.Dot.lr.dot_lty.html#Dlty"><span class="id" title="abbreviation">Dlty</span></a> (<a class="idref" href="D.iris_extra.iris_prelude.html#20319bb2b4b1b488f74bc651672f060a"><span class="id" title="notation">λI</span></a> ρ <span class="id" title="var">d</span><a class="idref" href="D.iris_extra.iris_prelude.html#20319bb2b4b1b488f74bc651672f060a"><span class="id" title="notation">,</span></a><br/>
@@ -453,7 +453,7 @@ Semantics of primitive types.
 </div>
 
 <div class="doc">
-Dispatch function defining <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span> and <span class="inlinecode"><span class="id" title="var">Ds</span>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span>. 
+Dispatch function defining <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span> and <span class="inlinecode"><span class="id" title="var">Ds</span>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span>. 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="comment">(*&nbsp;Observe&nbsp;the&nbsp;naming&nbsp;pattern&nbsp;for&nbsp;semantic&nbsp;type&nbsp;constructors:<br/>
@@ -493,7 +493,7 @@ Unfolding lemma for <span class="inlinecode"><a class="idref" href="D.Dot.syn.sy
 </div>
 
 <div class="doc">
-Binding lemmas for <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span> and <span class="inlinecode"><span class="id" title="var">Ds</span>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span>. 
+Binding lemmas for <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span> and <span class="inlinecode"><span class="id" title="var">Ds</span>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span>. 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="id" title="keyword">Global Instance</span> <a name="pinterp_lemmas"><span class="id" title="instance">pinterp_lemmas</span></a>: <a class="idref" href="D.Dot.lr.dot_lty.html#CTyInterpLemmas"><span class="id" title="class">CTyInterpLemmas</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#0ce9935768a4f61376857a9a960895f5"><span class="id" title="variable">Σ</span></a>.<br/>
@@ -575,7 +575,7 @@ Expression typing
 </div>
 
 <div class="doc">
-<a name="lab78"></a><h2 class="section">Show these typing judgments are equivalent to what we present in the paper.</h2>
+<a name="lab80"></a><h2 class="section">Show these typing judgments are equivalent to what we present in the paper.</h2>
 
 </div>
 <div class="code">
@@ -827,7 +827,7 @@ Beware: we can do path replacement *before* substitution,
 <div class="doc">
   Prove that semantic and syntactic substitution of paths in types agree.
   However, this proof only works for paths that normalize; that's because
-  <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span> <span class="inlinecode">.<span class="id" title="var">sTp</span>[</span> <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span> <span class="inlinecode">/]</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.dlang.html#args"><span class="id" title="variable">args</span></a></span> <span class="inlinecode">ρ</span> <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> asserts that <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span> terminates, while
+  <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">⟧</span> <span class="inlinecode">.<span class="id" title="var">sTp</span>[</span> <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span> <span class="inlinecode">/]</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.dlang.html#args"><span class="id" title="variable">args</span></a></span> <span class="inlinecode">ρ</span> <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> asserts that <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span> terminates, while
   <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>⟦</span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.path_repl.html#T'"><span class="id" title="variable">T'</span></a></span> <span class="inlinecode">⟧</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.dlang.html#args"><span class="id" title="variable">args</span></a></span> <span class="inlinecode">ρ</span> <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> need not assert that (say, because <span class="inlinecode"><a class="idref" href="D.Dot.syn.path_repl.html#T'"><span class="id" title="variable">T'</span></a></span> is
   <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#VlSorts.TOr"><span class="id" title="constructor">TOr</span></a></span> <span class="inlinecode"><a class="idref" href="D.DSub.syn.ds_syn.html#VlSorts.TTop"><span class="id" title="constructor">TTop</span></a></span> <span class="inlinecode">(<a class="idref" href="D.DSub.syn.ds_syn.html#VlSorts.TSel"><span class="id" title="constructor">TSel</span></a></span> <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#l"><span class="id" title="variable">l</span></a>)</span>.
   
@@ -947,7 +947,7 @@ Backward compatibility.
 Adequacy of normalization for gDOT paths. 
 </div>
 <div class="code">
-<span class="id" title="keyword">Lemma</span> <a name="ipwp_gs_adequacy"><span class="id" title="lemma">ipwp_gs_adequacy</span></a> <span class="id" title="var">Σ</span> `{!<a class="idref" href="D.Dot.lr.dlang_inst.html#dlang_adequacy.dlangPreG"><span class="id" title="class">dlangPreG</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#e15c0eb40e61adefe95778c26e7840f6"><span class="id" title="variable">Σ</span></a>} `{!<a class="idref" href="D.iris_extra.swap_later_impl.html#SwapPropI"><span class="id" title="abbreviation">SwapPropI</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#e15c0eb40e61adefe95778c26e7840f6"><span class="id" title="variable">Σ</span></a>} {<span class="id" title="var">p</span> <span class="id" title="var">T</span> <span class="id" title="var">i</span>}<br/>
+<span class="id" title="keyword">Lemma</span> <a name="ipwp_gs_adequacy"><span class="id" title="lemma">ipwp_gs_adequacy</span></a> <span class="id" title="var">Σ</span> `{!<a class="idref" href="D.Dot.lr.dlang_inst.html#dlangG"><span class="id" title="class">dlangG</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#e15c0eb40e61adefe95778c26e7840f6"><span class="id" title="variable">Σ</span></a>} `{!<a class="idref" href="D.iris_extra.swap_later_impl.html#SwapPropI"><span class="id" title="abbreviation">SwapPropI</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#e15c0eb40e61adefe95778c26e7840f6"><span class="id" title="variable">Σ</span></a>} {<span class="id" title="var">p</span> <span class="id" title="var">T</span> <span class="id" title="var">i</span>}<br/>
 &nbsp;&nbsp;(<span class="id" title="var">Hwp</span> : <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">∀</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">`(</span></a><span class="id" title="var">Hdlang</span> : !<a class="idref" href="D.Dot.lr.dlang_inst.html#dlangG"><span class="id" title="class">dlangG</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#e15c0eb40e61adefe95778c26e7840f6"><span class="id" title="variable">Σ</span></a>) `(!<a class="idref" href="D.iris_extra.swap_later_impl.html#SwapPropI"><span class="id" title="abbreviation">SwapPropI</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#e15c0eb40e61adefe95778c26e7840f6"><span class="id" title="variable">Σ</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">),</span></a> <a class="idref" href="https://plv.mpi-sws.org/coqdoc/iris//iris.bi.interface.html#b7d65d242d889c3e37aca6013a51bfad"><span class="id" title="notation">⊢</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Lists.List.html#ae9a5e1034e143b218b09d8e454472bd"><span class="id" title="notation">[]</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#615c6b406a9d4d675feb328bc8bf97f6"><span class="id" title="notation">⊨</span></a><a class="idref" href="D.Dot.lr.unary_lr.html#615c6b406a9d4d675feb328bc8bf97f6"><span class="id" title="notation">p</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#p"><span class="id" title="variable">p</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#615c6b406a9d4d675feb328bc8bf97f6"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#T"><span class="id" title="variable">T</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#615c6b406a9d4d675feb328bc8bf97f6"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#i"><span class="id" title="variable">i</span></a>):<br/>
 &nbsp;&nbsp;<a class="idref" href="D.iris_extra.det_reduction.html#terminates"><span class="id" title="definition">terminates</span></a> (<a class="idref" href="D.Dot.syn.syn.html#VlSorts.path2tm"><span class="id" title="definition">path2tm</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#p"><span class="id" title="variable">p</span></a>).<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
