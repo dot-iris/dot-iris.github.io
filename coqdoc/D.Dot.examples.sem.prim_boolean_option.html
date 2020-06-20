@@ -26,6 +26,14 @@
 <h1 class="libtitle">D.Dot.examples.sem.prim_boolean_option</h1>
 
 <div class="code">
+</div>
+
+<div class="doc">
+Encoding Option, using primitive booleans; we export Option as an abstract type.
+The core lemma is <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.scala_lib.html#option.optionModInvTyp"><span class="id" title="definition">optionModInvTyp</span></a></span>.
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">D</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.tactics.html#"><span class="id" title="library">tactics</span></a>.<br/>
@@ -45,17 +53,8 @@
 <span class="id" title="keyword">Import</span> <span class="id" title="var">hoasNotation</span>.<br/>
 
 <br/>
-</div>
-
-<div class="doc">
-Encoding Option, using primitive booleans; we export Option as an abstract type.
-
-</div>
-<div class="code">
-
-<br/>
 <span class="comment">(*<br/>
-&nbsp;&nbsp;Source&nbsp;in&nbsp;pseudo-Scala.<br/>
+&nbsp;&nbsp;Approximated&nbsp;source,&nbsp;in&nbsp;pseudo-Scala.<br/>
 <br/>
 &nbsp;&nbsp;type&nbsp;Option&nbsp;=&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;T<br/>
@@ -63,15 +62,14 @@ Encoding Option, using primitive booleans; we export Option as an abstract type.
 &nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;pmatch:&nbsp;<span class="inlinecode"><span class="id" title="var">U</span></span>&nbsp;=&gt;&nbsp;U&nbsp;=&gt;&nbsp;(T&nbsp;=&gt;&nbsp;U)&nbsp;=&gt;&nbsp;U<br/>
 &nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;type&nbsp;None&nbsp;=&nbsp;Option&nbsp;{&nbsp;type&nbsp;T&nbsp;=&nbsp;Nothing&nbsp;}<br/>
+&nbsp;&nbsp;type&nbsp;None&nbsp;=&nbsp;Option&nbsp;&amp;&nbsp;{&nbsp;type&nbsp;T&nbsp;=&nbsp;Nothing;&nbsp;val&nbsp;isEmpty:&nbsp;true.type&nbsp;}<br/>
 &nbsp;&nbsp;val&nbsp;noneV:&nbsp;None&nbsp;=&nbsp;new&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;T&nbsp;=&nbsp;Nothing<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;isEmpty&nbsp;=&nbsp;true<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;pmatch:&nbsp;<span class="inlinecode"><span class="id" title="var">U</span></span>&nbsp;=&gt;&nbsp;U&nbsp;=&gt;&nbsp;(Nothing&nbsp;=&gt;&nbsp;U)&nbsp;=&gt;&nbsp;U&nbsp;=&nbsp;<span class="inlinecode"><span class="id" title="var">U</span></span>&nbsp;=&gt;&nbsp;(none:&nbsp;U)&nbsp;=&gt;&nbsp;(some:&nbsp;T&nbsp;=&gt;&nbsp;U)&nbsp;=&gt;&nbsp;none<br/>
 &nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;//type&nbsp;Some&nbsp;=&nbsp;Option&nbsp;&amp;&nbsp;{&nbsp;self&nbsp;=&gt;&nbsp;val&nbsp;get:&nbsp;self.T&nbsp;}<br/>
-&nbsp;&nbsp;type&nbsp;Some&nbsp;=&nbsp;Option&nbsp;&amp;&nbsp;{&nbsp;type&nbsp;T;&nbsp;val&nbsp;get:&nbsp;T&nbsp;}<br/>
+&nbsp;&nbsp;type&nbsp;Some&nbsp;=&nbsp;Option&nbsp;&amp;&nbsp;{&nbsp;type&nbsp;T;&nbsp;val&nbsp;get:&nbsp;this.T;&nbsp;val&nbsp;isEmpty:&nbsp;false.type&nbsp;}<br/>
 &nbsp;&nbsp;def&nbsp;mkSome<span class="inlinecode"><span class="id" title="var">S</span></span>(t:&nbsp;S):&nbsp;Some&nbsp;{&nbsp;type&nbsp;T&nbsp;=&nbsp;S&nbsp;}&nbsp;=&nbsp;new&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;T&nbsp;=&nbsp;S<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;isEmpty&nbsp;=&nbsp;false<br/>
@@ -79,6 +77,15 @@ Encoding Option, using primitive booleans; we export Option as an abstract type.
 &nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;pmatch:&nbsp;<span class="inlinecode"><span class="id" title="var">U</span></span>&nbsp;=&gt;&nbsp;U&nbsp;=&gt;&nbsp;(T&nbsp;=&gt;&nbsp;U)&nbsp;=&gt;&nbsp;U&nbsp;=&nbsp;<span class="inlinecode"><span class="id" title="var">U</span></span>&nbsp;=&gt;&nbsp;(none:&nbsp;U)&nbsp;=&gt;&nbsp;(some:&nbsp;T&nbsp;=&gt;&nbsp;U)&nbsp;=&gt;&nbsp;some(get)<br/>
 &nbsp;&nbsp;}<br/>
 *)</span><br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab144"></a><h2 class="section">Define interface for <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.scala_lib.html#option.hoptionModV"><span class="id" title="definition">hoptionModV</span></a></span>.</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="comment">(*&nbsp;∀&nbsp;x&nbsp;:&nbsp;{type&nbsp;U},&nbsp;x.U&nbsp;→&nbsp;(self.T&nbsp;→&nbsp;x.U)&nbsp;→&nbsp;x.U&nbsp;*)</span><br/>
@@ -100,28 +107,23 @@ Encoding Option, using primitive booleans; we export Option as an abstract type.
 <a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">}</span></a>.<br/>
 
 <br/>
-<span class="id" title="keyword">Definition</span> <a name="prim_boolean_option_mod.hmkSomeTGen"><span class="id" title="definition">hmkSomeTGen</span></a> <span class="id" title="var">res</span> : <a class="idref" href="D.Dot.examples.hoas.html#hty"><span class="id" title="definition">hty</span></a> := <a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">∀:</span></a> <span class="id" title="var">x</span><a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.tparam"><span class="id" title="abbreviation">tparam</span></a> "A"<a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">(</span></a><a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#x"><span class="id" title="variable">x</span></a> <a class="idref" href="D.Dot.examples.hoas.html#20eaa41cf53828edc65b75a9d71d904c"><span class="id" title="notation">@;</span></a> "A" <a class="idref" href="D.Dot.examples.hoas.html#d71d9a5ce88ae18071782d76f145573c"><span class="id" title="notation">→:</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#res"><span class="id" title="variable">res</span></a> (<a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#x"><span class="id" title="variable">x</span></a> <a class="idref" href="D.Dot.examples.hoas.html#20eaa41cf53828edc65b75a9d71d904c"><span class="id" title="notation">@;</span></a> "A") (<a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#x"><span class="id" title="variable">x</span></a> <a class="idref" href="D.Dot.examples.hoas.html#20eaa41cf53828edc65b75a9d71d904c"><span class="id" title="notation">@;</span></a> "A")<a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">)</span></a>.<br/>
-<span class="id" title="keyword">Definition</span> <a name="prim_boolean_option_mod.hmkSomeConcrT"><span class="id" title="definition">hmkSomeConcrT</span></a> : <a class="idref" href="D.Dot.examples.hoas.html#hty"><span class="id" title="definition">hty</span></a> := <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hmkSomeTGen"><span class="id" title="definition">hmkSomeTGen</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hsomeConcrT"><span class="id" title="definition">hsomeConcrT</span></a>.<br/>
+</div>
 
-<br/>
+<div class="doc">
+<a name="lab145"></a><h3 class="section">The definition and upper bound for the <span class="inlinecode">&quot;<span class="id" title="var">Option</span>&quot;</span> abstract type.</h3>
+
+</div>
+<div class="code">
 <span class="id" title="keyword">Definition</span> <a name="prim_boolean_option_mod.hoptionTConcr"><span class="id" title="definition">hoptionTConcr</span></a> := <a class="idref" href="D.Dot.examples.hoas.html#syn.hTOr"><span class="id" title="definition">hTOr</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hnoneConcrT"><span class="id" title="definition">hnoneConcrT</span></a> (<a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hsomeConcrT"><span class="id" title="definition">hsomeConcrT</span></a> <a class="idref" href="https://plv.mpi-sws.org/coqdoc/stdpp/stdpp.base.html#49af51f22ba6081c5259453e85aa12b3"><span class="id" title="notation">⊥</span></a> <a class="idref" href="https://plv.mpi-sws.org/coqdoc/stdpp/stdpp.base.html#6c0a583aa94fbbce6fcf0f655cf1cbb7"><span class="id" title="notation">⊤</span></a>).<br/>
-
-<br/>
-<span class="id" title="keyword">Definition</span> <a name="prim_boolean_option_mod.hoptionModTConcrBody"><span class="id" title="definition">hoptionModTConcrBody</span></a> : <a class="idref" href="D.Dot.examples.hoas.html#hty"><span class="id" title="definition">hty</span></a> := <a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">{@</span></a><br/>
-&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.typeEq"><span class="id" title="definition">typeEq</span></a> "Option" <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hoptionTConcr"><span class="id" title="definition">hoptionTConcr</span></a><a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">;</span></a><br/>
-&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">val</span></a> "none" <a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hnoneConcrT"><span class="id" title="definition">hnoneConcrT</span></a><a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">;</span></a><br/>
-&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">val</span></a> "mkSome" <a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hmkSomeConcrT"><span class="id" title="definition">hmkSomeConcrT</span></a><br/>
-<a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">}</span></a>.<br/>
 
 <br/>
 </div>
 
 <div class="doc">
-Define interface for <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.scala_lib.html#option.hoptionModV"><span class="id" title="definition">hoptionModV</span></a></span>. To rewrite to have abstraction. 
+<a name="lab146"></a><h3 class="section">The return types of the <span class="inlinecode">&quot;<span class="id" title="var">Option</span>&quot;</span> constructors.</h3>
+
 </div>
 <div class="code">
-
-<br/>
 <span class="id" title="keyword">Definition</span> <a name="prim_boolean_option_mod.hnoneT"><span class="id" title="definition">hnoneT</span></a> <span class="id" title="var">self</span> := <a class="idref" href="D.Dot.examples.hoas.html#syn.hTAnd"><span class="id" title="definition">hTAnd</span></a> (<a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#self"><span class="id" title="variable">self</span></a> <a class="idref" href="D.Dot.examples.hoas.html#20eaa41cf53828edc65b75a9d71d904c"><span class="id" title="notation">@;</span></a> "Option") <a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">{@</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.typeEq"><span class="id" title="definition">typeEq</span></a> "T" <a class="idref" href="https://plv.mpi-sws.org/coqdoc/stdpp/stdpp.base.html#49af51f22ba6081c5259453e85aa12b3"><span class="id" title="notation">⊥</span></a><a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">;</span></a> <a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">val</span></a> "isEmpty" <a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.hoas.html#syn.hTSing"><span class="id" title="definition">hTSing</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#true"><span class="id" title="constructor">true</span></a> <a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">}</span></a>.<br/>
 
 <br/>
@@ -136,6 +138,13 @@ Behold here <span class="inlinecode">(<span class="id" title="var">optionT</span
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">{@</span></a> <a class="idref" href="D.Dot.examples.hoas.html#8040d5e010e1bd5a7559ed70f1888ea8"><span class="id" title="notation">type</span></a> "T" <a class="idref" href="D.Dot.examples.hoas.html#8040d5e010e1bd5a7559ed70f1888ea8"><span class="id" title="notation">&gt;:</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#hL"><span class="id" title="variable">hL</span></a> <a class="idref" href="D.Dot.examples.hoas.html#8040d5e010e1bd5a7559ed70f1888ea8"><span class="id" title="notation">&lt;:</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#hU"><span class="id" title="variable">hU</span></a><a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">;</span></a> <a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">val</span></a> "isEmpty" <a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.hoas.html#syn.hTSing"><span class="id" title="definition">hTSing</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#false"><span class="id" title="constructor">false</span></a> <a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">}</span></a>.<br/>
 
 <br/>
+</div>
+
+<div class="doc">
+The full type of the <span class="inlinecode">&quot;<span class="id" title="var">mkSome</span>&quot;</span> constructor. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Local</span> <span class="id" title="keyword">Definition</span> <a name="prim_boolean_option_mod.hmkSomeTGen"><span class="id" title="definition">hmkSomeTGen</span></a> <span class="id" title="var">res</span> : <a class="idref" href="D.Dot.examples.hoas.html#hty"><span class="id" title="definition">hty</span></a> := <a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">∀:</span></a> <span class="id" title="var">x</span><a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.tparam"><span class="id" title="abbreviation">tparam</span></a> "A"<a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">(</span></a><a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#x"><span class="id" title="variable">x</span></a> <a class="idref" href="D.Dot.examples.hoas.html#20eaa41cf53828edc65b75a9d71d904c"><span class="id" title="notation">@;</span></a> "A" <a class="idref" href="D.Dot.examples.hoas.html#d71d9a5ce88ae18071782d76f145573c"><span class="id" title="notation">→:</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#res"><span class="id" title="variable">res</span></a> (<a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#x"><span class="id" title="variable">x</span></a> <a class="idref" href="D.Dot.examples.hoas.html#20eaa41cf53828edc65b75a9d71d904c"><span class="id" title="notation">@;</span></a> "A") (<a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#x"><span class="id" title="variable">x</span></a> <a class="idref" href="D.Dot.examples.hoas.html#20eaa41cf53828edc65b75a9d71d904c"><span class="id" title="notation">@;</span></a> "A")<a class="idref" href="D.Dot.examples.hoas.html#fad0f22540ee1043bb4031c8182a8c51"><span class="id" title="notation">)</span></a>.<br/>
 <span class="id" title="keyword">Definition</span> <a name="prim_boolean_option_mod.hmkSomeT"><span class="id" title="definition">hmkSomeT</span></a> <span class="id" title="var">self</span> : <a class="idref" href="D.Dot.examples.hoas.html#hty"><span class="id" title="definition">hty</span></a> := <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hmkSomeTGen"><span class="id" title="definition">hmkSomeTGen</span></a> (<a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hsomeT"><span class="id" title="definition">hsomeT</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#self"><span class="id" title="variable">self</span></a>).<br/>
 
 <br/>
@@ -149,12 +158,12 @@ Behold here <span class="inlinecode">(<span class="id" title="var">optionT</span
 </div>
 
 <div class="doc">
-<a name="lab144"></a><h2 class="section">Implement <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.scala_lib.html#option.hoptionModV"><span class="id" title="definition">hoptionModV</span></a></span>.</h2>
+<a name="lab147"></a><h2 class="section">Implement <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.scala_lib.html#option.hoptionModV"><span class="id" title="definition">hoptionModV</span></a></span>.</h2>
 
 </div>
 <div class="code">
 <span class="id" title="keyword">Definition</span> <a name="prim_boolean_option_mod.hnoneV"><span class="id" title="definition">hnoneV</span></a> := <a class="idref" href="D.Dot.examples.hoas.html#b765f911d00e667273c5726a29666d70"><span class="id" title="notation">ν</span></a><a class="idref" href="D.Dot.examples.hoas.html#b765f911d00e667273c5726a29666d70"><span class="id" title="notation">:</span></a> <span class="id" title="var">_</span><a class="idref" href="D.Dot.examples.hoas.html#b765f911d00e667273c5726a29666d70"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.hoas.html#228bb38a1d1ce7d86c8f11e064584a00"><span class="id" title="notation">{@</span></a><br/>
-&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#94acf627d08efa4f0a1f69dc193a1fb3"><span class="id" title="notation">type</span></a> "T" <a class="idref" href="D.Dot.examples.hoas.html#94acf627d08efa4f0a1f69dc193a1fb3"><span class="id" title="notation">=</span></a> <a class="idref" href="https://plv.mpi-sws.org/coqdoc/stdpp/stdpp.base.html#49af51f22ba6081c5259453e85aa12b3"><span class="id" title="notation">⊥</span></a> <a class="idref" href="D.Dot.examples.hoas.html#228bb38a1d1ce7d86c8f11e064584a00"><span class="id" title="notation">;</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#94acf627d08efa4f0a1f69dc193a1fb3"><span class="id" title="notation">type</span></a> "T" <a class="idref" href="D.Dot.examples.hoas.html#94acf627d08efa4f0a1f69dc193a1fb3"><span class="id" title="notation">=</span></a> <a class="idref" href="https://plv.mpi-sws.org/coqdoc/stdpp/stdpp.base.html#49af51f22ba6081c5259453e85aa12b3"><span class="id" title="notation">⊥</span></a><a class="idref" href="D.Dot.examples.hoas.html#228bb38a1d1ce7d86c8f11e064584a00"><span class="id" title="notation">;</span></a><br/>
 &nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">val</span></a> "isEmpty" <a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">=</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#true"><span class="id" title="constructor">true</span></a><a class="idref" href="D.Dot.examples.hoas.html#228bb38a1d1ce7d86c8f11e064584a00"><span class="id" title="notation">;</span></a><br/>
 &nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">val</span></a> "pmatch" <a class="idref" href="D.Dot.examples.hoas.html#7a2ccd3039e0d6e79be6ed27d574ba71"><span class="id" title="notation">=</span></a> <a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">λ</span></a><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">:</span></a> <span class="id" title="var">x</span> <span class="id" title="var">none</span> <span class="id" title="var">some</span><a class="idref" href="D.Dot.examples.hoas.html#77e880f8e16415230d458d3dd9dd7d47"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#none"><span class="id" title="variable">none</span></a><br/>
 <a class="idref" href="D.Dot.examples.hoas.html#228bb38a1d1ce7d86c8f11e064584a00"><span class="id" title="notation">}</span></a>.<br/>
@@ -175,6 +184,30 @@ Behold here <span class="inlinecode">(<span class="id" title="var">optionT</span
 <a class="idref" href="D.Dot.examples.hoas.html#228bb38a1d1ce7d86c8f11e064584a00"><span class="id" title="notation">}</span></a>.<br/>
 
 <br/>
+</div>
+
+<div class="doc">
+<a name="lab148"></a><h3 class="section">Define concrete types for <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.scala_lib.html#option.hoptionModV"><span class="id" title="definition">hoptionModV</span></a></span>, used only internally for derivation.</h3>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Local</span> <span class="id" title="keyword">Definition</span> <a name="prim_boolean_option_mod.hmkSomeConcrT"><span class="id" title="definition">hmkSomeConcrT</span></a> : <a class="idref" href="D.Dot.examples.hoas.html#hty"><span class="id" title="definition">hty</span></a> := <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hmkSomeTGen"><span class="id" title="definition">hmkSomeTGen</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hsomeConcrT"><span class="id" title="definition">hsomeConcrT</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Local</span> <span class="id" title="keyword">Definition</span> <a name="prim_boolean_option_mod.hoptionModTConcrBody"><span class="id" title="definition">hoptionModTConcrBody</span></a> : <a class="idref" href="D.Dot.examples.hoas.html#hty"><span class="id" title="definition">hty</span></a> := <a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">{@</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#hoasNotation.typeEq"><span class="id" title="definition">typeEq</span></a> "Option" <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hoptionTConcr"><span class="id" title="definition">hoptionTConcr</span></a><a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">;</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">val</span></a> "none" <a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hnoneConcrT"><span class="id" title="definition">hnoneConcrT</span></a><a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">;</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">val</span></a> "mkSome" <a class="idref" href="D.Dot.examples.hoas.html#dac71af5b2f1b5b356d8450427b7ece1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hmkSomeConcrT"><span class="id" title="definition">hmkSomeConcrT</span></a><br/>
+<a class="idref" href="D.Dot.examples.hoas.html#e3020cf33d78a94b82155f3b6b087159"><span class="id" title="notation">}</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab149"></a><h3 class="section">Prove typing.</h3>
+
+</div>
+<div class="code">
 <span class="id" title="keyword">Lemma</span> <a name="prim_boolean_option_mod.boolSing"><span class="id" title="lemma">boolSing</span></a> <span class="id" title="var">Γ</span> (<span class="id" title="var">b</span> : <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#bool"><span class="id" title="inductive">bool</span></a>) : <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.examples.sem.storeless_typing.html#851999643db7ae388071010068a98a85"><span class="id" title="notation">v</span></a><a class="idref" href="D.Dot.examples.sem.storeless_typing.html#851999643db7ae388071010068a98a85"><span class="id" title="notation">⊢ₜ</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#b"><span class="id" title="variable">b</span></a> <a class="idref" href="D.Dot.examples.sem.storeless_typing.html#851999643db7ae388071010068a98a85"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.TSing"><span class="id" title="constructor">TSing</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#b"><span class="id" title="variable">b</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="D.Dot.examples.sem.storeless_typing.html#iT_Path'"><span class="id" title="lemma">iT_Path'</span></a>, (<a class="idref" href="D.Dot.examples.old_typing.old_subtyping.html#iP_Sngl_Refl"><span class="id" title="constructor">iP_Sngl_Refl</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="D.Dot.syn.syn.html#VlSorts.TBool"><span class="id" title="abbreviation">TBool</span></a>)).<br/>
@@ -206,7 +239,7 @@ Behold here <span class="inlinecode">(<span class="id" title="var">optionT</span
 </div>
 
 <div class="doc">
-Rather precise type for <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.scala_lib.html#option.hoptionModV"><span class="id" title="definition">hoptionModV</span></a></span>. 
+Type <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.scala_lib.html#option.hoptionModV"><span class="id" title="definition">hoptionModV</span></a></span> precisely, using <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.storeless_typing.html#iT_Obj_I"><span class="id" title="constructor">iT_Obj_I</span></a></span> directly. 
 </div>
 <div class="code">
 <span class="id" title="keyword">Example</span> <a name="prim_boolean_option_mod.optionModConcrTyp"><span class="id" title="definition">optionModConcrTyp</span></a> <span class="id" title="var">Γ</span> :<br/>
@@ -215,11 +248,18 @@ Rather precise type for <span class="inlinecode"><a class="idref" href="D.Dot.ex
 &nbsp;&nbsp;<span class="id" title="tactic">set</span> <span class="id" title="var">U</span> := (<a class="idref" href="D.Dot.examples.ex_utils.html#3b46f8a39b2df2d3ba2df41c9fe962c8"><span class="id" title="notation">▶:</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hoptionModTConcrBody"><span class="id" title="definition">hoptionModTConcrBody</span></a>)%<span class="id" title="var">ty</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.ssr.ssreflect.html#aed478b27f23b4f753c27c8ac393febc"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">have</span> := <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.noneTypStronger"><span class="id" title="definition">noneTypStronger</span></a> (<span class="id" title="var">U</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">::</span></a> <span class="id" title="var">Γ</span>).<br/>
 &nbsp;&nbsp;<span class="id" title="var">have</span> := <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.mkSomeTypStronger"><span class="id" title="definition">mkSomeTypStronger</span></a> (<span class="id" title="var">U</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Init.Datatypes.html#cbcf67aac0c2a85b8d93d37de9969adf"><span class="id" title="notation">::</span></a> <span class="id" title="var">Γ</span>) ⇒ /(<a class="idref" href="D.Dot.examples.sem.storeless_typing.html#iD_Val"><span class="id" title="constructor">iD_Val</span></a> "mkSome") <span class="id" title="var">Hs</span> <span class="id" title="var">Hn</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="var">ltcrush</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="D.Dot.examples.sem.storeless_typing.html#iT_Obj_I"><span class="id" title="constructor">iT_Obj_I</span></a>; <span class="id" title="var">tcrush</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">tcrush_nclosed</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
+</div>
+
+<div class="doc">
+Use subsumption to upcast <span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.scala_lib.html#option.hoptionModV"><span class="id" title="definition">hoptionModV</span></a></span> to the type representing its
+public interface. 
+</div>
+<div class="code">
 <span class="id" title="keyword">Example</span> <a name="prim_boolean_option_mod.optionModInvTyp"><span class="id" title="definition">optionModInvTyp</span></a> <span class="id" title="var">Γ</span> :<br/>
 &nbsp;&nbsp;<a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.examples.sem.storeless_typing.html#851999643db7ae388071010068a98a85"><span class="id" title="notation">v</span></a><a class="idref" href="D.Dot.examples.sem.storeless_typing.html#851999643db7ae388071010068a98a85"><span class="id" title="notation">⊢ₜ</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hoptionModV"><span class="id" title="definition">hoptionModV</span></a> <a class="idref" href="D.Dot.examples.sem.storeless_typing.html#851999643db7ae388071010068a98a85"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.examples.hoas.html#eebc01a27482beba2e49b11948bab893"><span class="id" title="notation">μ</span></a><a class="idref" href="D.Dot.examples.hoas.html#eebc01a27482beba2e49b11948bab893"><span class="id" title="notation">:</span></a> <span class="id" title="var">self</span><a class="idref" href="D.Dot.examples.hoas.html#eebc01a27482beba2e49b11948bab893"><span class="id" title="notation">,</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.hoptionModTInvBody"><span class="id" title="definition">hoptionModTInvBody</span></a> <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#self"><span class="id" title="variable">self</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
@@ -238,8 +278,8 @@ Rather precise type for <span class="inlinecode"><a class="idref" href="D.Dot.ex
 </div>
 
 <div class="doc">
-We also satisfy a weaker interface, similar to the one exported by
-<span class="inlinecode"><span class="id" title="var">scala_lib.v</span></span>. 
+<span class="inlinecode"><a class="idref" href="D.Dot.examples.syn.scala_lib.html#option.hoptionModV"><span class="id" title="definition">hoptionModV</span></a></span> also satisfies a weaker interface, similar to the one
+exported by <span class="inlinecode"><span class="id" title="var">scala_lib.v</span></span>. 
 </div>
 <div class="code">
 
