@@ -269,7 +269,7 @@ FromPDotPaper
 Use distributivity of intersections and unions (iDistr_And_Or_Sub, aka
 <span class="inlinecode"><span class="id" title="var">Distr</span>-∧-∨-&lt;:</span>) to show, essentially:
 <pre>
-  ▷^i (Option ∧ { type T &gt;: ⊥ &lt;: pcore.types.Type }) &lt;:
+  ▷^i ((None ∨ Some) ∧ { type T &gt;: ⊥ &lt;: pcore.types.Type }) &lt;:
   ▷^i (None ∨ (Some ∧ { type T &gt;: ⊥ &lt;: pcore.types.Type }))
 </pre>
 as noted in the paper (Sec. 6.3).
