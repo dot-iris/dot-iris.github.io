@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab152"></a><h1 class="section">Motivating example, semantic version.</h1>
+<a name="lab149"></a><h1 class="section">Motivating example, semantic version.</h1>
 
 
 <div class="paragraph"> </div>
@@ -570,16 +570,16 @@ as noted in the paper (Sec. 6.3).
 &nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.examples.old_fundamental.html#fundamental_typed"><span class="id" title="lemma">fundamental_typed</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">exact</span>: <a class="idref" href="D.Dot.examples.sem.prim_boolean_option.html#prim_boolean_option_mod.optionModInvTyp"><span class="id" title="definition">optionModInvTyp</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">iApply</span> (<a class="idref" href="D.Dot.lr.sem_unstamped_typing.html#uT_All_I_Strong"><span class="id" title="lemma">uT_All_I_Strong</span></a> (<span class="id" title="var">Γ'</span> := <span class="id" title="var">Γ</span>)). <span class="id" title="var">ietp_weaken_ctx</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="var">iApply</span> (<a class="idref" href="D.Dot.examples.old_fundamental.html#uT_ISub"><span class="id" title="lemma">uT_ISub</span></a> (<span class="id" title="var">i</span> := 0)).<br/>
+&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.lr.sem_unstamped_typing.html#suT_Sub"><span class="id" title="lemma">suT_Sub</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.examples.sem.from_pdot_mutual_rec_sem.html#fromPDotPaperTyp"><span class="id" title="definition">fromPDotPaperTyp</span></a>.<br/>
-&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.examples.sem.semtyp_lemmas.sub_lr.html#sSub_Top"><span class="id" title="lemma">sSub_Top</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.dsub_lr.html#sStp_Top"><span class="id" title="lemma">sStp_Top</span></a>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
 </div>
 
 <div class="doc">
-<a name="lab153"></a><h2 class="section">Additional examples of client code, not mentioned in the paper.</h2>
+<a name="lab150"></a><h2 class="section">Additional examples of client code, not mentioned in the paper.</h2>
 
 As they are open terms, technically not covered by the safety theorem below,
 but of course they could be, after being made closed. 
@@ -644,7 +644,7 @@ but of course they could be, after being made closed.
 &nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.lr.sem_unstamped_typing.html#uT_All_E"><span class="id" title="lemma">uT_All_E</span></a>; <span class="id" title="tactic">first</span> <span class="id" title="var">last</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.examples.sem.from_pdot_mutual_rec_sem.html#fromPDotPaperTyp"><span class="id" title="definition">fromPDotPaperTyp</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.lr.sem_unstamped_typing.html#uT_All_I_Strong"><span class="id" title="lemma">uT_All_I_Strong</span></a>. <span class="id" title="var">ietp_weaken_ctx</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="var">iApply</span> (<a class="idref" href="D.Dot.examples.old_fundamental.html#uT_ISub"><span class="id" title="lemma">uT_ISub</span></a> (<span class="id" title="var">i</span> := 0)); <span class="id" title="var">last</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.examples.sem.semtyp_lemmas.sub_lr.html#sSub_Top"><span class="id" title="lemma">sSub_Top</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.lr.sem_unstamped_typing.html#suT_Sub"><span class="id" title="lemma">suT_Sub</span></a>; <span class="id" title="var">last</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.semtyp_lemmas.dsub_lr.html#sStp_Top"><span class="id" title="lemma">sStp_Top</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">iApply</span> <a class="idref" href="D.Dot.examples.old_fundamental.html#fundamental_typed"><span class="id" title="lemma">fundamental_typed</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="D.Dot.examples.sem.from_pdot_mutual_rec_sem.html#getAnyTypeTyp0"><span class="id" title="definition">getAnyTypeTyp0</span></a>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
