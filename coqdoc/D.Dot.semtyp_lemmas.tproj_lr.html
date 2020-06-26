@@ -81,6 +81,7 @@ discussed in the paper.
 </div>
 
 <div class="doc">
+**
 Semantic proofs of typing lemmas for existentials.
 
 <div class="paragraph"> </div>
@@ -140,6 +141,8 @@ Rule <span class="inlinecode">&lt;:-∃</span> (called <span class="inlinecode">
 </div>
 
 <div class="doc">
+<a name="lab104"></a><h2 class="section">Semantics of type projections.</h2>
+
   This semantic type models upper-bound-only type projections using
   (model-level) existentials and normal DOT type members:
     <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>[[<a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>#<a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a>]](ρ)</span> <span class="inlinecode">=</span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> <span class="inlinecode">|</span> <span class="inlinecode">∃</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#w"><span class="id" title="variable">w</span></a></span> <span class="inlinecode">∈</span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>[[<a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>]](ρ).</span> <span class="inlinecode"><a class="idref" href="D.Dot.examples.sem.no_russell_paradox.html#v"><span class="id" title="definition">v</span></a></span> <span class="inlinecode">∈</span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.lr_syn_aux.html#V"><span class="id" title="variable">V</span></a>[[<span class="id" title="var">w.A</span>]](ρ)</span> <span class="inlinecode">}</span>.
@@ -159,7 +162,8 @@ Rule <span class="inlinecode">&lt;:-∃</span> (called <span class="inlinecode">
 </div>
 
 <div class="doc">
-Technical infrastructure for setoid rewriting. 
+<a name="lab105"></a><h3 class="section">Technical infrastructure for setoid rewriting.</h3>
+
 </div>
 <div class="code">
 <span class="id" title="keyword">Instance</span>: <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Classes.Morphisms.html#Params"><span class="id" title="class">Params</span></a> (@<a class="idref" href="D.Dot.semtyp_lemmas.tproj_lr.html#oProjN"><span class="id" title="definition">oProjN</span></a>) 4 := {}.<br/>
@@ -197,7 +201,8 @@ Technical infrastructure for setoid rewriting.
 </div>
 
 <div class="doc">
-Semantic proofs of typing lemmas for projections. 
+<a name="lab106"></a><h2 class="section">Semantic proofs of typing lemmas for projections.</h2>
+
 </div>
 <div class="code">
 <span class="id" title="keyword">Section</span> <a name="type_proj"><span class="id" title="section">type_proj</span></a>.<br/>
