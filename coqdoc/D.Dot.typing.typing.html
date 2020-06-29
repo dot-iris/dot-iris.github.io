@@ -29,7 +29,7 @@
 </div>
 
 <div class="doc">
-<a name="lab108"></a><h1 class="section">Judgments defining syntactic gDOT definition and term typing.</h1>
+<a name="lab105"></a><h1 class="section">Judgments defining syntactic gDOT definition and term typing.</h1>
 
 </div>
 <div class="code">
@@ -54,7 +54,7 @@
 </div>
 
 <div class="doc">
-<a name="lab109"></a><h2 class="section">Judgments for typing, subtyping, path and definition typing.</h2>
+<a name="lab106"></a><h2 class="section">Judgments for typing, subtyping, path and definition typing.</h2>
 
 </div>
 <div class="code">
@@ -139,7 +139,7 @@ Primitives.
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.typing.typing.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">t</span></a><a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">⊢ₜ</span></a> <a class="idref" href="D.Dot.typing.typing.html#e1"><span class="id" title="variable">e1</span></a> <a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.typing.typing.html#T"><span class="id" title="variable">T</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.typing.typing.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">t</span></a><a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">⊢ₜ</span></a> <a class="idref" href="D.Dot.typing.typing.html#e2"><span class="id" title="variable">e2</span></a> <a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.typing.typing.html#T"><span class="id" title="variable">T</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.typing.typing.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">t</span></a><a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">⊢ₜ</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.tif"><span class="id" title="constructor">tif</span></a> <a class="idref" href="D.Dot.typing.typing.html#e"><span class="id" title="variable">e</span></a> <a class="idref" href="D.Dot.typing.typing.html#e1"><span class="id" title="variable">e1</span></a> <a class="idref" href="D.Dot.typing.typing.html#e2"><span class="id" title="variable">e2</span></a> <a class="idref" href="D.Dot.typing.typing.html#e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.typing.typing.html#T"><span class="id" title="variable">T</span></a><br/>
-<span class="id" title="keyword">where</span> <a name="e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">&quot;</span></a>Γ t⊢ₜ e : T " := (<a class="idref" href="D.Dot.typing.typing.html#typed"><span class="id" title="inductive">typed</span></a> <span class="id" title="var">Γ</span> <span class="id" title="var">e</span> <span class="id" title="var">T</span>)<br/>
+<span class="id" title="keyword">where</span> <a name="e9962b55c67283afc40d913aa13c481e"><span class="id" title="notation">&quot;</span></a>Γ t⊢ₜ e : T" := (<a class="idref" href="D.Dot.typing.typing.html#typed"><span class="id" title="inductive">typed</span></a> <span class="id" title="var">Γ</span> <span class="id" title="var">e</span> <span class="id" title="var">T</span>)<br/>
 <span class="id" title="keyword">with</span> <a name="dms_typed"><span class="id" title="inductive">dms_typed</span></a> <span class="id" title="var">Γ</span> : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.dms"><span class="id" title="definition">dms</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.ty"><span class="id" title="inductive">ty</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Unicode.Utf8_core.html#c41c566ddac4c1298b9e7dd2bae1c794"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Prop</span> :=<br/>
 | <a name="iD_Nil"><span class="id" title="constructor">iD_Nil</span></a> : <a class="idref" href="D.Dot.typing.typing.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.typing.typing.html#70fe04ac076b665e0d333acbeb0f3571"><span class="id" title="notation">t</span></a><a class="idref" href="D.Dot.typing.typing.html#70fe04ac076b665e0d333acbeb0f3571"><span class="id" title="notation">⊢</span></a><a class="idref" href="D.Dot.typing.typing.html#70fe04ac076b665e0d333acbeb0f3571"><span class="id" title="notation">ds</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.11.1/stdlib//Coq.Lists.List.html#ae9a5e1034e143b218b09d8e454472bd"><span class="id" title="notation">[]</span></a> <a class="idref" href="D.Dot.typing.typing.html#70fe04ac076b665e0d333acbeb0f3571"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.TTop"><span class="id" title="constructor">TTop</span></a><br/>
 <span class="comment">(*&nbsp;This&nbsp;demands&nbsp;definitions&nbsp;and&nbsp;members&nbsp;to&nbsp;be&nbsp;defined&nbsp;in&nbsp;aligned&nbsp;lists.&nbsp;*)</span><br/>
@@ -190,7 +190,7 @@ Primitives.
 </div>
 
 <div class="doc">
-<a name="lab110"></a><h2 class="section">A few derived rules, and some automation to use them in examples.</h2>
+<a name="lab107"></a><h2 class="section">A few derived rules, and some automation to use them in examples.</h2>
 
 </div>
 <div class="code">
