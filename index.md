@@ -1,3 +1,9 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+# layout: home
+---
 This is the homepage for the **DOT-Iris** project. We extend the
 formal foundations of the Scala programming language, that is, the DOT calculus,
 using step-indexed logical relations and the Iris framework.
