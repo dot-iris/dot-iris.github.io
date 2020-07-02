@@ -25,7 +25,7 @@ using step-indexed logical relations and the Iris framework.
 
 # News
 
-- 2020-07-01: Website online
+- 2020-07-03: Website online
 - 2014-06-24: AEC submission accepted.
 - 2020-06-19: _Scala Step-by-Step: Soundness for DOT with Step-Indexed Logical
   Relations in Iris_ unconditionally accepted at ICFP 2020.
