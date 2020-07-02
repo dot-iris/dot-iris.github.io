@@ -43,12 +43,3 @@ using step-indexed logical relations and the Iris framework.
 # Contacts
 For any question or suggestion, feel free to contact me, Paolo G. Giarrusso, at
 p !dot! giarrusso (at) gmail !dot! com.
-
-{::comment}
-# Credits
-This project benefited from code and ideas of many different people:
-
-- Paolo G. Giarrusso
-
-Further acknowledgments in each publication.
-{:/comment}
