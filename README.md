@@ -1,6 +1,6 @@
 # dot-iris.github.io
 
-GitHub Pages website for https://github.com/Blaisorblade/dot-iris. 
+GitHub Pages website for https://github.com/Blaisorblade/dot-iris.
 
 Automatically generated from
 https://github.com/Blaisorblade/dot-iris/blob/master/.travis.yml.
