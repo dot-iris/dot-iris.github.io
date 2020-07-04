@@ -28,8 +28,9 @@ using step-indexed logical relations and the Iris framework.
     abstraction. The gDOT type system, its semantic model, its soundness proofs,
     and all examples in the paper have been mechanized in Coq.
 
-    - [Preprint, Version 1](2020-dot-submission.pdf)
-    - Revised version coming soon.
+    - [Preprint, Version 0.1](2020-dot-submission.pdf)
+    - [Author Version](gdot-icfp20-1.0.pdf)
+    - Extended version coming soon.
     - [Coq Formalization](https://github.com/Blaisorblade/dot-iris)
     - [coqdoc](coqdoc/).
 
@@ -42,6 +43,7 @@ using step-indexed logical relations and the Iris framework.
 
 ## News
 
+- 2020-07-04: Author version online
 - 2020-07-03: Website online
 - 2014-06-24: AEC submission accepted.
 - 2020-06-19: _Scala Step-by-Step: Soundness for DOT with Step-Indexed Logical
