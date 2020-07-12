@@ -92,7 +92,7 @@ discussed in the paper.
 I adapted the rules from
 <a href="https://dl.acm.org/doi/pdf/10.1145/3290322">
 https://dl.acm.org/doi/pdf/10.1145/3290322</a>
-).
+
 (see <span class="inlinecode">≤∃<a class="idref" href="D.iris_extra.det_reduction.html#L"><span class="id" title="module">L</span></a></span> and <span class="inlinecode">≤∃<a class="idref" href="D.pure_program_logic.weakestpre.html#R"><span class="id" title="variable">R</span></a></span> in Fig. 4).
 
 <div class="paragraph"> </div>
@@ -530,17 +530,22 @@ And <span class="inlinecode"><a class="idref" href="D.Dot.semtyp_lemmas.tproj_lr
 
 <div class="paragraph"> </div>
 
-    That rule indeed holds, but was challenging to prove; for technical reasons,
-    to enable this we had to add a basic update modality, <span class="inlinecode">|==&gt;</span>, to all
-    judgments. Luckily, that was very easy.
+    That rule indeed holds, but was challenging to prove, because this rule
+    involves a type definition that doesn't appear in the source program, and
+    the setup described in our ICFP'20 paper does not support such type
+    definitions for technical reasons. Luckily, we only needed to tweak our
+    model a bit, preserving all results.
 
 <div class="paragraph"> </div>
 
-    The reason is that this rule must allocate a new type definition
-    that doesn't appear in the source program, and we haven't set things up
-    to allow this; indeed, the conclusion of rule <span class="inlinecode"><span class="id" title="var">sProj_Stp_TMem_alloc</span></span> is
-    not <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a></span> <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#s"><span class="id" title="variable">s</span></a>⊨</span> <span class="inlinecode">...</span>, but is preceded by the update modality <span class="inlinecode">|==&gt;</span> <span class="inlinecode"><span class="id" title="var">_</span></span>, which
-    makes the conclusion weaker.
+    Technically, in Iris jargon, to enable this proof we prepended a basic
+    update modality (<span class="inlinecode">|==&gt;</span>) to the definitions of all semantic judgments, to
+    allow using <span class="inlinecode"><a class="idref" href="D.Dot.semtyp_lemmas.tproj_lr.html#oProj_oTMem"><span class="id" title="lemma">oProj_oTMem</span></a></span> despite its own update modality.
+    Luckily, it was easy enough to update the proofs for these changes in
+    definitions; see:
+    <a href="https://github.com/Blaisorblade/dot-iris/pull/303">
+    https://github.com/Blaisorblade/dot-iris/pull/303</a>
+    .
   
 <div class="paragraph"> </div>
 
