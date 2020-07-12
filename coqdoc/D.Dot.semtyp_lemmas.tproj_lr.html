@@ -40,7 +40,10 @@ This shows how to restrict type projections to be sound and usable in Dotty.
 
 This is developed as an <i>extension</i> of guarded DOT (gDOT), described in the
 ICFP'20 paper "Scala Step-by-Step".
-(Preprint available at https://dot-iris.github.io/gdot-icfp20-1.0.pdf).
+(Preprint available at
+<a href="https://dot-iris.github.io/gdot-icfp20-1.0.pdf">
+https://dot-iris.github.io/gdot-icfp20-1.0.pdf</a>
+).
 
 <div class="paragraph"> </div>
 
@@ -81,13 +84,16 @@ discussed in the paper.
 </div>
 
 <div class="doc">
-**
-Semantic proofs of typing lemmas for existentials.
+<a name="lab105"></a><h2 class="section">Semantic proofs of typing lemmas for existentials.</h2>
+
 
 <div class="paragraph"> </div>
 
-I adapted the rules from https://dl.acm.org/doi/pdf/10.1145/3290322 (see
-<span class="inlinecode">≤∃<a class="idref" href="D.iris_extra.det_reduction.html#L"><span class="id" title="module">L</span></a></span> and <span class="inlinecode">≤∃<a class="idref" href="D.pure_program_logic.weakestpre.html#R"><span class="id" title="variable">R</span></a></span> in Fig. 4).
+I adapted the rules from
+<a href="https://dl.acm.org/doi/pdf/10.1145/3290322">
+https://dl.acm.org/doi/pdf/10.1145/3290322</a>
+).
+(see <span class="inlinecode">≤∃<a class="idref" href="D.iris_extra.det_reduction.html#L"><span class="id" title="module">L</span></a></span> and <span class="inlinecode">≤∃<a class="idref" href="D.pure_program_logic.weakestpre.html#R"><span class="id" title="variable">R</span></a></span> in Fig. 4).
 
 <div class="paragraph"> </div>
 
@@ -141,7 +147,7 @@ Rule <span class="inlinecode">&lt;:-∃</span> (called <span class="inlinecode">
 </div>
 
 <div class="doc">
-<a name="lab105"></a><h2 class="section">Semantics of type projections.</h2>
+<a name="lab106"></a><h2 class="section">Semantics of type projections.</h2>
 
   This semantic type models upper-bound-only type projections using
   (model-level) existentials and normal DOT type members:
@@ -162,7 +168,7 @@ Rule <span class="inlinecode">&lt;:-∃</span> (called <span class="inlinecode">
 </div>
 
 <div class="doc">
-<a name="lab106"></a><h3 class="section">Technical infrastructure for setoid rewriting.</h3>
+<a name="lab107"></a><h3 class="section">Technical infrastructure for setoid rewriting.</h3>
 
 </div>
 <div class="code">
@@ -201,7 +207,7 @@ Rule <span class="inlinecode">&lt;:-∃</span> (called <span class="inlinecode">
 </div>
 
 <div class="doc">
-<a name="lab107"></a><h2 class="section">Semantic proofs of typing lemmas for projections.</h2>
+<a name="lab108"></a><h2 class="section">Semantic proofs of typing lemmas for projections.</h2>
 
 </div>
 <div class="code">
@@ -276,10 +282,10 @@ TODO: other rules should be derivable from the rules for existentials.
 
 <div class="paragraph"> </div>
 
-    Γ ⊨ T &lt;:^i U
+    <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a></span> <span class="inlinecode">⊨</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">&lt;:^<a class="idref" href="D.iris_extra.cmra_prop_lift.html#i"><span class="id" title="variable">i</span></a></span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#U"><span class="id" title="variable">U</span></a></span>
 <hr/>
 
-    Γ ⊨ TA <:^i UA
+    <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a></span> <span class="inlinecode">⊨</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>#<a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">&lt;:^<a class="idref" href="D.iris_extra.cmra_prop_lift.html#i"><span class="id" title="variable">i</span></a></span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#U"><span class="id" title="variable">U</span></a>#<a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span>
   
 </div>
 <div class="code">
@@ -319,7 +325,7 @@ TODO: other rules should be derivable from the rules for existentials.
     Type projections are subtypes of their upper bound.
 <hr/>
 
-    Γ ⊨ { A :: L .. U }TA <:^i U
+    <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a></span> <span class="inlinecode">⊨</span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">::</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.det_reduction.html#L"><span class="id" title="module">L</span></a></span> <span class="inlinecode">..</span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#U"><span class="id" title="variable">U</span></a></span> <span class="inlinecode">}<a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>#<a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">&lt;:^<a class="idref" href="D.iris_extra.cmra_prop_lift.html#i"><span class="id" title="variable">i</span></a></span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#U"><span class="id" title="variable">U</span></a></span>
   
 </div>
 <div class="code">
@@ -345,10 +351,10 @@ TODO: other rules should be derivable from the rules for existentials.
 
 <div class="paragraph"> </div>
 
-    Γ ⊨ T &lt;:^i { A :: L .. U }
+    <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a></span> <span class="inlinecode">⊨</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">&lt;:^<a class="idref" href="D.iris_extra.cmra_prop_lift.html#i"><span class="id" title="variable">i</span></a></span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">::</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.det_reduction.html#L"><span class="id" title="module">L</span></a></span> <span class="inlinecode">..</span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#U"><span class="id" title="variable">U</span></a></span> <span class="inlinecode">}</span>
 <hr/>
 
-    Γ ⊨ TA <:^i U
+    <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a></span> <span class="inlinecode">⊨</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>#<a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">&lt;:^<a class="idref" href="D.iris_extra.cmra_prop_lift.html#i"><span class="id" title="variable">i</span></a></span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#U"><span class="id" title="variable">U</span></a></span>
   
 </div>
 <div class="code">
@@ -369,10 +375,10 @@ TODO: other rules should be derivable from the rules for existentials.
 
 <div class="paragraph"> </div>
 
-    Γ ⊨ p :^i T
+    <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a></span> <span class="inlinecode">⊨</span> <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span> <span class="inlinecode">:^<a class="idref" href="D.iris_extra.cmra_prop_lift.html#i"><span class="id" title="variable">i</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span>
 <hr/>
 
-    Γ ⊨ p.A &lt;:^i TA
+    <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a></span> <span class="inlinecode">⊨</span> <span class="inlinecode"><span class="id" title="var">p.A</span></span> <span class="inlinecode">&lt;:^<a class="idref" href="D.iris_extra.cmra_prop_lift.html#i"><span class="id" title="variable">i</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>#<a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span>
   
 <div class="paragraph"> </div>
 
@@ -399,18 +405,20 @@ TODO: other rules should be derivable from the rules for existentials.
 
 <div class="paragraph"> </div>
 
-    Γ ⊨ T &lt;:^i { A :: L .. U }
-    Γ ⊨ p :^i T
+    <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a></span> <span class="inlinecode">⊨</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span> <span class="inlinecode">&lt;:^<a class="idref" href="D.iris_extra.cmra_prop_lift.html#i"><span class="id" title="variable">i</span></a></span> <span class="inlinecode">{</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span> <span class="inlinecode">::</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.det_reduction.html#L"><span class="id" title="module">L</span></a></span> <span class="inlinecode">..</span> <span class="inlinecode"><a class="idref" href="D.Dot.syn.syn.html#U"><span class="id" title="variable">U</span></a></span> <span class="inlinecode">}</span>
+    <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a></span> <span class="inlinecode">⊨</span> <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span> <span class="inlinecode">:^<a class="idref" href="D.iris_extra.cmra_prop_lift.html#i"><span class="id" title="variable">i</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a></span>
 <hr/>
 
-    Γ ⊨ L &lt;:^i TA
+    <span class="inlinecode"><a class="idref" href="D.iris_extra.lty.html#1b004e48cd1f64e22d5c000cf0d7f047"><span class="id" title="variable">Γ</span></a></span> <span class="inlinecode">⊨</span> <span class="inlinecode"><a class="idref" href="D.iris_extra.det_reduction.html#L"><span class="id" title="module">L</span></a></span> <span class="inlinecode">&lt;:^<a class="idref" href="D.iris_extra.cmra_prop_lift.html#i"><span class="id" title="variable">i</span></a></span> <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>#<a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span>
 
-    But this is _not_ the Scala 2 lower-bound rule (which doesn't require [p]
+<div class="paragraph"> </div>
+
+    But this is <i>not</i> the Scala 2 lower-bound rule (which doesn't require <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#p"><span class="id" title="variable">p</span></a></span>
     to exist), and it is not directly usable for a typechecker.
     The only typing rule we can use in Scala is
-    [sSel_Stp_Proj], and to use that the user needs to get a value of type
-    [p.A] in the usual, safe way:
-    if [e] has type [L], then [e : p.A] has types [p.A] and [TA].
+    <span class="inlinecode"><a class="idref" href="D.Dot.semtyp_lemmas.tproj_lr.html#sSel_Stp_Proj"><span class="id" title="lemma">sSel_Stp_Proj</span></a></span>, and to use that the user needs to get a value of type
+    <span class="inlinecode"><span class="id" title="var">p.A</span></span> in the usual, safe way:
+    if <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#e"><span class="id" title="variable">e</span></a></span> has type <span class="inlinecode"><a class="idref" href="D.iris_extra.det_reduction.html#L"><span class="id" title="module">L</span></a></span>, then <span class="inlinecode"><a class="idref" href="D.pure_program_logic.weakestpre.html#e"><span class="id" title="variable">e</span></a></span> <span class="inlinecode">:</span> <span class="inlinecode"><span class="id" title="var">p.A</span></span> has types <span class="inlinecode"><span class="id" title="var">p.A</span></span> and <span class="inlinecode"><a class="idref" href="D.iris_extra.cmra_prop_lift.html#T"><span class="id" title="variable">T</span></a>#<a class="idref" href="D.iris_extra.cmra_prop_lift.html#A"><span class="id" title="variable">A</span></a></span>.
 
 <div class="paragraph"> </div>
 
@@ -488,7 +496,7 @@ And <span class="inlinecode"><a class="idref" href="D.Dot.semtyp_lemmas.tproj_lr
   
 <div class="paragraph"> </div>
 
-<a name="lab108"></a><h2 class="section">Rules for projecting members with matching bounds.</h2>
+<a name="lab109"></a><h2 class="section">Rules for projecting members with matching bounds.</h2>
 
 <div class="paragraph"> </div>
 
@@ -522,9 +530,9 @@ And <span class="inlinecode"><a class="idref" href="D.Dot.semtyp_lemmas.tproj_lr
 
 <div class="paragraph"> </div>
 
-    That rule indeed holds, but was challenging to prove; for technical
-    reasons, to enable this we had to add an update modality to all judgments.
-    Luckily, that was very easy.
+    That rule indeed holds, but was challenging to prove; for technical reasons,
+    to enable this we had to add a basic update modality, <span class="inlinecode">|==&gt;</span>, to all
+    judgments. Luckily, that was very easy.
 
 <div class="paragraph"> </div>
 
@@ -536,7 +544,7 @@ And <span class="inlinecode"><a class="idref" href="D.Dot.semtyp_lemmas.tproj_lr
   
 <div class="paragraph"> </div>
 
-<a name="lab109"></a><h3 class="section">Auxiliary lemma.</h3>
+<a name="lab110"></a><h3 class="section">Auxiliary lemma.</h3>
 
 </div>
 <div class="code">
