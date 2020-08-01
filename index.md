@@ -28,7 +28,7 @@ using step-indexed logical relations and the Iris framework.
     abstraction. The gDOT type system, its semantic model, its soundness proofs,
     and all examples in the paper have been mechanized in Coq.
 
-    - [Author Version](gdot-icfp20-1.0.pdf).
+    - [Author Version](gdot-icfp20-1.02.pdf).
     - Extended version coming soon.
     - [Coq Formalization](https://github.com/Blaisorblade/dot-iris)
     - [coqdoc](coqdoc/).
@@ -43,6 +43,7 @@ using step-indexed logical relations and the Iris framework.
 
 ## News
 
+- 2020-08-01: Updated author version (with minor changes from camera-ready).
 - 2020-07-05: Added link to artifact on Zenodo
 - 2020-07-04: Author version online
 - 2020-07-03: Website online
