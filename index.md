@@ -44,7 +44,7 @@ using step-indexed logical relations and the Iris framework.
 
 ## News
 
-- 2020-08-01: Add extended version.
+- 2020-08-01: Added extended version.
 - 2020-08-01: Updated author version (with minor changes from camera-ready).
 - 2020-07-05: Added link to artifact on Zenodo
 - 2020-07-04: Author version online
