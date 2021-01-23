@@ -246,7 +246,7 @@ semantically-typed&nbsp;example.<br/>
 <span class="id" title="var">Combined</span> <span class="id" title="keyword">Scheme</span> <a name="pure_typing_mut_ind"><span class="id" title="definition">pure_typing_mut_ind</span></a> <span class="id" title="var">from</span> <a class="idref" href="D.Dot.typing.subtyping.html#path_typed_mut_ind"><span class="id" title="definition">path_typed_mut_ind</span></a>, <a class="idref" href="D.Dot.typing.subtyping.html#subtype_mut_ind"><span class="id" title="definition">subtype_mut_ind</span></a>.<br/>
 
 <br/>
-<span class="id" title="keyword">Hint Constructors</span> <a class="idref" href="D.Dot.typing.subtyping.html#path_typed"><span class="id" title="inductive">path_typed</span></a> <a class="idref" href="D.Dot.typing.subtyping.html#subtype"><span class="id" title="inductive">subtype</span></a> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Constructors</span> <a class="idref" href="D.Dot.typing.subtyping.html#path_typed"><span class="id" title="inductive">path_typed</span></a> <a class="idref" href="D.Dot.typing.subtyping.html#subtype"><span class="id" title="inductive">subtype</span></a> : <span class="id" title="var">core</span>.<br/>
 
 <br/>
 </div>
@@ -255,8 +255,8 @@ semantically-typed&nbsp;example.<br/>
 Ensure <span class="inlinecode"><span class="id" title="tactic">eauto</span></span>'s proof search does not diverge due to transitivity. 
 </div>
 <div class="code">
-<span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iStp_Trans</span> : <span class="id" title="var">core</span>.<br/>
-<span class="id" title="keyword">Hint Extern</span> 10 ⇒ <span class="id" title="var">try_once</span> <span class="id" title="var">iStp_Trans</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iStp_Trans</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Extern</span> 10 ⇒ <span class="id" title="var">try_once</span> <span class="id" title="var">iStp_Trans</span> : <span class="id" title="var">core</span>.<br/>
 
 <br/>
 </div>
@@ -265,12 +265,12 @@ Ensure <span class="inlinecode"><span class="id" title="tactic">eauto</span></sp
 Remove hints that can slow down search. 
 </div>
 <div class="code">
-<span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iStp_Eq</span> <span class="id" title="var">iStp_Skolem_P</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iStp_Eq</span> <span class="id" title="var">iStp_Skolem_P</span> : <span class="id" title="var">core</span>.<br/>
 <span class="comment">(*&nbsp;Not&nbsp;directed.&nbsp;*)</span><br/>
-<span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iP_Sngl_Trans</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iP_Sngl_Trans</span> : <span class="id" title="var">core</span>.<br/>
 <span class="comment">(*&nbsp;These&nbsp;cause&nbsp;cycles.&nbsp;*)</span><br/>
-<span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iP_Mu_E</span> : <span class="id" title="var">core</span>.<br/>
-<span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iP_Mu_I</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iP_Mu_E</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iP_Mu_I</span> : <span class="id" title="var">core</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a name="unstamped_path_root_is_var"><span class="id" title="lemma">unstamped_path_root_is_var</span></a> <span class="id" title="var">Γ</span> <span class="id" title="var">p</span> <span class="id" title="var">T</span> <span class="id" title="var">i</span>:<br/>

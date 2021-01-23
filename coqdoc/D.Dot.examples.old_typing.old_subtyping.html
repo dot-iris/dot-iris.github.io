@@ -201,22 +201,22 @@
 <span class="id" title="var">Combined</span> <span class="id" title="keyword">Scheme</span> <a name="old_pure_typing_mut_ind"><span class="id" title="definition">old_pure_typing_mut_ind</span></a> <span class="id" title="var">from</span> <a class="idref" href="D.Dot.examples.old_typing.old_subtyping.html#unstamped_path_typed_mut_ind"><span class="id" title="definition">unstamped_path_typed_mut_ind</span></a>, <a class="idref" href="D.Dot.examples.old_typing.old_subtyping.html#unstamped_subtype_mut_ind"><span class="id" title="definition">unstamped_subtype_mut_ind</span></a>.<br/>
 
 <br/>
-<span class="id" title="keyword">Hint Constructors</span> <a class="idref" href="D.Dot.examples.old_typing.old_subtyping.html#path_typed"><span class="id" title="inductive">path_typed</span></a> <a class="idref" href="D.Dot.examples.old_typing.old_subtyping.html#subtype"><span class="id" title="inductive">subtype</span></a> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Constructors</span> <a class="idref" href="D.Dot.examples.old_typing.old_subtyping.html#path_typed"><span class="id" title="inductive">path_typed</span></a> <a class="idref" href="D.Dot.examples.old_typing.old_subtyping.html#subtype"><span class="id" title="inductive">subtype</span></a> : <span class="id" title="var">core</span>.<br/>
 </div>
 
 <div class="doc">
 Ensure <span class="inlinecode"><span class="id" title="tactic">eauto</span></span>'s proof search does not diverge due to transitivity. 
 </div>
 <div class="code">
-<span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iSub_Trans</span> : <span class="id" title="var">core</span>.<br/>
-<span class="id" title="keyword">Hint Extern</span> 10 ⇒ <span class="id" title="var">try_once</span> <span class="id" title="var">iSub_Trans</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iSub_Trans</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Extern</span> 10 ⇒ <span class="id" title="var">try_once</span> <span class="id" title="var">iSub_Trans</span> : <span class="id" title="var">core</span>.<br/>
 </div>
 
 <div class="doc">
 Remove unwanted hints: we don't want to use this rule silently. 
 </div>
 <div class="code">
-<span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iSub_Skolem_P</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iSub_Skolem_P</span> : <span class="id" title="var">core</span>.<br/>
 
 <br/>
 </div>
@@ -225,15 +225,15 @@ Remove unwanted hints: we don't want to use this rule silently.
 These hints can slow down proof search.  Not directed. 
 </div>
 <div class="code">
-<span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">old_subtyping.iP_Sngl_Trans</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">old_subtyping.iP_Sngl_Trans</span> : <span class="id" title="var">core</span>.<br/>
 </div>
 
 <div class="doc">
 These can cause cycles. 
 </div>
 <div class="code">
-<span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">old_subtyping.iP_Mu_E</span> : <span class="id" title="var">core</span>.<br/>
-<span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">old_subtyping.iP_Mu_I</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">old_subtyping.iP_Mu_E</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">old_subtyping.iP_Mu_I</span> : <span class="id" title="var">core</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a name="unstamped_path_root_is_var"><span class="id" title="lemma">unstamped_path_root_is_var</span></a> <span class="id" title="var">Γ</span> <span class="id" title="var">p</span> <span class="id" title="var">T</span> <span class="id" title="var">i</span>:<br/>

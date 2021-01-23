@@ -152,9 +152,9 @@ Non-dependent application; allowed for any argument.
 <span class="id" title="var">Combined</span> <span class="id" title="keyword">Scheme</span> <a name="typing_mut_ind"><span class="id" title="definition">typing_mut_ind</span></a> <span class="id" title="var">from</span> <a class="idref" href="D.DSub.typing.ds_obj_ident_typing.html#typed_mut_ind"><span class="id" title="definition">typed_mut_ind</span></a>, <a class="idref" href="D.DSub.typing.ds_obj_ident_typing.html#subtype_mut_ind"><span class="id" title="definition">subtype_mut_ind</span></a>.<br/>
 
 <br/>
-<span class="id" title="keyword">Hint Constructors</span> <a class="idref" href="D.DSub.typing.ds_obj_ident_typing.html#typed"><span class="id" title="inductive">typed</span></a> <a class="idref" href="D.DSub.typing.ds_obj_ident_typing.html#subtype"><span class="id" title="inductive">subtype</span></a> : <span class="id" title="var">core</span>.<br/>
-<span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iSub_Trans</span> : <span class="id" title="var">core</span>.<br/>
-<span class="id" title="keyword">Hint Extern</span> 10 ⇒ <span class="id" title="var">try_once</span> <span class="id" title="var">iSub_Trans</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Constructors</span> <a class="idref" href="D.DSub.typing.ds_obj_ident_typing.html#typed"><span class="id" title="inductive">typed</span></a> <a class="idref" href="D.DSub.typing.ds_obj_ident_typing.html#subtype"><span class="id" title="inductive">subtype</span></a> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Remove</span> <span class="id" title="var">Hints</span> <span class="id" title="var">iSub_Trans</span> : <span class="id" title="var">core</span>.<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Extern</span> 10 ⇒ <span class="id" title="var">try_once</span> <span class="id" title="var">iSub_Trans</span> : <span class="id" title="var">core</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a name="stamped_to_storeless_typing_mut"><span class="id" title="lemma">stamped_to_storeless_typing_mut</span></a> <span class="id" title="var">Γ</span>:<br/>
