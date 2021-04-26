@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="../">Project Page</a>
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">D.Dot.syntyp_lemmas.prims_lr_syn</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a id="lab115"></a><h1 class="section">Semantic lemmas for typing of primitive expressions.</h1>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">iris.proofmode</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="https://plv.mpi-sws.org/coqdoc/iris/iris.proofmode.tactics.html#"><span class="id" title="library">tactics</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.syn.syn.html#"><span class="id" title="library">syn</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.typing.typing_aux_defs.html#"><span class="id" title="library">typing_aux_defs</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">D.pure_program_logic</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.pure_program_logic.lifting.html#"><span class="id" title="library">lifting</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">iris.program_logic</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="https://plv.mpi-sws.org/coqdoc/iris/iris.program_logic.language.html#"><span class="id" title="library">language</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">D.Dot</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="D.Dot.lr.unary_lr.html#"><span class="id" title="library">unary_lr</span></a> <a class="idref" href="D.Dot.semtyp_lemmas.prims_lr.html#"><span class="id" title="library">prims_lr</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Implicit</span> <span class="id" title="keyword">Types</span> (<span class="id" title="var">v</span>: <a class="idref" href="D.Dot.syn.syn.html#VlSorts.vl"><span class="id" title="definition">vl</span></a>) (<span class="id" title="var">e</span>: <a class="idref" href="D.Dot.syn.syn.html#VlSorts.tm"><span class="id" title="inductive">tm</span></a>) (<span class="id" title="var">d</span>: <a class="idref" href="D.Dot.syn.syn.html#VlSorts.dm"><span class="id" title="inductive">dm</span></a>) (<span class="id" title="var">ds</span>: <a class="idref" href="D.Dot.syn.syn.html#VlSorts.dms"><span class="id" title="definition">dms</span></a>) (ρ : <a class="idref" href="D.Dot.syn.syn.html#VlSorts.env"><span class="id" title="definition">env</span></a>).<br/>
+
+<br/>
+<span class="id" title="keyword">Set</span> <span class="id" title="var">Suggest</span> <span class="id" title="keyword">Proof</span> <span class="id" title="var">Using</span>.<br/>
+<span class="id" title="keyword">Set</span> <span class="id" title="var">Default</span> <span class="id" title="keyword">Proof</span> <span class="id" title="var">Using</span> "Type*".<br/>
+
+<br/>
+<span class="id" title="keyword">Section</span> <a id="Sec" class="idref" href="#Sec"><span class="id" title="section">Sec</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Context</span> `{<a id="HdlangG:2" class="idref" href="#HdlangG:2"><span class="id" title="binder">HdlangG</span></a>: !<a class="idref" href="D.Dot.lr.dlang_inst.html#dlangG"><span class="id" title="class">dlangG</span></a> <a id="0101b9beac487b383a5ba2a8f6922788" class="idref" href="#0101b9beac487b383a5ba2a8f6922788"><span class="id" title="binder">Σ</span></a>}.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="T_Un" class="idref" href="#T_Un"><span class="id" title="lemma">T_Un</span></a> <a id="55485d85e29df2faa6748490a2d4cd13" class="idref" href="#55485d85e29df2faa6748490a2d4cd13"><span class="id" title="binder">Γ</span></a> <a id="u:4" class="idref" href="#u:4"><span class="id" title="binder">u</span></a> <a id="e1:5" class="idref" href="#e1:5"><span class="id" title="binder">e1</span></a> <a id="B1:6" class="idref" href="#B1:6"><span class="id" title="binder">B1</span></a> <a id="Br:7" class="idref" href="#Br:7"><span class="id" title="binder">Br</span></a> (<a id="Hu:8" class="idref" href="#Hu:8"><span class="id" title="binder">Hu</span></a> : <a class="idref" href="D.Dot.typing.typing_aux_defs.html#un_op_syntype"><span class="id" title="inductive">un_op_syntype</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#u:4"><span class="id" title="variable">u</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#B1:6"><span class="id" title="variable">B1</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#Br:7"><span class="id" title="variable">Br</span></a>) :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#55485d85e29df2faa6748490a2d4cd13"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">⊨</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#e1:5"><span class="id" title="variable">e1</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.TPrim"><span class="id" title="constructor">TPrim</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#B1:6"><span class="id" title="variable">B1</span></a> <a class="idref" href="https://plv.mpi-sws.org/coqdoc/iris/iris.bi.interface.html#0f70793a7efc24c230ef5e3a6ac95b68"><span class="id" title="notation">-∗</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#55485d85e29df2faa6748490a2d4cd13"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">⊨</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.tun"><span class="id" title="constructor">tun</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#u:4"><span class="id" title="variable">u</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#e1:5"><span class="id" title="variable">e1</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.TPrim"><span class="id" title="constructor">TPrim</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#Br:7"><span class="id" title="variable">Br</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">apply</span> <a class="idref" href="D.Dot.semtyp_lemmas.prims_lr.html#sT_Un"><span class="id" title="lemma">sT_Un</span></a>, <a class="idref" href="D.Dot.semtyp_lemmas.prims_lr.html#un_op_syntype_sound"><span class="id" title="lemma">un_op_syntype_sound</span></a>, <span class="id" title="var">Hu</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="T_Bin" class="idref" href="#T_Bin"><span class="id" title="lemma">T_Bin</span></a> <a id="a27a3f5be2c643b658176c4fa6dd32d6" class="idref" href="#a27a3f5be2c643b658176c4fa6dd32d6"><span class="id" title="binder">Γ</span></a> <a id="b:10" class="idref" href="#b:10"><span class="id" title="binder">b</span></a> <a id="e1:11" class="idref" href="#e1:11"><span class="id" title="binder">e1</span></a> <a id="e2:12" class="idref" href="#e2:12"><span class="id" title="binder">e2</span></a> <a id="B1:13" class="idref" href="#B1:13"><span class="id" title="binder">B1</span></a> <a id="B2:14" class="idref" href="#B2:14"><span class="id" title="binder">B2</span></a> <a id="Br:15" class="idref" href="#Br:15"><span class="id" title="binder">Br</span></a> (<a id="Hu:16" class="idref" href="#Hu:16"><span class="id" title="binder">Hu</span></a> : <a class="idref" href="D.Dot.typing.typing_aux_defs.html#bin_op_syntype"><span class="id" title="inductive">bin_op_syntype</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#b:10"><span class="id" title="variable">b</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#B1:13"><span class="id" title="variable">B1</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#B2:14"><span class="id" title="variable">B2</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#Br:15"><span class="id" title="variable">Br</span></a>) :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#a27a3f5be2c643b658176c4fa6dd32d6"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">⊨</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#e1:11"><span class="id" title="variable">e1</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.TPrim"><span class="id" title="constructor">TPrim</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#B1:13"><span class="id" title="variable">B1</span></a> <a class="idref" href="https://plv.mpi-sws.org/coqdoc/iris/iris.bi.interface.html#0f70793a7efc24c230ef5e3a6ac95b68"><span class="id" title="notation">-∗</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#a27a3f5be2c643b658176c4fa6dd32d6"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">⊨</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#e2:12"><span class="id" title="variable">e2</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.TPrim"><span class="id" title="constructor">TPrim</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#B2:14"><span class="id" title="variable">B2</span></a> <a class="idref" href="https://plv.mpi-sws.org/coqdoc/iris/iris.bi.interface.html#6e96398fec71e244af9dd75e40876ca6"><span class="id" title="notation">-∗</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#a27a3f5be2c643b658176c4fa6dd32d6"><span class="id" title="variable">Γ</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">⊨</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.tbin"><span class="id" title="constructor">tbin</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#b:10"><span class="id" title="variable">b</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#e1:11"><span class="id" title="variable">e1</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#e2:12"><span class="id" title="variable">e2</span></a> <a class="idref" href="D.Dot.lr.unary_lr.html#3a399242aa00b5b8125c3791f52d8ea1"><span class="id" title="notation">:</span></a> <a class="idref" href="D.Dot.syn.syn.html#VlSorts.TPrim"><span class="id" title="constructor">TPrim</span></a> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#Br:15"><span class="id" title="variable">Br</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">apply</span> <a class="idref" href="D.Dot.semtyp_lemmas.prims_lr.html#sT_Bin_cond"><span class="id" title="lemma">sT_Bin_cond</span></a>, <a class="idref" href="D.Dot.semtyp_lemmas.prims_lr.html#ty_syn"><span class="id" title="constructor">ty_syn</span></a>, <span class="id" title="var">Hu</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="D.Dot.syntyp_lemmas.prims_lr_syn.html#Sec"><span class="id" title="section">Sec</span></a>.<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>
