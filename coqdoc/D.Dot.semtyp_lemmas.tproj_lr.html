@@ -510,13 +510,13 @@ And <span class="inlinecode"><a class="idref" href="D.Dot.semtyp_lemmas.tproj_lr
 
 <div class="doc">
     For lower bounds, we'd expect a rule similar to:
-      <span class="inlinecode"><span class="id" title="var">Γ</span></span> <span class="inlinecode">⊨</span> <span class="inlinecode"><span class="id" title="var">T</span></span> <span class="inlinecode">&lt;:^<span class="id" title="var">i</span></span> <span class="inlinecode">{</span> <span class="inlinecode"><span class="id" title="var">A</span></span> <span class="inlinecode">::</span> <span class="inlinecode"><span class="id" title="var">T</span></span> <span class="inlinecode">..</span> <span class="inlinecode"><span class="id" title="var">T</span></span> <span class="inlinecode">}</span>
+      <span class="inlinecode"><span class="id" title="var">Γ</span></span> <span class="inlinecode">⊨</span> <span class="inlinecode"><span class="id" title="var">T</span></span> <span class="inlinecode">&lt;:^<span class="id" title="var">i</span></span> <span class="inlinecode">{</span> <span class="inlinecode"><span class="id" title="var">A</span></span> <span class="inlinecode">::</span> <span class="inlinecode"><span class="id" title="var">T</span></span> <span class="inlinecode">..</span> <span class="inlinecode"><span class="id" title="var">T</span></span> <span class="inlinecode">}#<span class="id" title="var">A</span></span>
     However, we must first of all "guard" it with ▷, like other gDOT rules
     involving (g)DOT's impredicative type members; that would give:
 
 <div class="paragraph"> </div>
 
-      <span class="inlinecode"><span class="id" title="var">Γ</span></span> <span class="inlinecode">⊨</span> <span class="inlinecode">▷</span> <span class="inlinecode"><span class="id" title="var">T</span></span> <span class="inlinecode">&lt;:^<span class="id" title="var">i</span></span> <span class="inlinecode">{</span> <span class="inlinecode"><span class="id" title="var">A</span></span> <span class="inlinecode">&gt;:</span> <span class="inlinecode"><span class="id" title="var">T</span></span> <span class="inlinecode">&lt;:</span> <span class="inlinecode"><span class="id" title="var">T</span></span> <span class="inlinecode">}</span>
+      <span class="inlinecode"><span class="id" title="var">Γ</span></span> <span class="inlinecode">⊨</span> <span class="inlinecode">▷</span> <span class="inlinecode"><span class="id" title="var">T</span></span> <span class="inlinecode">&lt;:^<span class="id" title="var">i</span></span> <span class="inlinecode">{</span> <span class="inlinecode"><span class="id" title="var">A</span></span> <span class="inlinecode">&gt;:</span> <span class="inlinecode"><span class="id" title="var">T</span></span> <span class="inlinecode">&lt;:</span> <span class="inlinecode"><span class="id" title="var">T</span></span> <span class="inlinecode">}#<span class="id" title="var">A</span></span>
 
 <div class="paragraph"> </div>
 
