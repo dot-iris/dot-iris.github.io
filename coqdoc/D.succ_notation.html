@@ -29,18 +29,18 @@
 </div>
 
 <div class="doc">
-<a id="lab57"></a><h1 class="section">ssreflect postfix notation for the successor and predecessor functions.</h1>
+<a id="lab59"></a><h1 class="section">ssreflect postfix notation for the successor and predecessor functions.</h1>
 
 SSreflect uses "pred" for the generic predicate type, and S as a local bound
 variable.
 </div>
 <div class="code">
-<span class="id" title="keyword">Notation</span> <a id="succn" class="idref" href="#succn"><span class="id" title="abbreviation">succn</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.13.0/stdlib//Coq.Init.Datatypes.html#S"><span class="id" title="constructor">Datatypes.S</span></a>.<br/>
-<span class="id" title="keyword">Notation</span> <a id="predn" class="idref" href="#predn"><span class="id" title="abbreviation">predn</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.13.0/stdlib//Coq.Init.Peano.html#pred"><span class="id" title="abbreviation">Peano.pred</span></a>.<br/>
+<span class="id" title="keyword">Notation</span> <a id="succn" class="idref" href="#succn"><span class="id" title="abbreviation">succn</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.15.1/stdlib//Coq.Init.Datatypes.html#S"><span class="id" title="constructor">Datatypes.S</span></a>.<br/>
+<span class="id" title="keyword">Notation</span> <a id="predn" class="idref" href="#predn"><span class="id" title="abbreviation">predn</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.15.1/stdlib//Coq.Init.Peano.html#pred"><span class="id" title="abbreviation">Peano.pred</span></a>.<br/>
 
 <br/>
 <span class="comment">(*&nbsp;Enable&nbsp;using&nbsp;S&nbsp;in&nbsp;pattern&nbsp;matching&nbsp;by&nbsp;shadowing&nbsp;S.&nbsp;*)</span><br/>
-<span class="id" title="keyword">Definition</span> <a id="S" class="idref" href="#S"><span class="id" title="definition">S</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.13.0/stdlib//Coq.Init.Datatypes.html#S"><span class="id" title="constructor">S</span></a>.<br/>
+<span class="id" title="keyword">Definition</span> <a id="S" class="idref" href="#S"><span class="id" title="definition">S</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.15.1/stdlib//Coq.Init.Datatypes.html#S"><span class="id" title="constructor">S</span></a>.<br/>
 
 <br/>
 <span class="id" title="keyword">Notation</span> <a id="bda89d73ec4a8f23ae92b565ffb5aaa6" class="idref" href="#bda89d73ec4a8f23ae92b565ffb5aaa6"><span class="id" title="notation">&quot;</span></a>n .+1" := (<a class="idref" href="D.succ_notation.html#succn"><span class="id" title="abbreviation">succn</span></a> <span class="id" title="var">n</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 2, <span class="id" title="tactic">left</span> <span class="id" title="keyword">associativity</span>,<br/>
