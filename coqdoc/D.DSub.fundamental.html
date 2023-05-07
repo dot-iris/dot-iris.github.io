@@ -186,6 +186,42 @@
 &nbsp;&nbsp;<span class="id" title="tactic">intros</span>; <span class="id" title="tactic">eapply</span> (<a class="idref" href="D.DSub.fundamental.html#adequacy"><span class="id" title="lemma">adequacy</span></a> <a class="idref" href="https://plv.mpi-sws.org/coqdoc/iris/iris.base_logic.lib.iprop.html#55178d41d7107d58e1a212122a1f7484"><span class="id" title="notation">#[]</span></a>) ⇒ //; <span class="id" title="var">iIntros</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">by</span> <span class="id" title="var">iApply</span> <a class="idref" href="D.DSub.fundamental.html#fundamental_typed"><span class="id" title="lemma">fundamental_typed</span></a>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="comment">(*<br/>
+From&nbsp;iris&nbsp;Require&nbsp;Import&nbsp;later_credits.<br/>
+From&nbsp;iris.base_logic&nbsp;Require&nbsp;Import&nbsp;fancy_updates.<br/>
+Section&nbsp;tests.<br/>
+&nbsp;&nbsp;Context&nbsp;`{!dsubSynG&nbsp;Σ}&nbsp;`{!invGS&nbsp;Σ}.<br/>
+<br/>
+&nbsp;&nbsp;Definition&nbsp;istpl&nbsp;i&nbsp;Γ&nbsp;T1&nbsp;T2&nbsp;:&nbsp;iProp&nbsp;Σ&nbsp;:=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;PB&gt;&nbsp;∀&nbsp;ρ&nbsp;v,&nbsp;G⟦Γ⟧&nbsp;ρ&nbsp;→&nbsp;£&nbsp;i&nbsp;-∗&nbsp;⟦T1⟧&nbsp;ρ&nbsp;v&nbsp;→&nbsp;⟦T2⟧&nbsp;ρ&nbsp;v.<br/>
+<br/>
+&nbsp;&nbsp;[global] Arguments istpl /.
+  <span class="inlinecode"><span class="id" title="var">global</span></span>&nbsp;Instance&nbsp;istpl_persistent&nbsp;i&nbsp;Γ&nbsp;T1&nbsp;T2&nbsp;:&nbsp;Persistent&nbsp;(istpl&nbsp;i&nbsp;Γ&nbsp;T1&nbsp;T2)&nbsp;:=&nbsp;_.<br/>
+&nbsp;&nbsp;Notation&nbsp;"Γ&nbsp;⊨&nbsp;T1&nbsp;&lt;:<span class="inlinecode"></span> <span class="inlinecode"><span class="id" title="var">i</span></span>  <span class="inlinecode"></span>&nbsp;T2"&nbsp;:=&nbsp;(istpl&nbsp;i&nbsp;Γ&nbsp;T1&nbsp;T2)&nbsp;(at&nbsp;level&nbsp;74,&nbsp;T1,&nbsp;T2&nbsp;at&nbsp;next&nbsp;level).<br/>
+<br/>
+&nbsp;&nbsp;Lemma&nbsp;lTyp_Sub_Typ&nbsp;Γ&nbsp;L1&nbsp;L2&nbsp;U1&nbsp;U2&nbsp;i&nbsp;j&nbsp;:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Γ&nbsp;⊨&nbsp;L2&nbsp;&lt;:<span class="inlinecode"></span> <span class="inlinecode"><span class="id" title="var">i</span></span> <span class="inlinecode"></span>&nbsp;L1&nbsp;-∗<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Γ&nbsp;⊨&nbsp;U1&nbsp;&lt;:<span class="inlinecode"></span> <span class="inlinecode"><span class="id" title="var">j</span></span> <span class="inlinecode"></span>&nbsp;U2&nbsp;-∗<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Γ&nbsp;⊨&nbsp;TTMem&nbsp;L1&nbsp;U1&nbsp;&lt;:<span class="inlinecode"></span> <span class="inlinecode"><span class="id" title="var">i</span></span> <span class="inlinecode">+</span> <span class="inlinecode"><span class="id" title="var">j</span></span> <span class="inlinecode"></span>&nbsp;TTMem&nbsp;L2&nbsp;U2.<br/>
+&nbsp;&nbsp;Proof.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;pupd.&nbsp;iIntros&nbsp;"HT1 HT2&nbsp;!&gt;&nbsp;v&nbsp;Hg [Ci Cj] /=".
+    unfold_interp.
+    iDestruct 1 as (φ) "<span class="inlinecode"><span class="id" title="var">H</span>φ<span class="id" title="var">l</span></span> <span class="inlinecode">[<span class="id" title="var">HL</span>φ</span> <span class="inlinecode">#<span class="id" title="var">H</span>φ<span class="id" title="var">U</span>]</span>";&nbsp;iExists&nbsp;φ.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;iSplit;&nbsp;first&nbsp;done.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;iSplitL&nbsp;"Ci";&nbsp;iIntros&nbsp;""&nbsp;(w).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1:&nbsp;iSpecialize&nbsp;("HT1"&nbsp;!&nbsp;ρ&nbsp;w&nbsp;with&nbsp;"Hg&nbsp;Cj").<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;iSpecialize&nbsp;("HT1"&nbsp;*)</span><br/>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;setoid_rewrite&nbsp;mlaterN_impl.&nbsp;*)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat&nbsp;iSplitL;&nbsp;first&nbsp;done;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iIntros&nbsp;""&nbsp;(w).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iNext;&nbsp;iIntros&nbsp;"!&gt;&nbsp;**".<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;iApply&nbsp;"HLφ"&nbsp;=&gt;&nbsp;//.&nbsp;by&nbsp;iApply&nbsp;"IHT".<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;iApply&nbsp;"IHT1".&nbsp;by&nbsp;iApply&nbsp;"HφU".<br/>
+*)</span><br/>
 </div>
 </div>
 <div id="footer">
